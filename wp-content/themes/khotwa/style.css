@@ -1,0 +1,167 @@
+/*
+Theme Name: KHOTWA
+Author: Mouhcine Errebache
+Version: 1.0
+Description: Thème personnalisé permettant de modifier ahmed texte et images depuis l'administration WordPress.
+*/
+/* Basic Reset */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* HTML5 display-reset */
+html, body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    line-height: 1.5;
+    font-family: Arial, sans-serif;
+    text-rendering: optimizeLegibility;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+  }
+  
+/* Remove default styles for lists */
+ul, ol {
+    list-style: none;
+}
+
+/* Remove default styles for links */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Remove default button styles */
+button, input, textarea, select {
+    font: inherit;
+    background: none;
+    border: none;
+    outline: none;
+}
+
+/* Table Styles Reset */
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+}
+
+/* Image Reset */
+img, picture, svg, video {
+    max-width: 100%;
+    display: block;
+}
+
+/* Remove default border from images */
+img {
+    border-style: none;
+}
+
+/* Form Elements Reset */
+textarea {
+    resize: none;
+}
+
+/* Clear all paddings and margins */
+body, h1, h2, h3, h4, h5, h6, p, blockquote, pre, figure, hr {
+    margin: 0;
+    padding: 0;
+}
+
+/* Full Width for Main Content */
+main {
+    display: block;
+}
+
+/* Basic Box-Sizing Reset */
+html {
+    box-sizing: border-box;
+}
+
+/* Prevent Text Overflow */
+body {
+    word-wrap: break-word;
+}
+
+/* Clear float elements */
+.clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+
+/* langue selector */
+.language-dropdown-wrapper {
+    position: relative;
+    display: inline-block;
+    z-index: 1000;
+    margin-left: 50px;
+}
+
+.rtl .language-dropdown-wrapper {
+    margin-right: 50px;
+    margin-left: 0px;
+}
+
+.language-toggle {
+    cursor: pointer;
+    padding: 3px;
+}
+.language-toggle img {
+  border-radius: 5px;
+}
+.language-dropdown-list {
+    display: none;
+    position: absolute;
+    right: -22px;
+    top: 30px;
+    background: #ffffff;
+    border: 1px solid #ffffff;
+    border-radius: 4px;
+    min-width: 74px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+.language-dropdown-list.show {
+    display: block;
+}
+
+.language-dropdown-list::before {
+    content: "";
+    position: absolute;
+    top: -8px;
+    right: 40%; 
+    border-width: 0 8px 8px 8px;
+    border-style: solid;
+    border-color: transparent transparent #ffffff transparent;
+}
+
+.language-dropdown-list.show {
+    display: block;
+}
+
+.language-dropdown-list li {
+    padding: 5px 10px;
+    width: 40px;
+    margin: 0 auto;
+}
+
+.language-dropdown-list li a {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #333;
+    text-decoration: none;
+}

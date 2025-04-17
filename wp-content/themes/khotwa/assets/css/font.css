@@ -1,0 +1,40 @@
+@font-face {
+    font-family: '29lt_bukralight';
+    src: url('/assets/fonts/29ltbukralight-webfont.woff2') format('woff2'),
+         url('/assets/fonts/29ltbukralight-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: '29lt_bukraregular';
+    src: url('/assets/fonts/29ltbukrabolditalic-webfont.woff2') format('woff2'),
+         url('/assets/fonts/29ltbukrabolditalic-webfont.woff') format('woff');
+    font-weight: bold;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: '29lt_bukraregular';
+    src: url('/assets/fonts/29ltbukraregular-webfont.woff2') format('woff2'),
+         url('/assets/fonts/29ltbukraregular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'ff_shamel_familysans_one_bold';
+    src: url('/assets/fonts/ffshamelfamily-sansonebold-webfont.woff2') format('woff2'),
+         url('/assets/fonts/ffshamelfamily-sansonebold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'ff_shamel_familysans_one_book';
+    src: url('/assets/fonts/ffshamelfamily-sansonebook-webfont.woff2') format('woff2'),
+         url('/assets/fonts/ffshamelfamily-sansonebook-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
