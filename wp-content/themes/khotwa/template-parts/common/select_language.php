@@ -5,7 +5,6 @@
     ));
 
     if (!empty($languages)) :
-        // Trouver la langue courante
         $current_lang = null;
         foreach ($languages as $lang) {
             if (!empty($lang['current_lang']) && $lang['current_lang']) {
@@ -17,14 +16,14 @@
         if ($current_lang): ?>
             <div class="language-dropdown-wrapper mr-5">
                 <div class="language-toggle">
-                    <img src="<?php echo esc_url($current_lang['flag']); ?>" alt="<?php echo esc_attr($current_lang['name']); ?>" width="20" height="14">
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/flags/<?php echo esc_attr($current_lang['slug']); ?>.svg" alt="<?php echo esc_attr($current_lang['name']); ?>" width="20" height="18">
                 </div>
                 <ul class="language-dropdown-list">
                     <?php foreach ($languages as $lang) :
                         if (empty($lang['current_lang'])) : ?>
                             <li>
                                 <a href="<?php echo esc_url($lang['url']); ?>">
-                                    <img src="<?php echo esc_url($lang['flag']); ?>" alt="<?php echo esc_attr($lang['name']); ?>" width="20" height="14">
+                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/flags/<?php echo esc_attr($lang['slug']); ?>.svg" alt="<?php echo esc_attr($lang['name']); ?>" width="35" height="18">
                                 </a>
                             </li>
                         <?php endif;

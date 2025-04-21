@@ -37,21 +37,19 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
-
     <?php wp_head(); ?>
 
     <style>
         /* ------------------------------
            FONT-FACE (exemple)
         ------------------------------ */
-        @font-face {
+        /* @font-face {
             font-family: 'FF Shamel Sans';
-            src: url('<?php echo get_template_directory_uri(); ?>/assets/fonts/FFShamelFamilySansOneBook.ttf') format('truetype'),
-                url('<?php echo get_template_directory_uri(); ?>/assets/fonts/FFShamelFamilySansOneBook.woff2') format('woff2'),
-                url('<?php echo get_template_directory_uri(); ?>/assets/fonts/FFShamelFamilySansOneBook.woff') format('woff');
+            src: url('<?php echo get_template_directory_uri(); ?>/assets/fonts/ffshamelfamily-sansonebold-webfont.woff2') format('woff2'),
+                url('<?php echo get_template_directory_uri(); ?>/assets/fonts/ffshamelfamily-sansonebold-webfont.woff') format('woff');
             font-weight: normal;
             font-style: normal;
-        }
+        } */
 
         /* ------------------------------
            BANNER SECTION

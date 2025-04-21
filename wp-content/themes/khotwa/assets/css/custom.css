@@ -2,8 +2,9 @@
    RESET + GLOBAL
 =============================== */
 :root {
-  --font-primary: '29lt_bukraregular', sans-serif;
-  --font-secondary: 'ff_shamel_familysans_one_book', sans-serif;
+  --font-primary: '29LT Bukra', sans-serif;
+  --font-secondary: 'FF Shamel Family Sans One Book', sans-serif;
+  --font-sub-title: 'FF Shamel Family Sans One', sans-serif;
   --color-jaune: #FEAF22;
   --color-orange: #FC874D;
   --color-rouge: #FF3308;
@@ -17,6 +18,7 @@ body {
     box-sizing: border-box;
     overflow-x: hidden;
     background-color: #fff;
+    font-family: '29lt_bukraregular', sans-serif !important;
 }
 .btn-consultation {
   font-family: var(--font-secondary);
@@ -231,7 +233,7 @@ body {
 .banner_section {
     background-size: cover;
     background-position: center;
-    height: 100vh;
+    min-height: 700px;
     position: relative;
 }
 
@@ -244,9 +246,9 @@ body {
 }
 
 .banner_section .txt_list {
-  font-family: var(--font-secondary);
+    font-family: var(--font-secondary);
     color: #fff;
-    font-size: 12px;
+    font-size: 14px;
     line-height: 1.5;
     text-align: center;
 }
@@ -329,7 +331,7 @@ body {
 footer {
     background-size: cover;
     background-position: center;
-    height: 100vh;
+    min-height: 700px;
 }
 footer p{
     font-family: var(--font-secondary);
@@ -362,7 +364,7 @@ footer p{
   height: 80px;
 }
 .text-footer-jaune{
-  font-family: var(--font-secondary);
+  font-family: var(--font-sub-title);
     color: var(--color-jaune);
 }
 .icon-rounded {
@@ -376,7 +378,24 @@ footer p{
   text-align: center;
   font-size: 16px;
   line-height: 0;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
+a.text-light:hover,
+a.text-light:active,
+a.text-light:focus {
+  color: var(--color-jaune);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.icon-rounded:hover,
+.icon-rounded:active,
+.icon-rounded:focus {
+  color: var(--color-jaune);
+  cursor: pointer;
+  border-color: var(--color-jaune);
+}
+
 /* ===============================
    DESTINATION SECTION
 =============================== */
@@ -415,6 +434,7 @@ footer p{
 .destination-title {
     margin-bottom: 1.5rem;
     font-size: 34px;
+    line-height: 50px;
     font-family: var(--font-primary);
     color: var(--text-color-marron);
 }
@@ -489,6 +509,7 @@ footer p{
   margin-bottom: 2rem;
   margin-right: 23rem;
   margin-left: 23rem;
+  line-height: 60px;
 }
 .step-box {
   background: transparent;
@@ -538,22 +559,22 @@ footer p{
 /* Sous-titres et descriptions toujours alignés */
 .step-subtitle,
 .step-description {
-  font-family: var(--font-secondary);
+  font-family: var(--font-sub-title);
   text-align: center;
 }
 .step-subtitle {
   font-family: var(--font-secondary);
-  font-size: 25px;
+  font-size: 22px;
   font-weight: bold;
   margin-bottom: 20px;
   margin-left: 5rem;
   margin-right: 5rem;
   margin-top: 100px;
-
+  min-height: 50px;
 }
 .step-description {
   font-family: var(--font-secondary);
-  font-size: 20px;
+  font-size: 18px;
   line-height: 1.5;
 }
 

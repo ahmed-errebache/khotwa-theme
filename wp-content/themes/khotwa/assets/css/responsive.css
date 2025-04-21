@@ -1,12 +1,12 @@
-:root {
-  --font-primary: '29lt_bukraregular', sans-serif;
-  --font-secondary: 'ff_shamel_familysans_one_book', sans-serif;
-  --color-jaune: #FEAF22;
-  --color-orange: #FC874D;
-  --color-rouge: #FF3308;
-  --text-color-marron: #7B041F;
-  --background-color-marron: #6C0502;
-}
+  /* :root {
+    --font-primary: '29lt_bukraregular', sans-serif;
+    --font-secondary: 'ff_shamel_familysans_one_book', sans-serif;
+    --color-jaune: #FEAF22;
+    --color-orange: #FC874D;
+    --color-rouge: #FF3308;
+    --text-color-marron: #7B041F;
+    --background-color-marron: #6C0502;
+  } */
 /* Responsive Styles (Mobile) */
 @media (max-width: 768px) {
   .navbar-container {
