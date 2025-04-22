@@ -849,14 +849,14 @@ a.text-light:focus {
 
 .desktop-version .window-wrapper {
   position: absolute;
-  top: 8%;
-  left: 20px;
+  top: 9%;
+  left: 6%;
   z-index: 2;
 }
 
 .desktop-version .window-frame {
   display: block;
-  width: 90%;
+  width: 95%;
   height: auto;
 }
 
@@ -1048,7 +1048,7 @@ a.text-light:focus {
 }
 
 .universitySwiper {
-  top: 10%;
+  top: 20%;
   position: relative;
   z-index: 1;
   width: 90%;
@@ -1138,7 +1138,7 @@ a.text-light:focus {
   width: 100%;
   height: 500px;
   overflow: visible;
-  padding-top: 3rem;
+  padding-top: 1.5rem;
 }
 
 .specialization-background {
@@ -1193,26 +1193,41 @@ a.text-light:focus {
   height: auto;
   width: 100%;
 }
+
+.specialization-btn {
+  position: absolute;
+  bottom: 9%;
+  left: 35%;
+}
 @media (max-width: 768px) {
   .specialization-section {
     height: auto;
-    padding-top: 2rem;
-    padding-bottom: 5rem;
   }
 
   .specialization-title {
-    font-size: 31px;
+    font-size: 23px;
   }
 
   .specialization-subtitle {
-    font-size: 31px;
+    font-size: 23px;
+  }
+  .specialization-text {
+    margin-bottom: 0rem;
   }
 
   .specialization-image {
     position: relative;
     right: 0;
-    top: 7rem;
+    top: 1rem;
     transform: none;
+  }
+  .specialization-btn {
+    position: absolute;
+    top: 80%;
+    left: 20%;
+  }
+  .specialization-content {
+    margin-top: -10rem;
   }
 
   .specialization-image img {
