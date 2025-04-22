@@ -112,7 +112,6 @@
                             'fallback_cb'    => false,
                         ));
                         ?>
-                        <?php get_template_part('template-parts/common/select_language'); ?>
 
                         <div class="mobile social_contact mt-5">
                            <?php get_template_part('template-parts/common/social_contact'); ?> 
@@ -120,6 +119,7 @@
 
                     </div>
 
+                    <?php get_template_part('template-parts/common/select_language'); ?>
                     <!-- Bouton CTA pour desktop -->
                     <button class="cta-button desktop">
                         <?php echo esc_html($cta_button_text); ?>

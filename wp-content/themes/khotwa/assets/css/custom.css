@@ -8,6 +8,7 @@
   --color-jaune: #FEAF22;
   --color-orange: #FC874D;
   --color-rouge: #FF3308;
+  --color-rouge-light: #FF4D27;
   --text-color-marron: #7B041F;
   --background-color-marron: #6C0502;
 }
@@ -170,7 +171,7 @@ body {
     border-radius: 4px;
     min-width: 74px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.15);
-    padding: 0;
+    padding: 5px;
     margin: 0;
     text-align: center;
     opacity: 0;
@@ -184,7 +185,14 @@ body {
     visibility: visible;
 }
 
+.language-dropdown-list.show ::before {
+  display: none;
+}
+
 .language-dropdown-list::before {
+  display: none;
+}
+/* .language-dropdown-list::before {
     content: "";
     position: absolute;
     top: -8px;
@@ -192,7 +200,7 @@ body {
     border-width: 0 8px 8px 8px;
     border-style: solid;
     border-color: transparent transparent #ffb223 transparent;
-}
+} */
 
 /* ===============================
    CTA BUTTON
@@ -480,7 +488,7 @@ a.text-light:focus {
   background-position: center;
 }
 
-/* Icônes décoratives */
+/* IcÃ´nes dÃ©coratives */
 .icon-top-left,
 .icon-top-right {
   position: absolute;
@@ -517,7 +525,7 @@ a.text-light:focus {
   padding: 1.5rem;
 }
 
-/* Style commun pour le numéro d'étape et le titre */
+/* Style commun pour le numÃ©ro d'Ã©tape et le titre */
 .step-number,
 .step-heading {
   font-family: var(--font-primary);
@@ -526,7 +534,7 @@ a.text-light:focus {
   margin-bottom: 10px;
 }
 
-/* Couleurs spécifiques pour chaque étape (numéros et titres) */
+/* Couleurs spÃ©cifiques pour chaque Ã©tape (numÃ©ros et titres) */
 .step-1 .step-number,
 .step-1 .step-heading {
   color: #FF004E; /* Rose */
@@ -542,7 +550,7 @@ a.text-light:focus {
 
 /* Container de l'image pour forcer une hauteur fixe et aligner les sous-titres */
 .step-image-container {
-  height: 100px; /* Hauteur fixe à ajuster selon vos besoins */
+  height: 100px; /* Hauteur fixe Ã  ajuster selon vos besoins */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -556,7 +564,7 @@ a.text-light:focus {
   display: block;
 }
 
-/* Sous-titres et descriptions toujours alignés */
+/* Sous-titres et descriptions toujours alignÃ©s */
 .step-subtitle,
 .step-description {
   font-family: var(--font-sub-title);
@@ -579,14 +587,14 @@ a.text-light:focus {
 }
 
 
-/* Image Vector3 derrière le contenu mais au-dessus du background */
+/* Image Vector3 derriÃ¨re le contenu mais au-dessus du background */
 .vector3-container {
   position: absolute;
-  top: 160px; /* Ajustez selon vos besoins (peut être 150px, 200px, etc.) */
+  top: 160px; /* Ajustez selon vos besoins (peut Ãªtre 150px, 200px, etc.) */
   left: 0;
   right: 130px;
   text-align: center;
-  z-index: 1; /* Derrière .content-container qui a z-index:2 */
+  z-index: 1; /* DerriÃ¨re .content-container qui a z-index:2 */
 }
 
 /* Ajustez max-width pour redimensionner le swirl */
@@ -774,28 +782,12 @@ a.text-light:focus {
 /* ===============================
    RESPONSIVE
 =============================== */
-@media (max-width: 767.98px) {
-    .steps-title {
-        font-size: 1.5rem;
-    }
-    .icon-shape {
-        width: 40%;
-    }
-    .icon-top-left {
-        display: none;
-    }
-}
+
 @media (min-width: 1440px) {
   .is_homepage {
     bottom: -15%;
   }
-  @media (min-width: 768px) {
-    .testimonial-img {
-      width: 100%;
-      height: 400px;
-      object-fit: cover;
-    }
-  }
+  
   
 }
 
@@ -804,22 +796,8 @@ a.text-light:focus {
  ******************************************************/
 
 /* --- Responsive : affiche desktop au-dessus de 768px, mobile en dessous --- */
-@media (min-width: 769px) {
-  .consultation-mobile-version {
-    display: none;
-  }
-  .desktop-version {
-    display: block;
-  }
-}
-@media (max-width: 768px) {
-  .desktop-version {
-    display: none;
-  }
-  .consultation-mobile-version {
-    display: block;
-  }
-}
+
+
 
 /* --- Structure commune --- */
 .consultation-section {
@@ -830,37 +808,30 @@ a.text-light:focus {
 /* =====================
    VERSION DESKTOP
 ===================== */
-.container-fluid {
-  padding-left: 0 !important;
-  padding-right: 0 !important;
-  margin-left: 0 !important;
-  margin-right: 0 !important;
-}
-.desktop-version .bg-wrapper {
+.consultation-section .bg-wrapper {
   position: relative;
   width: 100%;
 }
 
-.desktop-version .bg-image {
-  display: block;
+.consultation-section .bg-image {
   width: 100%;
   height: auto;
 }
 
-.desktop-version .window-wrapper {
+.consultation-section .window-wrapper {
   position: absolute;
   top: 9%;
   left: 6%;
   z-index: 2;
 }
 
-.desktop-version .window-frame {
+.consultation-section .window-frame {
   display: block;
   width: 95%;
   height: auto;
 }
 
-.desktop-version .consultation-content {
+.consultation-section .consultation-content {
   position: absolute;
   top: 20%;
   right: 3%;
@@ -873,7 +844,7 @@ a.text-light:focus {
   color: #fff; /* Texte blanc */
 }
 
-.desktop-version .consultation-title {
+.consultation-section .consultation-title {
   font-family: var(--font-primary);
     font-size: 42px;
     font-weight: bold;
@@ -882,7 +853,7 @@ a.text-light:focus {
     line-height: 56px;
 }
 
-.desktop-version .consultation-features {
+.consultation-section .consultation-features {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -891,22 +862,22 @@ a.text-light:focus {
   list-style: none;
 }
 
-.desktop-version .consultation-feature {
+.consultation-section .consultation-feature {
   display: flex;
   flex-direction: row;
   align-items: center;
   margin: 10px 20px 10px 20%;
 }
-.desktop-version .btn-conslut-section{
+.consultation-section .btn-conslut-section{
   margin-right: 3%;
 }
-.desktop-version .feature-icon {
+.consultation-section .feature-icon {
   margin-left: 12px;
   max-width: 35px;
   height: auto;
 }
 
-.desktop-version .consultation-feature p {
+.consultation-section .consultation-feature p {
   font-family: var(--font-secondary);
   margin: 0;
   font-size: 24px;
@@ -917,37 +888,29 @@ a.text-light:focus {
 /* =====================
    VERSION MOBILE
 ===================== */
-/* Cache la version mobile si > 768px, montrez-la si ≤ 768px */
-@media (min-width: 769px) {
-  .consultation-mobile-version {
-    display: none;
-  }
-}
-@media (max-width: 768px) {
-  .consultation-mobile-version {
-    display: block;
-  }
-}
+/* Cache la version mobile si > 768px, montrez-la si â‰¤ 768px */
 
-/* Conteneur général de la version mobile */
+
+
+/* Conteneur gÃ©nÃ©ral de la version mobile */
 .consultation-mobile-version {
   width: 100%;
   margin: 0;
   padding: 0;
   overflow: hidden;
   direction: rtl;
-  color: #fff; /* Texte blanc par défaut */
+  color: #fff; /* Texte blanc par dÃ©faut */
 }
 
-/* Bloc supérieur avec le fond coloré */
+/* Bloc supÃ©rieur avec le fond colorÃ© */
 .color-bg {
   width: 100%;
   padding: 30px 20px;
   background-size: cover;
-  color: #fff; /* Texte blanc par défaut */
+  color: #fff; /* Texte blanc par dÃ©faut */
 }
 
-/* Bloc supérieur avec le fond coloré */
+/* Bloc supÃ©rieur avec le fond colorÃ© */
 .color-bg {
   width: 100%;
   padding: 30px 20px;
@@ -968,7 +931,7 @@ a.text-light:focus {
   font-weight: bold;
 }
 
-/* Liste d'icônes + textes */
+/* Liste d'icÃ´nes + textes */
 .consultation-mobile-features {
   list-style: none;
   padding: 0;
@@ -988,7 +951,7 @@ a.text-light:focus {
 .consultation-mobile-features li img {
   width: 25px;
   height: auto;
-  margin-left: 8px; /* Icon à gauche du texte (en RTL) */
+  margin-left: 8px; /* Icon Ã  gauche du texte (en RTL) */
 }
 .mobile-btn-consultation{
   position: absolute;       
@@ -1001,7 +964,7 @@ a.text-light:focus {
   position: relative; 
 }
 
-/* Bloc inférieur : fille + cadre */
+/* Bloc infÃ©rieur : fille + cadre */
 .girl-container {
   position: relative;
   width: 100%;
@@ -1015,13 +978,13 @@ a.text-light:focus {
   display: block;
 }
 
-/* Cadre superposé par-dessus la fille */
+/* Cadre superposÃ© par-dessus la fille */
 .frame-image {
   position: absolute;
   top: 45%;
   left: 52%;
   transform: translate(-50%, -50%);
-  width: 80%; /* Ajustez selon le rendu souhaité */
+  width: 80%; /* Ajustez selon le rendu souhaitÃ© */
   max-width: 400px;
   height: auto;
 }
@@ -1078,61 +1041,88 @@ a.text-light:focus {
 }
 
 
-@media (max-width: 768px) {
-  .universitySwiper {
-    top: -20%;
-  }
 
+
+/* ===============================
+   STUDY COUNTRIES SECTION
+=============================== */
+
+.study-countries {
+  position: relative;
+  width: 100%;
+  overflow: visible;
+  padding-top: 1.5rem;
+  background: linear-gradient(to top, #FFFFFF 50%, #ECE5BD 100%)
+}
+.study-countries h2 {
+  font-family: var(--font-primary);
+  font-size: 34px;
+  line-height: 45px;
+  font-weight: bold;
+  color: var(--text-color-marron);
+  text-align: center;
+  margin-bottom: 2rem;
+  max-width: 40%;
+  margin: 0 auto;
+}
+.study-countries .country-card {
+  box-shadow: 0px 5.3px 30px rgba(215, 215, 215, 0.5);
+  border-radius: 16px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  min-height: 470px;
+}
+.study-countries .country-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0px 8px 50px rgba(215, 215, 215, 0.6);
+}
+.study-countries .main-study {
+  margin: 50px 0;
+  background-image: url('/wp-content/themes/khotwa/assets/img/background_section_study.png');
+  background-position:8% 4%;
+  background-repeat: no-repeat;
+}
+
+.study-countries .country-card-image {
+  min-height: 250px;
+}
+
+.study-countries .country-card-image .image-card {
+  min-height: 250px;
+  max-height: 250px;
+  border-top-right-radius: 20px;
+  border-top-left-radius: 20px;
+  margin-bottom: 70px;
+}
+
+.study-countries h3 {
+  font-family: var(--font-sub-title);
+  font-size: 20px;
+  color: var(--color-rouge-light);
+}
+
+.study-countries .card-desciption {
+  font-size: 15px;
+  line-height: 1.5;
+  font-family: var(--font-secondary);
+  padding: 10px 20px;
+}
+.flag-icon {
+  width: 80px;
+  height: 80px;
+  top: auto;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  bottom: -15%;
+}
+.rtl .study-countries .card-desciption {
+  text-align: right;
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+/* ===============================
+   SPECIALIZATION SECTION
+=============================== */
 .specialization-section {
   position: relative;
   width: 100%;
@@ -1198,42 +1188,4 @@ a.text-light:focus {
   position: absolute;
   bottom: 9%;
   left: 35%;
-}
-@media (max-width: 768px) {
-  .specialization-section {
-    height: auto;
-  }
-
-  .specialization-title {
-    font-size: 23px;
-  }
-
-  .specialization-subtitle {
-    font-size: 23px;
-  }
-  .specialization-text {
-    margin-bottom: 0rem;
-  }
-
-  .specialization-image {
-    position: relative;
-    right: 0;
-    top: 1rem;
-    transform: none;
-  }
-  .specialization-btn {
-    position: absolute;
-    top: 80%;
-    left: 20%;
-  }
-  .specialization-content {
-    margin-top: -10rem;
-  }
-
-  .specialization-image img {
-    width: 90%;
-    max-width: 90%;
-    margin: 0 auto;
-    display: block;
-  }
 }
