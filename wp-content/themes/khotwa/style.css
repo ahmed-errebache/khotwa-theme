@@ -104,20 +104,29 @@ body {
     position: relative;
     display: inline-block;
     z-index: 1000;
-    margin-left: 50px;
+    margin-right: 50px;
 }
 
 .rtl .language-dropdown-wrapper {
-    margin-right: 50px;
+    margin-left: 50px !important;
     margin-left: 0px;
+}
+
+.ltr .language-dropdown-list {
+   right: auto;
+   left: 0;
 }
 
 .language-toggle {
     cursor: pointer;
     padding: 3px;
 }
-.language-toggle img {
-  border-radius: 5px;
+.language-dropdown-wrapper .language-toggle img {
+    border-radius: 5px;
+    height: 22px;
+}
+.language-dropdown-wrapper .language-toggle img {
+   margin-left: 20px;
 }
 .language-dropdown-list {
     display: none;

@@ -23,9 +23,9 @@ if (is_array($background_de_process) && isset($background_de_process['url'])) {
 <!-- Section Process -->
 <section class="process-section text-white position-relative" style="background: linear-gradient(rgba(123,4,31,0.7), rgba(123,4,31,0.7)), url('<?php echo $background_url; ?>'); background-size: cover; background-position: center;">
  <!-- Image Vector3 positionnée sur le background, sous le contenu -->
- <div class="vector3-container">
+ <!-- <div class="vector3-container">
         <img src="<?php echo get_template_directory_uri(); ?>/assets/img/Vector3.png" alt="Vector3" class="vector3-image">
-    </div>    
+    </div>     -->
 <!-- Icônes décoratives -->
     <div class="icon-top-left">
         <img src="<?php echo get_template_directory_uri(); ?>/assets/img/iconSections.png" alt="Icon Top Left" class="icon-shape">
