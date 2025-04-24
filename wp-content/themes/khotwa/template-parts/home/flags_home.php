@@ -45,7 +45,7 @@ $paragraphe_destination = $paragraphe_destination
     <!-- Contenu principal -->
     <div class="container py-4">
         <!-- Bloc : avatar + texte (remonté avec marge négative) -->
-        <div class="row avatar-row">
+        <div class="row avatar-row" data-aos="fade-in" data-aos-delay="800">
             <div class="col-12 text-center mb-3">
                 <!-- Avatar et texte dans une seule ligne -->
                 <div class="d-inline-flex align-items-center">
@@ -63,7 +63,7 @@ $paragraphe_destination = $paragraphe_destination
         <!-- Titre de la destination -->
         <div class="row">
             <div class="col-12 text-center mb-3">
-                <h2 class="destination-title text-violet fw-bold">
+                <h2 class="destination-title text-violet fw-bold" data-aos="fade-up" data-aos-delay="300">
                     <?php // On autorise le HTML (ex: <br>) si vous le souhaitez 
                     ?>
                     <?php echo wp_kses_post($titre_destination); ?>
@@ -77,16 +77,16 @@ $paragraphe_destination = $paragraphe_destination
                 <img
                     src="<?php echo $bg_map_url; ?>"
                     alt="Carte de la destination"
-                    class="maps-overlay">
+                    class="maps-overlay" data-aos="fade-up" data-aos-delay="800">
                 <img
                     src="<?php echo $image_flag_url; ?>"
                     alt="Drapeau de la destination"
-                    class="flag-overlay">
+                    class="flag-overlay" data-aos="fade-up" data-aos-delay="400">
             </div>
         </div>
 
         <!-- Paragraphe descriptif -->
-        <div class="row description-row">
+        <div class="row description-row" data-aos="fade-up" data-aos-delay="300">
             <div class="col-12 text-center">
                 <div class="destination-paragraph">
                     <?php echo wp_kses_post($paragraphe_destination); ?>

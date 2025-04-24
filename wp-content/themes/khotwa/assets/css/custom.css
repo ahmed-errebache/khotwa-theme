@@ -2,9 +2,9 @@
    RESET + GLOBAL
 =============================== */
 :root {
-  --font-primary: '29LT Bukra', sans-serif;
-  --font-secondary: 'FF Shamel Family Sans One Book', sans-serif;
-  --font-sub-title: 'FF Shamel Family Sans One', sans-serif;
+  --font-primary: '29LT Bukra','Poppins', sans-serif;
+  --font-secondary: 'FF Shamel Family Sans One Book', 'Poppins regular', sans-serif;
+  --font-sub-title: 'FF Shamel Family Sans One','Poppins semi bold', sans-serif;
   --color-jaune: #FEAF22;
   --color-orange: #FC874D;
   --color-rouge: #FF3308;
@@ -17,10 +17,16 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    overflow-x: hidden;
     background-color: #fff;
     font-family: '29lt_bukraregular', sans-serif !important;
+    max-width: 100vw;
 }
+.wrapper {
+  overflow-x: hidden;
+  position: relative;
+  max-width: 100%;
+}
+
 .btn-consultation {
   font-family: var(--font-secondary);
   background-color: var(--color-jaune);
@@ -258,9 +264,28 @@ body {
     color: #fff;
     font-size: 14px;
     line-height: 1.5;
-    text-align: center;
 }
 
+.banner_section .txt_list {
+   text-align: left;
+}
+
+.banner_section .benefit_item {
+    display: flex;
+    align-items: center;
+    max-width: 75%;
+    margin: 0 auto;
+}
+
+.rtl .banner_section .txt_list {
+  text-align: right;
+}
+.rtl .banner_section .benefit {
+   width: 100%;
+}
+.rtl .banner_section .benefit_item {
+   max-width: 100%;
+}
 .banner_section .cta-banner {
     background-color: #ffb223;
     color: #68021a;
@@ -297,6 +322,7 @@ body {
 .banner_section .benefit {
     margin: 0 auto;
     display: flex;
+    width: 80%;
 }
 
 .is_homepage {
@@ -311,7 +337,7 @@ body {
     justify-content: center;
     align-items: center;
     border-radius: 15px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); */
 }
 
 .is_homepage .video-thumbnail {
@@ -412,51 +438,54 @@ a.text-light:focus {
     position: relative;
 }
 
-.background-top-destination img {
+.destination-section .background-top-destination img {
     display: block;
     margin: 0;
     padding: 0;
 }
 
-.avatar-row {
+.destination-section .avatar-row {
     margin-top: -150px;
 }
 
-.avatar-image {
-    width: 40%;
+.destination-section .avatar-image {
     height: auto;
     margin-left: 20px;
     margin-right: 10px;
 }
 
-.text-orange {
+.destination-section .text-orange {
   font-family: var(--font-secondary);
     color:var(--color-orange);
     font-size: 20px;
 }
 
-.text-violet {
+.destination-section .text-violet {
     color: #7B041F;
 }
-
-.destination-title {
+.rtl .destination-section .destination-title {
+  max-width: 40%;
+}
+.destination-section .destination-title {
     margin-bottom: 1.5rem;
     font-size: 34px;
     line-height: 50px;
     font-family: var(--font-primary);
     color: var(--text-color-marron);
+    max-width: 50%;
+    margin: 0 auto;
 }
 
-.position-relative {
+.destination-section .position-relative {
     position: relative;
 }
 
-.maps-overlay {
+.destination-section .maps-overlay {
     max-width: 100%;
     height: auto;
 }
 
-.flag-overlay {
+.destination-section .flag-overlay {
     position: absolute;
     top: -5%;
     left: 25%;
@@ -464,7 +493,7 @@ a.text-light:focus {
     height: auto;
 }
 
-.destination-paragraph {
+.destination-section .destination-paragraph {
     font-family: var(--font-secondary);
     max-width: 800px;
     margin: 0 auto;
@@ -472,7 +501,7 @@ a.text-light:focus {
     line-height: 1.5;
 }
 
-.description-row {
+.destination-section .description-row {
     margin-top: 20px;
 }
 
@@ -488,75 +517,85 @@ a.text-light:focus {
   background-position: center;
 }
 
-/* IcÃ´nes dÃ©coratives */
-.icon-top-left,
-.icon-top-right {
+.process-section .icon-top-left,
+.process-section .icon-top-right {
   position: absolute;
   z-index: 2;
 }
-.icon-top-left {
+
+.process-section .icon-top-left {
   top: 170px;
   left: -105px;
 }
-.icon-top-right {
+
+.process-section .icon-top-right {
   top: -20px;
   right: 215px;
 }
-.icon-shape {
+
+.process-section .icon-shape {
   width: 50%;
   height: auto;
   display: block;
 }
 
-/* Titre de la section et mise en forme globale */
-.steps-title {
-  font-family: var(--font-primary);
+.rtl .process-section .steps-title {
   font-size: 42px;
+  line-height: 60px;
+}
+
+.process-section .steps-title {
+  font-family: var(--font-primary);
+  font-size: 35px;
   font-weight: bold;
   text-align: center;
   margin-bottom: 2rem;
   margin-right: 23rem;
   margin-left: 23rem;
-  line-height: 60px;
+  line-height: 50px;
 }
-.step-box {
+
+.process-section .step-box {
   background: transparent;
   border-radius: 8px;
   padding: 1.5rem;
+  max-width: 90%;
+  margin: 0 auto;
+  text-align: center;
 }
 
-/* Style commun pour le numÃ©ro d'Ã©tape et le titre */
-.step-number,
-.step-heading {
+.process-section .step-number,
+.process-section .step-heading {
   font-family: var(--font-primary);
   font-size: 31px;
   font-weight: bold;
   margin-bottom: 10px;
 }
 
-/* Couleurs spÃ©cifiques pour chaque Ã©tape (numÃ©ros et titres) */
-.step-1 .step-number,
-.step-1 .step-heading {
+.process-section .step-1 .step-number,
+.process-section .step-1 .step-heading {
   color: #FF004E; /* Rose */
 }
-.step-2 .step-number,
-.step-2 .step-heading {
+
+.process-section .step-2 .step-number,
+.process-section .step-2 .step-heading {
   color: #60D79A; /* Vert */
 }
-.step-3 .step-number,
-.step-3 .step-heading {
+
+.process-section .step-3 .step-number,
+.process-section .step-3 .step-heading {
   color: #FFB223; /* Entre l'orange et le jaune */
 }
 
-/* Container de l'image pour forcer une hauteur fixe et aligner les sous-titres */
-.step-image-container {
+.process-section .step-image-container {
   height: 100px; /* Hauteur fixe Ã  ajuster selon vos besoins */
   display: flex;
   align-items: center;
   justify-content: center;
   margin-bottom: 1rem;
 }
-.step-image {
+
+.process-section .step-image {
   margin-top: 50px;
   max-height: 140%;
   max-width: 100%;
@@ -564,31 +603,35 @@ a.text-light:focus {
   display: block;
 }
 
-/* Sous-titres et descriptions toujours alignÃ©s */
-.step-subtitle,
-.step-description {
+.process-section .step-subtitle,
+.process-section .step-description {
   font-family: var(--font-sub-title);
   text-align: center;
 }
-.step-subtitle {
+
+.process-section .step-subtitle {
   font-family: var(--font-secondary);
-  font-size: 22px;
+  font-size: 20px;
   font-weight: bold;
   margin-bottom: 20px;
-  margin-left: 5rem;
-  margin-right: 5rem;
-  margin-top: 100px;
+  /* margin-left: 5rem;
+  margin-right: 5rem; */
+  margin-top: 80px;
   min-height: 50px;
+  line-height: 30px;
 }
-.step-description {
+
+.process-section .step-description {
   font-family: var(--font-secondary);
-  font-size: 18px;
+  font-size: 17px;
   line-height: 1.5;
 }
 
+.process-section p {
+  font-family: var(--font-secondary);
+}
 
-/* Image Vector3 derriÃ¨re le contenu mais au-dessus du background */
-.vector3-container {
+.process-section .vector3-container {
   position: absolute;
   top: 160px; /* Ajustez selon vos besoins (peut Ãªtre 150px, 200px, etc.) */
   left: 0;
@@ -597,14 +640,12 @@ a.text-light:focus {
   z-index: 1; /* DerriÃ¨re .content-container qui a z-index:2 */
 }
 
-/* Ajustez max-width pour redimensionner le swirl */
-.vector3-image {
+.process-section .vector3-image {
   max-width: 85%;
   height: auto;
 }
 
-/* Le contenu principal (les steps) doit se trouver devant l'image Vector3 */
-.content-container {
+.process-section .content-container {
   position: relative;
   z-index: 2;
 }
@@ -616,6 +657,15 @@ a.text-light:focus {
   position: relative;
   background-repeat: no-repeat;
   background-size: 100% 60%;
+  background: linear-gradient(to top, #FFFFFF 50%, #ECE5BD 100%);
+}
+.testimonial-main .testimonial-info {
+  background-image: url(/wp-content/themes/khotwa/assets/img/testimonial_bg.png);
+  background-position: 80% 10%;
+  background-repeat: no-repeat;
+}
+.rtl .testimonial-main .testimonial-info{
+  background-position: 20% 20%;
 }
 .testimonial-section .testimonial-main-title {
   color: var(--color-rouge);
@@ -650,6 +700,7 @@ a.text-light:focus {
   width: 100%;
   object-fit: cover;
   border-radius: 5%;
+  min-height: 380px;
 }
 .testimonial-section .play-btn {
   position: absolute;
@@ -669,14 +720,14 @@ a.text-light:focus {
   color: var(--color-rouge);
 }
 .testimonial-section .testimonial-name {
-  font-size: 35px;
+  font-size: 25px;
   font-weight: bold;
-  font-family: var(--font-secondary);
+  font-family: var(--font-sub-title);
   color: #000000;
   margin-bottom: 0.5rem;
 }
 .testimonial-section .testimonial-role {
-  font-size: 27px;
+  font-size: 20px;
     font-weight: normal;
     color: #000000;
     font-family: var(--font-secondary);
@@ -717,6 +768,7 @@ a.text-light:focus {
 .testimonial-section .testimonial-information p {
   margin-bottom: 20px;
   line-height: 25px;
+  font-family: var(--font-secondary);
 }
 .testimonial-section .swiper-button-next.btn-next {
   top: auto;
@@ -818,20 +870,29 @@ a.text-light:focus {
   height: auto;
 }
 
-.consultation-section .window-wrapper {
+.rtl .consultation-section .window-wrapper {
   position: absolute;
   top: 9%;
   left: 6%;
+  right: auto;
+  z-index: 2;
+}
+
+.consultation-section .window-wrapper {
+  position: absolute;
+  top: 9%;
+  right: 6%;
+  left: auto;
   z-index: 2;
 }
 
 .consultation-section .window-frame {
   display: block;
-  width: 95%;
+  /* width: 95%; */
   height: auto;
 }
 
-.consultation-section .consultation-content {
+ .consultation-section .consultation-content {
   position: absolute;
   top: 20%;
   right: 3%;
@@ -843,16 +904,38 @@ a.text-light:focus {
   text-align: right;
   color: #fff; /* Texte blanc */
 }
-
+.rtl .consultation-section .consultation-content {
+  right: 3%;
+  direction: rtl;
+  left: auto;
+  text-align: right;
+}
+.consultation-section .consultation-content {
+  left: 3%;
+  right: auto;
+  text-align: left;
+  direction: ltr;
+}
 .consultation-section .consultation-title {
+  font-family: var(--font-primary);
+  font-size: 35px;
+  font-weight: bold;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  line-height: 50px;
+}
+.rtl .consultation-section .consultation-title {
   font-family: var(--font-primary);
     font-size: 42px;
     font-weight: bold;
     margin-right: 20px;
     margin-bottom: 20px;
     line-height: 56px;
+    text-align: right;
 }
-
+.consultation-section .text-red {
+  color: var(--color-rouge);
+}
 .consultation-section .consultation-features {
   display: flex;
   flex-direction: column;
@@ -866,24 +949,34 @@ a.text-light:focus {
   display: flex;
   flex-direction: row;
   align-items: center;
-  margin: 10px 20px 10px 20%;
+  /* margin: 10px 20px 10px 20%; */
 }
 .consultation-section .btn-conslut-section{
   margin-right: 3%;
 }
-.consultation-section .feature-icon {
+.rtl .consultation-section .feature-icon {
   margin-left: 12px;
   max-width: 35px;
   height: auto;
 }
-
-.consultation-section .consultation-feature p {
+.consultation-section .feature-icon {
+  margin-right: 12px;
+  max-width: 35px;
+  height: auto;
+}
+.rtl .consultation-section .consultation-feature p {
   font-family: var(--font-secondary);
   margin: 0;
   font-size: 24px;
   font-weight: normal;
+  line-height: 45px;
 }
-
+.consultation-section .consultation-feature p {
+  font-family: var(--font-secondary);
+  margin: 10px;
+  font-size: 20px;
+  font-weight: normal;
+}
 
 /* =====================
    VERSION MOBILE
@@ -1054,6 +1147,9 @@ a.text-light:focus {
   padding-top: 1.5rem;
   background: linear-gradient(to top, #FFFFFF 50%, #ECE5BD 100%)
 }
+.rtl .study-countries h2 {
+  max-width: 40%;
+}
 .study-countries h2 {
   font-family: var(--font-primary);
   font-size: 34px;
@@ -1062,7 +1158,7 @@ a.text-light:focus {
   color: var(--text-color-marron);
   text-align: center;
   margin-bottom: 2rem;
-  max-width: 40%;
+  max-width: 50%;
   margin: 0 auto;
 }
 .study-countries .country-card {

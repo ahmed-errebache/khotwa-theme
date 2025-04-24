@@ -64,14 +64,21 @@ $(document).ready(function() {
           $dropdown.toggleClass('show');
       });
 
-      // Hover pour desktop
-      $wrapper.on('mouseenter', function () {
-          $dropdown.addClass('show');
-      });
+      // Hover pour desktop and click fallback for mobile
+      if ('ontouchstart' in window || navigator.maxTouchPoints) {
+          $wrapper.on('click', function (e) {
+              e.stopPropagation();
+              $dropdown.toggleClass('show');
+          });
+      } else {
+          $wrapper.on('mouseenter', function () {
+              $dropdown.addClass('show');
+          });
 
-      $wrapper.on('mouseleave', function () {
-          $dropdown.removeClass('show');
-      });
+          // $wrapper.on('mouseleave', function () {
+          //     $dropdown.removeClass('show');
+          // });
+      }
 
       // Fermer au clic à l'extérieur
       $(document).on('click', function (e) {
@@ -80,7 +87,7 @@ $(document).ready(function() {
           }
       });
 
-      $(document).ready(function ($) {
+       // swiper
         new Swiper(".mySwiper", {
           loop: true,
           pagination: {
@@ -110,5 +117,11 @@ $(document).ready(function() {
               },
           },
       });
+      
+      // AOS (Animate On Scroll)
+      AOS.init({
+        once: true,          // L'animation ne se joue qu'une seule fois
+        duration: 800,       // Durée de chaque animation (ms)
+        easing: 'ease-out',  // Animation fluide
       });
 });

@@ -1,6 +1,12 @@
 <?php
 $study_country_title = get_field('study_country_title');
 $study_cards = get_field('study_cards_country');
+
+// Champs du bouton
+$study_btn_text = get_field('study_country_button');
+$study_btn_url = get_field('study_country_button_url');
+$study_btn_color = get_field('study_button_color') ?: '#000'; // Valeur par défaut
+$study_btn_bg = get_field('study_button_background') ?: '#feaf22'; // Valeur par défaut
 ?>
 <?php if ($study_country_title || !empty($study_cards)) : ?>
     <section class="study-countries py-2">
@@ -10,7 +16,7 @@ $study_cards = get_field('study_cards_country');
             <?php if ($study_country_title): ?>
                 <div class="row">
                     <div class="col-12">
-                        <h2 class="mb-3 text-center">
+                        <h2 class="mb-3 text-center" data-aos="fade-up" data-aos-delay="300">
                             <?php echo esc_html($study_country_title); ?>
                         </h2>
                     </div>
@@ -46,7 +52,7 @@ $study_cards = get_field('study_cards_country');
                             $description = !empty($card['study_country_description']) ? esc_html($card['study_country_description']) : '';
                             $url = is_array($link_card) && isset($link_card['url']) ? esc_url($link_card['url']) : esc_url($link_card);
                         ?>
-                            <div class="swiper-slide">
+                            <div class="swiper-slide" data-aos="fade-up" data-aos-delay="300">
                                 <div class="country-card mb-4 rounded h-100">
                                     <?php if ($url): ?>
                                         <a href="<?php echo $url; ?>" class="text-decoration-none text-dark d-block h-100">
@@ -82,11 +88,22 @@ $study_cards = get_field('study_cards_country');
                         <?php endforeach; ?>
                     </div>
 
-                    <div class="swiper-pagination"></div>
+                    <!-- <div class="swiper-pagination"></div> -->
                     <!-- Uncomment if you want to add navigation buttons
                     <div class="swiper-button-next"></div>
                     <div class="swiper-button-prev"></div> -->
                 </div>
+            <?php endif; ?>
+            <?php if ($study_btn_text && $study_btn_url): ?>
+            <div class="row mt-2" data-aos="fade-up" data-aos-delay="300">
+                <div class="col-12 text-center">
+                <a href="<?php echo esc_url($study_btn_url); ?>"
+                    class="btn-consultation"
+                    style="color: <?php echo esc_attr($study_btn_color); ?>; background-color: <?php echo esc_attr($study_btn_bg); ?>;">
+                    <?php echo esc_html($study_btn_text); ?>
+                </a>
+                </div>
+            </div>
             <?php endif; ?>
         </div>
         </div>

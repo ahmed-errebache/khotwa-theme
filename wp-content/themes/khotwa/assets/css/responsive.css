@@ -69,10 +69,14 @@
   .navbar-menu li a {
     color: #70021C;
     font-weight: bold;
-    font-size: 14px;
-    line-height: 15px;
+    font-size: 1rem;
+    line-height: 20px;
   }
-
+  .phone_label {
+    font-size: 1rem;
+    line-height: 20px;
+    font-family: var(--font-secondary);
+  }
   .navbar-collapse.active {
     left: 0;
   }
@@ -109,6 +113,9 @@
   .rtl .language-dropdown-wrapper,
   .language-dropdown-wrapper {
     margin: 0;
+    position: absolute;
+    right: 8%;
+    bottom: 40%;
   }
 
   .footer {
@@ -188,6 +195,10 @@ BANNER SECTION
     right: 0;
   }
 
+  .banner_section .benefit_item {
+    max-width: 100%;
+  }
+
   .is_homepage {
     width: 90%;
     height: 178px;
@@ -203,67 +214,72 @@ BANNER SECTION
   /* --------------
   DESTINATION
    -------------- */
-  .text-orange {
+  .destination-section .text-orange {
     font-size: 18px;
   }
 
-  .avatar-row {
+  .destination-section .avatar-row {
     margin-top: 70px;
   }
 
-  .avatar-image {
+  .destination-section .avatar-image {
     width: 90px;
     margin-left: 10px;
     margin-right: 5px;
   }
 
-  .destination-title {
+  .destination-section .destination-title ,
+  .rtl .destination-section .destination-title{
+    max-width: 100%;
+  }
+
+  .destination-section .destination-title {
     font-size: 1.7rem;
     line-height: 40px;
     margin-bottom: 1rem;
   }
 
-  .flag-overlay {
+  .destination-section .flag-overlay {
     top: 0;
     left: 0;
     width: 100%;
     position: relative;
   }
 
-  .destination-paragraph {
+  .destination-section .destination-paragraph {
     font-size: 1rem;
     line-height: 1.4;
     margin-bottom: 30px;
   }
 
-  .description-row {
+  .destination-section .description-row {
     margin-top: 10px;
   }
 
   /* ------------------------------
    PROCESS SECTION
 ------------------------------ */
-  .steps-title {
-    font-size: 1.7rem;
+.process-section .steps-title ,.rtl .process-section .steps-title{
+    font-size: 35px;
     width: 100%;
-    margin: auto;
+    margin: 0 auto;
     line-height: 40px;
     padding: 0 15px;
   }
 
-  .icon-top-left {
+  .process-section .icon-top-left {
     display: none;
   }
 
-  .vector3-image {
+  .process-section .vector3-image {
     display: none;
   }
 
-  .icon-shape {
+  .process-section .icon-shape {
     width: 40%;
   }
 
-  .step-description {
+  .process-section .step-description {
     font-size: 1rem;
     line-height: 1.4;
   }
@@ -275,14 +291,22 @@ BANNER SECTION
   /* ------------------------------
    CONSULTATION SECTION
 ------------------------------ */
-  .consultation-section .consultation-title{
+  .consultation-section .consultation-title,
+  .rtl .consultation-section .consultation-title{
     font-size: 1.7rem;
     line-height: 40px;
     text-align: center;
     margin-bottom: 20px;
     margin-top: 50px;
   }
-  .consultation-section .consultation-feature p {
+  .consultation-section .consultation-feature {
+    text-align: left;
+  }
+  .rtl .consultation-section .consultation-feature {
+    text-align: right;
+  }
+  .consultation-section .consultation-feature p,
+  .rtl .consultation-section .consultation-feature p{
     font-size: 1rem;
     line-height: 1.4;
   }
@@ -295,8 +319,12 @@ BANNER SECTION
 
   .testimonial-section .testimonial-main-title {
     max-width: 100%;
-    font-size: 23px;
+    font-size: 33px;
     text-align: center;
+  }
+
+  .testimonial-section .swiper {
+    padding-bottom: 50px;
   }
 
   .testimonial-section .testimonial-top-right {
@@ -365,7 +393,8 @@ BANNER SECTION
   /* ------------------------------
    Study Section
 ------------------------------ */
-  .study-countries h2 {
+  .study-countries h2,
+  .rtl .study-countries h2{
     font-size: 1.7rem;
     text-align: center;
     max-width: 100%;

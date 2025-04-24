@@ -27,7 +27,7 @@ $key_benefits = get_field('key_benefits');
 
                 <!-- Image gauche -->
                 <?php if ($left_image_url): ?>
-                    <div class="left_image_banner desktop img_banner">
+                    <div class="left_image_banner desktop img_banner" data-aos="fade-right" data-aos-delay="250" data-aos-easing="ease-in-sine">
                         <img src="<?php echo $left_image_url; ?>" alt="Left Image" class="img-fluid">
                     </div>
                 <?php endif; ?>
@@ -35,16 +35,16 @@ $key_benefits = get_field('key_benefits');
                 <!-- Contenu principal -->
                 <div class="col-md-12 text-center">
                     <?php if ($title): ?>
-                        <h1 class="title mb-3"><?php echo esc_html($title); ?></h1>
+                        <h1 class="title mb-3" data-aos="fade-up" data-aos-delay="300"><?php echo esc_html($title); ?></h1>
                     <?php endif; ?>
 
                     <?php if ($is_banner_home_page && $subtitle): ?>
-                        <p class="sub_title mb-4"><?php echo esc_html($subtitle); ?></p>
+                        <p class="sub_title mb-4" data-aos="fade-up" data-aos-delay="300"><?php echo esc_html($subtitle); ?></p>
                     <?php endif; ?>
 
                     <!-- Liste des avantages principaux -->
                     <?php if ($key_benefits): ?>
-                        <div class="benefit justify-content-center text-center mb-4">
+                        <div class="benefit justify-content-center text-center mb-4" data-aos="fade-up" data-aos-delay="250">
                             <div class="row">
                             <?php foreach ($key_benefits as $benefit):
                                 $benefit_icon = $benefit['benefit_icon'];
@@ -52,23 +52,25 @@ $key_benefits = get_field('key_benefits');
                                 $benefit_icon_url = is_array($benefit_icon) && isset($benefit_icon['url']) ? esc_url($benefit_icon['url']) : esc_url($benefit_icon);
                                 ?>
                                 <div class="col-6 col-md-3 d-flex align-items-center justify-content-center mb-3">
-                                    <?php if ($benefit_icon_url): ?>
-                                        <img src="<?php echo $benefit_icon_url; ?>" alt="Benefit Icon" class="me-2">
-                                    <?php endif; ?>
-                                    <span class="txt_list"><?php echo esc_html($benefit_text); ?></span>
+                                    <div class="benefit_item">
+                                        <?php if ($benefit_icon_url): ?>
+                                            <img src="<?php echo $benefit_icon_url; ?>" alt="Benefit Icon" class="me-2">
+                                        <?php endif; ?>
+                                        <span class="txt_list"><?php echo esc_html($benefit_text); ?></span>
+                                    </div>
                                 </div>
                             <?php endforeach; ?>
                             </div>
                         </div>
                     <?php endif; ?>
                     <?php if ($button_text && $button_url): ?>
-                        <a class="btn btn-consultation"
+                        <a class="btn btn-consultation" data-aos="fade-up" data-aos-delay="300"
                             href="<?php echo esc_url($button_url); ?>">
                             <?php echo esc_html($button_text); ?>
                         </a>
                     <?php endif; ?>
                     <?php if ($left_image_url): ?>
-                        <div class="left_image_banner mobile img_banner py-5">
+                        <div class="left_image_banner mobile img_banner py-5" data-aos="fade-up" data-aos-delay="300">
                             <img src="<?php echo $left_image_url; ?>" alt="Left Image" class="img-fluid">
                         </div>
                     <?php endif; ?> 
@@ -77,7 +79,7 @@ $key_benefits = get_field('key_benefits');
                         <div class="is_homepage">
                             <!-- Image vidéo cliquable -->
                             <?php if ($video_image_url && $video_url): ?>
-                                <div class="video-thumbnail">
+                                <div class="video-thumbnail" data-aos="fade-up" data-aos-delay="500">
                                   <a href="#"
                                     class="video-trigger"
                                     data-bs-toggle="modal"
@@ -117,7 +119,7 @@ $key_benefits = get_field('key_benefits');
                 </div>
                 <!-- Image droite -->
                 <?php if ($right_image_url): ?>
-                    <div class="right_image desktop img_banner">
+                    <div class="right_image desktop img_banner" data-aos="fade-left" data-aos-delay="250">
                         <img src="<?php echo $right_image_url; ?>" alt="Right Image" class="img-fluid">
                     </div>
                 <?php endif; ?>

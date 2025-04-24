@@ -12,6 +12,7 @@ $fenetre_mobile    = get_field('fenetre_consultation_section_mobile');
 
 // Champs communs
 $titre       = get_field('titre_consultation_section');
+$consultation_titre_red = get_field('consultation_titre_red');
 $features    = get_field('repetetor_consultation_feature');
 $text_button = get_field('text_button_consultation_button');
 
@@ -36,7 +37,7 @@ $fenetre_mobile_url    = ( is_array($fenetre_mobile)    && isset($fenetre_mobile
       />
     <?php endif; ?>
 
-    <div class="window-wrapper">
+    <div class="window-wrapper" data-aos="fade-left" data-aos-delay="200">
       <?php if ( $fenetre_desktop_url ) : ?>
         <img
           src="<?php echo $fenetre_desktop_url; ?>"
@@ -46,10 +47,15 @@ $fenetre_mobile_url    = ( is_array($fenetre_mobile)    && isset($fenetre_mobile
       <?php endif; ?>
     </div>
 
-    <div class="consultation-content">
+    <div class="consultation-content" data-aos="fade-right" data-aos-delay="200">
       <?php if ( $titre ) : ?>
-        <h1 class="consultation-title"><?php echo $titre; ?></h1>
-      <?php endif; ?>
+        <h1 class="consultation-title">
+            <?php echo esc_html($titre); ?>
+            <?php if (!empty($consultation_titre_red)) : ?>
+                <span class="text-red"><?php echo esc_html($consultation_titre_red); ?></span>
+            <?php endif; ?>
+        </h1>     
+       <?php endif; ?>
 
       <?php if ( $features ) : ?>
         <div class="consultation-features d-flex flex-column align-items-start">
@@ -58,7 +64,7 @@ $fenetre_mobile_url    = ( is_array($fenetre_mobile)    && isset($fenetre_mobile
             $text_feature = $feature['text_feature'];
             $icon_url = ( is_array($icon) && isset($icon['url']) ) ? esc_url($icon['url']) : '';
           ?>
-          <div class="consultation-feature d-flex flex-row align-items-center my-2">
+          <div class="consultation-feature d-flex flex-row align-items-center">
             <?php if ( $icon_url ) : ?>
               <img
                 src="<?php echo $icon_url; ?>"
@@ -88,7 +94,12 @@ $fenetre_mobile_url    = ( is_array($fenetre_mobile)    && isset($fenetre_mobile
   <!-- Bloc supérieur avec fond dynamique -->
   <div class="color-bg" style="background-image: url('<?php echo $background_mobile_top_url; ?>');">
     <?php if ( $titre ) : ?>
-      <h1 class="consultation-title text-center"><?php echo $titre; ?></h1>
+      <h1 class="consultation-title">
+            <?php echo esc_html($titre); ?>
+            <?php if (!empty($consultation_titre_red)) : ?>
+                <span class="text-red"><?php echo esc_html($consultation_titre_red); ?></span>
+            <?php endif; ?>
+        </h1> 
     <?php endif; ?>
 
     <?php if ( $features ) : ?>

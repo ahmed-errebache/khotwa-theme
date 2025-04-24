@@ -80,7 +80,7 @@
             "label": "titre_destination",
             "name": "titre_destination",
             "aria-label": "",
-            "type": "wysiwyg",
+            "type": "text",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -89,12 +89,12 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "",
+            "default_value": "اختر وجهتك ودعنا نرسم خططك المستقبلية",
+            "maxlength": "",
             "allow_in_bindings": 1,
-            "tabs": "all",
-            "toolbar": "full",
-            "media_upload": 1,
-            "delay": 0
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
         },
         {
             "key": "field_67f2946abecff",
@@ -188,5 +188,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1744930910
+    "modified": 1745352636
 }
