@@ -154,6 +154,27 @@
             "append": ""
         },
         {
+            "key": "field_680805306f23c",
+            "label": "consultation titre red",
+            "name": "consultation_titre_red",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "خطة واضحة؟",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
             "key": "field_67fcd3d2a9a52",
             "label": "repetetor consultation feature",
             "name": "repetetor_consultation_feature",
@@ -266,5 +287,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1744930910
+    "modified": 1745356382
 }
