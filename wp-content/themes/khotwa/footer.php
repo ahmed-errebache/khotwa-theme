@@ -10,6 +10,8 @@ $direction_class = ($is_rtl && $current_language === 'ar') ? 'rtl' : 'ltr';
 $flex_row_class = ($is_rtl && $current_language === 'ar') ? 'flex-row-reverse' : '';
 
 // === Champs généraux ===
+$bg_footer_top = get_field('bg_footer_color_top') ?: '#800000';
+$bg_footer_bottom = get_field('bg_footer_color_bottom') ?: '#330000';
 $footer_map_iframe = get_field('footer_map_iframe');
 
 $footer_address_title = get_field('footer_address_title');
@@ -24,47 +26,45 @@ $default_footer_background = get_field('default_footer_background');
 $footer_select_color = get_field('footer_select_color'); // 'footer_red' ou 'footer_blue'
 
 // === valeurs statiques en cas de fond par défaut ===
-$static_red_bg     = get_template_directory_uri() . '/assets/img/footer-red.png';
-$static_blue_bg    = get_template_directory_uri() . '/assets/img/footer-blue.png';
-$static_plane_red  = get_template_directory_uri() . '/assets/img/plane-red.png';
-$static_plane_blue = get_template_directory_uri() . '/assets/img/plane-blue.png';
-$static_plane_mobile_red = get_template_directory_uri() . '/assets/img/plane-red-mobile.png';
-$static_plane_mobile_blue = get_template_directory_uri() . '/assets/img/plane-red-mobile.png';
+// $static_red_bg     = get_template_directory_uri() . '/assets/img/footer-red.png';
+// $static_blue_bg    = get_template_directory_uri() . '/assets/img/footer-blue.png';
+// $static_plane_red  = get_template_directory_uri() . '/assets/img/plane-red.png';
+// $static_plane_blue = get_template_directory_uri() . '/assets/img/plane-blue.png';
+// $static_plane_mobile_red = get_template_directory_uri() . '/assets/img/plane-red-mobile.png';
+// $static_plane_mobile_blue = get_template_directory_uri() . '/assets/img/plane-red-mobile.png';
 
 // === fallback si fond personnalisé (ACF)
 $footer_bg_color = get_field('footer_bg_color');
 $footer_image    = get_field('footer_image');
 $footer_image_mobile    = get_field('footer_image_mobile');
+$plane_img = is_array($footer_image) && isset($footer_image['url']) ? esc_url($footer_image['url']) : esc_url($footer_image);
+$plane_img_mobile = is_array($footer_image_mobile) && isset($footer_image_mobile['url']) ? esc_url($footer_image_mobile['url']) : esc_url($footer_image_mobile);
 
-$footer_bg = '';
-$plane_img = '';
-$plane_img_mobile = '';
-$plane_class = '';
 
 // === LOGIQUE PRINCIPALE
-if ($default_footer_background) {
-    if ($footer_select_color === 'footer_red') {
-        $footer_bg = $static_red_bg;
-        $plane_img = $static_plane_red;
-        $plane_img_mobile = $static_plane_mobile_red;
-        $plane_class = 'plane-red';
-    } elseif ($footer_select_color === 'footer_blue') {
-        $footer_bg = $static_blue_bg;
-        $plane_img = $static_plane_blue;
-        $plane_class = 'plane-blue';
-        $plane_img_mobile = $static_plane_mobile_blue;
-    }
-} else {
-    $footer_bg = is_array($footer_bg_color) && isset($footer_bg_color['url']) ? esc_url($footer_bg_color['url']) : esc_url($footer_bg_color);
-    $plane_img = is_array($footer_image) && isset($footer_image['url']) ? esc_url($footer_image['url']) : esc_url($footer_image);
-    $plane_img_mobile = is_array($footer_image_mobile) && isset($footer_image_mobile['url']) ? esc_url($footer_image_mobile['url']) : esc_url($footer_image_mobile);
-    $plane_class = 'plane-custom';
-}
+// if ($default_footer_background) {
+//     if ($footer_select_color === 'footer_red') {
+//         $footer_bg = $static_red_bg;
+//         $plane_img = $static_plane_red;
+//         $plane_img_mobile = $static_plane_mobile_red;
+//         $plane_class = 'plane-red';
+//     } elseif ($footer_select_color === 'footer_blue') {
+//         $footer_bg = $static_blue_bg;
+//         $plane_img = $static_plane_blue;
+//         $plane_class = 'plane-blue';
+//         $plane_img_mobile = $static_plane_mobile_blue;
+//     }
+// } else {
+//     $footer_bg = is_array($footer_bg_color) && isset($footer_bg_color['url']) ? esc_url($footer_bg_color['url']) : esc_url($footer_bg_color);
+//     $plane_img = is_array($footer_image) && isset($footer_image['url']) ? esc_url($footer_image['url']) : esc_url($footer_image);
+//     $plane_img_mobile = is_array($footer_image_mobile) && isset($footer_image_mobile['url']) ? esc_url($footer_image_mobile['url']) : esc_url($footer_image_mobile);
+//     $plane_class = 'plane-custom';
+// }
 
 ?>
 <style>
     .footer {
-        background-image: url('<?php echo $footer_bg; ?>');
+      background: linear-gradient(to top, <?php echo esc_attr($bg_footer_top); ?>, <?php echo esc_attr($bg_footer_bottom); ?>);
         color: #fff;
     }
     .plane {
