@@ -106,28 +106,6 @@
                     "allow_in_bindings": 0,
                     "placeholder": "",
                     "parent_repeater": "field_67e947196e53a"
-                },
-                {
-                    "key": "field_68018f6f8a55b",
-                    "label": "social icon",
-                    "name": "social_icon",
-                    "aria-label": "",
-                    "type": "text",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "maxlength": "",
-                    "allow_in_bindings": 0,
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": "",
-                    "parent_repeater": "field_67e947196e53a"
                 }
             ]
         },
@@ -342,30 +320,9 @@
             "append": ""
         },
         {
-            "key": "field_67e94c979fc8a",
-            "label": "default footer background",
-            "name": "default_footer_background",
-            "aria-label": "",
-            "type": "true_false",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "message": "use default background footer (RED \/ BLUE)",
-            "default_value": 1,
-            "allow_in_bindings": 0,
-            "ui": 0,
-            "ui_on_text": "",
-            "ui_off_text": ""
-        },
-        {
-            "key": "field_67e94ad23afbe",
-            "label": "footer_bg_color",
-            "name": "footer_bg_color",
+            "key": "field_67e94ff9ca452",
+            "label": "footer_image",
+            "name": "footer_image",
             "aria-label": "",
             "type": "image",
             "instructions": "",
@@ -386,8 +343,8 @@
             },
             "return_format": "array",
             "library": "all",
-            "min_width": 1440,
-            "min_height": 600,
+            "min_width": "",
+            "min_height": "",
             "min_size": "",
             "max_width": "",
             "max_height": "",
@@ -397,57 +354,52 @@
             "preview_size": "medium"
         },
         {
-            "key": "field_67e94b425ac08",
-            "label": "Footer background",
-            "name": "footer_select_color",
+            "key": "field_680bbd9cb36e2",
+            "label": "background  footer Color top",
+            "name": "bg_footer_color_top",
             "aria-label": "",
-            "type": "select",
+            "type": "color_picker",
             "instructions": "",
             "required": 0,
-            "conditional_logic": [
-                [
-                    {
-                        "field": "field_67e94c979fc8a",
-                        "operator": "==",
-                        "value": "1"
-                    }
-                ]
-            ],
+            "conditional_logic": 0,
             "wrapper": {
                 "width": "",
                 "class": "",
                 "id": ""
             },
-            "choices": {
-                "footer_red": "footer_red",
-                "footer_blue": "footer_blue"
-            },
-            "default_value": "footer_rd",
-            "return_format": "value",
-            "multiple": 0,
-            "allow_null": 0,
-            "allow_in_bindings": 0,
-            "ui": 0,
-            "ajax": 0,
-            "placeholder": ""
+            "default_value": "#800000",
+            "enable_opacity": 0,
+            "return_format": "string",
+            "allow_in_bindings": 0
         },
         {
-            "key": "field_67e94ff9ca452",
-            "label": "footer_image",
-            "name": "footer_image",
+            "key": "field_680bbdebe361e",
+            "label": "background footer Color bottom",
+            "name": "bg_footer_color_bottom",
+            "aria-label": "",
+            "type": "color_picker",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "#330000",
+            "enable_opacity": 0,
+            "return_format": "string",
+            "allow_in_bindings": 0
+        },
+        {
+            "key": "field_680bc25517655",
+            "label": "footer image mobile",
+            "name": "footer_image_mobile",
             "aria-label": "",
             "type": "image",
             "instructions": "",
             "required": 0,
-            "conditional_logic": [
-                [
-                    {
-                        "field": "field_67e94c979fc8a",
-                        "operator": "!=",
-                        "value": "1"
-                    }
-                ]
-            ],
+            "conditional_logic": 0,
             "wrapper": {
                 "width": "",
                 "class": "",
@@ -505,5 +457,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1745262865
+    "modified": 1745601129
 }

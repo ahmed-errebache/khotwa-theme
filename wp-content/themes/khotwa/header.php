@@ -13,10 +13,7 @@
     // Vérification si ACF est installé
     if (!function_exists('get_field')) return;
 
-    // Récupération des données ACF
-    $bg_image                = get_field('background_image');
-    $bg_image_url            = is_array($bg_image) && isset($bg_image['url']) ? esc_url($bg_image['url']) : esc_url($bg_image);
-    $header_background_color = get_field('header_background_color');
+    // $header_background_color = get_field('header_background_color');
     $cta_button_text         = get_field('cta_button_text') ?: 'استشارة مجانية';
     $cta_button_color        = get_field('cta_button_color') ?: '#ffffff';
     $cta_button_bgcolor      = get_field('cta_button_bgcolor') ?: '#b9131f';
@@ -40,24 +37,7 @@
     <?php wp_head(); ?>
 
     <style>
-        /* ------------------------------
-           FONT-FACE (exemple)
-        ------------------------------ */
-        /* @font-face {
-            font-family: 'FF Shamel Sans';
-            src: url('<?php echo get_template_directory_uri(); ?>/assets/fonts/ffshamelfamily-sansonebold-webfont.woff2') format('woff2'),
-                url('<?php echo get_template_directory_uri(); ?>/assets/fonts/ffshamelfamily-sansonebold-webfont.woff') format('woff');
-            font-weight: normal;
-            font-style: normal;
-        } */
-
-        /* ------------------------------
-           BANNER SECTION
-        ------------------------------ */
-        .banner_section {
-            background-image: url('<?php echo $bg_image_url; ?>');
-        }
-
+        
         /* ------------------------------
            CTA BUTTON
         ------------------------------ */
@@ -128,7 +108,7 @@
             </header>
 
         <!-- Bannière (exemple pour un pays) -->
-        <?php get_template_part('template-parts/common/banner'); ?>
+          <?php get_template_part('template-parts/common/banner'); ?>
         </section>
         <!-- MAIN CONTENT -->
         <main>

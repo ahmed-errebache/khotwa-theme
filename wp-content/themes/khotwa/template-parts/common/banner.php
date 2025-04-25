@@ -1,4 +1,6 @@
 <?php
+$bg_top = get_field('bg_banner_color_top') ?: '#800000';
+$bg_bottom = get_field('bg_banner_color_bottom') ?: '#330000';
 $title = get_field('title');
 $subtitle = get_field('subtitle');
 $is_banner_home_page = get_field('is_banner_home_page');
@@ -18,6 +20,11 @@ $video_image_url = is_array($video_image) && isset($video_image['url']) ? esc_ur
 $key_benefits = get_field('key_benefits');
 ?>
 
+<style>
+    .banner_section {
+        background: linear-gradient(to top, <?php echo esc_attr($bg_top); ?>, <?php echo esc_attr($bg_bottom); ?>);
+    }
+</style>
 
 <!-- Section Bannière -->
 <?php if ($title || $subtitle): ?>
@@ -79,7 +86,7 @@ $key_benefits = get_field('key_benefits');
                         <div class="is_homepage">
                             <!-- Image vidéo cliquable -->
                             <?php if ($video_image_url && $video_url): ?>
-                                <div class="video-thumbnail" data-aos="fade-up" data-aos-delay="500">
+                                <div class="video-thumbnail" data-aos="fade-up" data-aos-delay="300">
                                   <a href="#"
                                     class="video-trigger"
                                     data-bs-toggle="modal"

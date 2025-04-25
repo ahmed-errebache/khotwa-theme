@@ -313,6 +313,12 @@ BANNER SECTION
   .rtl .consultation-section .consultation-feature p {
     text-align: right;
   }
+  .girl-container {
+    position: relative;
+    left: calc(-1 * -15px);
+    width: calc(100% + 40px);
+    margin-top: 30px;
+  }
   /* ------------------------------
    TESTIMONIAL HOME
 ------------------------------ */
@@ -389,7 +395,10 @@ BANNER SECTION
   .testimonial-section .testimonial_bloc_img {
     margin-bottom: 10px !important;
   }
-
+  
+  .testimonial-main .testimonial-info {
+    background-image: none;
+  }
   /* ------------------------------
    Study Section
 ------------------------------ */
@@ -403,7 +412,9 @@ BANNER SECTION
   .study-countries .main-study {
     padding: 0 15px;
   }
-
+  .study-countries .main-study {
+    background-image: none;
+  }
   /* ======================================== */
   /* MEDIA QUERIES MIGRATED FROM custom.css */
   /* ======================================== */
@@ -468,5 +479,28 @@ BANNER SECTION
     max-width: 90%;
     margin: 0 auto;
     display: block;
+  }
+}
+
+
+/* Grands écrans (laptops / PC Windows) */
+@media screen and (min-width: 1024px) {
+  .ton-element {
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width: 1440px) {
+  .is_homepage {
+    bottom: -15%;
+  }
+}
+
+/* Très grands écrans (full HD ou +) */
+@media screen and (min-width: 1440px) {
+  .is_homepage {
+    bottom: -15%;
   }
 }

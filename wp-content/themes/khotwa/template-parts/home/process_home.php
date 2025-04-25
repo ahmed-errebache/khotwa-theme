@@ -1,5 +1,7 @@
 <?php
 // Récupération des champs ACF pour la section Process
+$bg_process_top = get_field('bg_banner_color_top') ?: '#800000';
+$bg_process_bottom = get_field('bg_banner_color_bottom') ?: '#330000';
 $titre_de_process = get_field('titre_de_process', false, false);
 $background_de_process = get_field('background_de_process');
 $process_repetetor     = get_field('process_repetetor');
@@ -21,8 +23,14 @@ if (is_array($background_de_process) && isset($background_de_process['url'])) {
 }
 ?>
 
+<style>
+    .process-section {
+        background: linear-gradient(to top, <?php echo esc_attr($bg_process_top); ?>, <?php echo esc_attr($bg_process_bottom); ?>);
+    }
+</style>
+
 <!-- Section Process -->
-<section class="process-section text-white position-relative" style="background: linear-gradient(rgba(123,4,31,0.7), rgba(123,4,31,0.7)), url('<?php echo $background_url; ?>'); background-size: cover; background-position: center;">
+<section class="process-section text-white position-relative">
     <!-- Icônes décoratives -->
     <div class="icon-top-left">
         <img src="<?php echo get_template_directory_uri(); ?>/assets/img/iconSections.png" alt="Icon Top Left" class="icon-shape">
