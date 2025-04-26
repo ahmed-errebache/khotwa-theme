@@ -467,7 +467,12 @@ BANNER SECTION
   .specialization-btn {
     position: absolute;
     top: 80%;
-    left: 20%;
+    left: 15%;
+  }
+  .specialization-section a{
+    padding: 10px;
+    min-height: 40px;
+    font-size: 14px;
   }
 
   .specialization-content {
@@ -481,7 +486,6 @@ BANNER SECTION
     display: block;
   }
 }
-
 
 /* Grands écrans (laptops / PC Windows) */
 @media screen and (min-width: 1024px) {
@@ -504,3 +508,39 @@ BANNER SECTION
     bottom: -15%;
   }
 }
+
+/* ===============================
+   PASSPORT SECTION
+=============================== */
+@media (min-width: 768px) {
+  .students-achievements__span {
+    width: 35%;
+  }
+  .students-achievements__title {
+    font-size: 37px;
+    margin-left: 10%;
+    margin-right: 10%;
+    justify-content: space-between;
+  }
+  .students-achievements__subtitle {
+    color: var(--color-jaune);
+    font-size: 37px;
+    margin-bottom: 5%;
+  }
+  .students-achievements__image {
+    width: 70%;
+  }
+  .students-achievements__cta {
+    left: 50%;
+    bottom: -4%;
+    transform: translateX(-50%);
+    width: 25%;
+    font-family: var(--font-secondary);
+    font-size: 16px;
+    padding: 10px 29px;
+    min-height: 54px;
+  }
+}
+
+
+
