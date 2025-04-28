@@ -6,7 +6,11 @@
 
 get_header(); // Récupère le header.php du thème
 ?>
-
+<!-- Bannière (exemple pour un pays) -->
+<?php get_template_part('template-parts/common/banner_country'); ?>
+        </section>
+<!-- MAIN CONTENT -->
+<main>
 
         <?php
         // Affiche chaque section si elle est configurée dans ACF
@@ -22,17 +26,18 @@ get_header(); // Récupère le header.php du thème
         get_template_part('template-parts/country/faq-section');
         ?>
 
-    <!-- Affichage du contenu principal de la page -->
-    <?php
-    if ( have_posts() ) :
-        while ( have_posts() ) : the_post();
-            the_content();
-        endwhile;
-    endif;
-    ?>
+<!-- Affichage du contenu principal de la page -->
+<?php
+if ( have_posts() ) :
+while ( have_posts() ) : the_post();
+    the_content();
+endwhile;
+endif;
+?>
 
 </div>
 
 <?php
 get_footer(); // Récupère le footer.php du thème
 ?>
+<?php

@@ -19,6 +19,7 @@
     $cta_button_bgcolor      = get_field('cta_button_bgcolor') ?: '#b9131f';
     $cta_button_hover_color  = get_field('cta_button_hover_color') ?: '#ffffff';
     $cta_button_hover_bgcolor = get_field('cta_button_hover_bgcolor') ?: '#ff4d4d';
+    $banner_country_page    = get_field('banner_country_page');
 
     // Détection automatique de la direction (RTL / LTR)
     $is_rtl           = is_rtl();
@@ -51,12 +52,13 @@
             color: <?php echo esc_attr($cta_button_hover_color); ?>;
         }
     </style>
+    <?php get_template_part('template-parts/common/button_settings'); ?>
 </head>
 
 <body <?php body_class(); ?>>
     <div class="wrapper">
         <!-- BANNER SECTION -->
-        <section class="banner_section">
+        <section class="banner_section <?php echo $banner_country_page ? 'banner_country_section' : ''; ?>">
             <!-- HEADER -->
             <header class="header <?php echo $direction_class; ?>">
                 <div class="navbar-container">
@@ -107,9 +109,4 @@
                 </div>
             </header>
 
-        <!-- Bannière (exemple pour un pays) -->
-          <?php get_template_part('template-parts/common/banner'); ?>
-        </section>
-        <!-- MAIN CONTENT -->
-        <main>
-            <!-- ... le reste de ton contenu ... -->
+        

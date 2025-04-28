@@ -485,6 +485,51 @@ BANNER SECTION
     margin: 0 auto;
     display: block;
   }
+
+   /* ------------------------------
+    Country Page
+  ------------------------------ */
+  .banner_country_section {
+    min-height: 1000px;
+  }
+  .banner_country {
+    position: relative;
+    min-height: 900px;
+  }
+  .banner_country .btn-consultation {
+    margin-top: 8%;
+  }
+  .banner_country .img_banner img{
+    position: absolute;
+    width: 100%;
+    height: auto;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+
+  .banner_country .left_image_banner {
+    left: 0;
+    right: auto;
+    width: 50%;
+    position: absolute;
+  }
+  .banner_country .left_image_banner.mobile {
+    display: block;
+  }
+  .banner_country .right_image_banner {
+    left: auto;
+    right: 0;
+    width: 50%;
+    display: block;
+  }
+
+  /* ------------------------------
+    Brands Section Country Page
+  ------------------------------ */
+  .brands-section {
+    padding-top: 15%;
+  }
 }
 
 /* Grands écrans (laptops / PC Windows) */
@@ -500,6 +545,24 @@ BANNER SECTION
   .is_homepage {
     bottom: -15%;
   }
+  /* ------------------------------
+    Country Page
+  ------------------------------ */
+
+    .banner_country {}
+
+    .banner_country .img_banner {}
+
+    .banner_country .img_banner img {}
+
+    .is_country_page {}
+
+    .is_country_page .play-icon {}
+
+    .banner_country .btn-consultation {}
+
+    .btn-consultation {}
+ 
 }
 
 /* Très grands écrans (full HD ou +) */
