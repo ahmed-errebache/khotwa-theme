@@ -48,6 +48,9 @@ if ($image_field) {
           <a class="btn btn-consultation aos-init aos-animate">
             <?php echo esc_html($btn_text); ?>
           </a>
+          <button class="btn-consultation btn-settings">
+            <?php echo esc_html( $btn_text ); ?>
+          </button>
         </div>
       <?php endif; ?>
     </div>
