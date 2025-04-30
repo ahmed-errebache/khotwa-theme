@@ -438,27 +438,6 @@
             ]
         },
         {
-            "key": "field_680d003a59a88",
-            "label": "banner country page",
-            "name": "banner_country_page",
-            "aria-label": "",
-            "type": "true_false",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "message": "",
-            "default_value": 0,
-            "allow_in_bindings": 0,
-            "ui": 0,
-            "ui_on_text": "",
-            "ui_off_text": ""
-        },
-        {
             "key": "field_680bba25ca560",
             "label": "background Color banner top",
             "name": "bg_color_banner_top",
@@ -532,13 +511,6 @@
                 "operator": "==",
                 "value": "page-template\/page_template_home.php"
             }
-        ],
-        [
-            {
-                "param": "page_template",
-                "operator": "==",
-                "value": "index.php"
-            }
         ]
     ],
     "menu_order": 0,
@@ -550,5 +522,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1745662156
+    "modified": 1745878038
 }
