@@ -43,7 +43,7 @@ $key_benefits = get_field('key_benefits');
 </style>
 
 <!-- Section Bannière -->
-<?php if ($title || $subtitle): ?>
+<?php if ($title): ?>
     <section class="banner banner_country py-2 text-center text-white">
         <div class="container">
             <div class="row align-items-center">

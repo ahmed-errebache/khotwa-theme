@@ -20,6 +20,7 @@
     $cta_button_hover_color  = get_field('cta_button_hover_color') ?: '#ffffff';
     $cta_button_hover_bgcolor = get_field('cta_button_hover_bgcolor') ?: '#ff4d4d';
     $banner_country_page    = get_field('banner_country_page');
+    $banner_contact_section = get_field('banner_contact_section');
 
     // Détection automatique de la direction (RTL / LTR)
     $is_rtl           = is_rtl();
@@ -58,7 +59,7 @@
 <body <?php body_class(); ?>>
     <div class="wrapper">
         <!-- BANNER SECTION -->
-        <section class="banner_section <?php echo $banner_country_page ? 'banner_country_section' : ''; ?>">
+        <section class="banner_section <?php echo $banner_country_page ? 'banner_country_section' : ''; ?> <?php echo $banner_contact_section ? 'banner_contact_section' : ''; ?>">
             <!-- HEADER -->
             <header class="header <?php echo $direction_class; ?>">
                 <div class="navbar-container">

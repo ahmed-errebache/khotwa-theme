@@ -92,4 +92,38 @@ add_action('init', function() {
 
 
 
+function khotwa_wpforms_custom_validation_messages( $strings ) {
+    if ( function_exists('pll_current_language') ) {
+        $lang = pll_current_language();
+    } else {
+        $lang = 'fr'; // fallback langue
+    }
+
+    if ( $lang === 'fr' ) {
+        $strings['val_required'] = 'Ce champ est obligatoire.';
+        $strings['val_email'] = 'Veuillez entrer une adresse email valide.';
+        $strings['val_url'] = 'Veuillez entrer une URL valide.';
+        $strings['val_phone'] = 'Veuillez entrer un numéro de téléphone valide.';
+        $strings['val_confirm'] = 'Les champs ne correspondent pas.';
+        $strings['val_captcha'] = 'Erreur de vérification Captcha.';
+    } elseif ( $lang === 'ar' ) {
+        $strings['val_required'] = 'هذا الحقل إجباري.';
+        $strings['val_email'] = 'يرجى إدخال بريد إلكتروني صالح.';
+        $strings['val_url'] = 'يرجى إدخال عنوان رابط صحيح.';
+        $strings['val_phone'] = 'يرجى إدخال رقم هاتف صحيح.';
+        $strings['val_confirm'] = 'الحقلان غير متطابقين.';
+        $strings['val_captcha'] = 'فشل التحقق من الكابتشا.';
+    } elseif ( $lang === 'en' ) {
+        $strings['val_required'] = 'This field is required.';
+        $strings['val_email'] = 'Please enter a valid email address.';
+        $strings['val_url'] = 'Please enter a valid URL.';
+        $strings['val_phone'] = 'Please enter a valid phone number.';
+        $strings['val_confirm'] = 'Fields do not match.';
+        $strings['val_captcha'] = 'Captcha verification failed.';
+    }
+
+    return $strings;
+}
+add_filter( 'wpforms_frontend_strings', 'khotwa_wpforms_custom_validation_messages' );
+
 
