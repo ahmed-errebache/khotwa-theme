@@ -25,16 +25,6 @@ get_header(); // Récupère le header.php du thème
         get_template_part('template-parts/country/reviews-section');
         get_template_part('template-parts/country/faq-section');
         ?>
-
-<!-- Affichage du contenu principal de la page -->
-<?php
-if ( have_posts() ) :
-while ( have_posts() ) : the_post();
-    the_content();
-endwhile;
-endif;
-?>
-
 </div>
 
 <?php

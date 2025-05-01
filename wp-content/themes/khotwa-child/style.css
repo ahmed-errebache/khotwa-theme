@@ -1,0 +1,69 @@
+/*
+Theme Name: Khotwa Child
+Template: khotwa
+*/
+
+.blog-hero {
+    padding: 2rem;
+    background: #600f1b;
+    color: white;
+}
+.featured-article {
+    max-width: 800px;
+    margin: 0 auto 2rem;
+    text-align: center;
+}
+.featured-article img {
+    max-width: 100%;
+    border-radius: 10px;
+}
+.latest-posts {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.mini-post {
+    width: 200px;
+    background: #4a0d16;
+    padding: 1rem;
+    border-radius: 8px;
+}
+.mini-post h3 {
+    font-size: 1rem;
+    color: #fff;
+}
+
+.grouped-by-country {
+    padding: 3rem 2rem;
+}
+.country-section {
+    margin-bottom: 3rem;
+}
+.country-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 1rem;
+}
+.flag-icon {
+    width: 24px;
+    height: 24px;
+}
+.country-posts {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+.post-card {
+    background: #fff;
+    border: 1px solid #eee;
+    width: 300px;
+    padding: 1rem;
+    border-radius: 6px;
+}
+.post-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+}
