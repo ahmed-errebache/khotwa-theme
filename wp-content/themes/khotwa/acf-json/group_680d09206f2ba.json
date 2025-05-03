@@ -16,7 +16,7 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "",
+            "default_value": "يسعدنا مشاركة  إنجازات بعض طلابنا",
             "maxlength": "",
             "allow_in_bindings": 0,
             "placeholder": "",
@@ -63,7 +63,7 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "",
+            "default_value": "باغي تكون بحالهم؟ الفرصة بين يديك",
             "maxlength": "",
             "allow_in_bindings": 0,
             "placeholder": "",
@@ -84,7 +84,7 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "",
+            "default_value": "استغل الفرصة وتسجل معنا دبا",
             "maxlength": "",
             "allow_in_bindings": 0,
             "placeholder": "",
@@ -110,5 +110,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1745684921
+    "modified": 1746010078
 }
