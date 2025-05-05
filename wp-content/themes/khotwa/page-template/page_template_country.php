@@ -17,8 +17,8 @@ get_header(); // Récupère le header.php du thème
         get_template_part('template-parts/country/brands_country');
         get_template_part('template-parts/country/domaine_country');
         get_template_part('template-parts/country/passport_country');
-        get_template_part('template-parts/country/why-choose');
-        get_template_part('template-parts/country/process-section');
+        get_template_part('template-parts/country/why_choose_country');
+        get_template_part('template-parts/country/process_country');
         get_template_part('template-parts/country/consultation-section');
         get_template_part('template-parts/country/testimonial-section');
         get_template_part('template-parts/country/study-countries-section');
