@@ -2,13 +2,15 @@
 // Vérification si ACF est installé
 if (!function_exists('get_field')) return;
 
-$footer_social_title = get_field('footer_social_title');
-$footer_social_icons = get_field('footer_social_icons');
-$footer_contact_title = get_field('footer_contact_title');
-$footer_phone_fix_label = get_field('footer_phone_fix_label');
-$footer_phone_fix_value = get_field('footer_phone_fix_value');
-$footer_phone_mobile_label = get_field('footer_phone_mobile_label');
-$footer_phone_mobile_value = get_field('footer_phone_mobile_value');
+$footer_social_icons = get_field('footer_social_icons', 'option');
+$footer_social_title = get_footer_field_translated('footer_social_title');
+// $footer_contact_title = get_field('footer_contact_title', 'option');
+$footer_contact_title = get_footer_field_translated('footer_contact_title');
+$footer_phone_fix_label = get_footer_field_translated('footer_phone_fix_label');
+$footer_phone_fix_value = get_field('footer_phone_fix_value', 'option');
+$footer_phone_mobile_label = get_footer_field_translated('footer_phone_mobile_label');
+$footer_phone_mobile_value = get_field('footer_phone_mobile_value', 'option');
+
 ?>
 
 <div class="col-md-4 mb-4">
@@ -16,7 +18,7 @@ $footer_phone_mobile_value = get_field('footer_phone_mobile_value');
         <?php if ($footer_social_title): ?>
             <h6 class="mb-3 text-footer-jaune"><?php echo esc_html($footer_social_title); ?></h6>
             <?php endif; ?>
-            <?php if ($footer_social_icons): ?>
+            <?php if (!empty($footer_social_icons) && is_array($footer_social_icons)): ?>
             <div class="d-flex gap-3 fs-5">
                 <?php foreach ($footer_social_icons as $icon):
                 $icon_link = isset($icon['link']) ? esc_url($icon['link']) : '#';

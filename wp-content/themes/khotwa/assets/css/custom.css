@@ -93,8 +93,8 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 25px 40px;
-    max-width: 1200px;
+    padding: 25px 0px;
+    max-width: 1320px;
     margin: 0 auto;
     width: 100%;
     position: relative;
@@ -372,6 +372,7 @@ footer {
 footer p{
     font-family: var(--font-secondary);
     color: #fff;
+    margin-bottom: 0;
 }
 
 .footer .plane {
@@ -1544,3 +1545,4 @@ div.wpforms-container-full button[type=submit]:focus::after {
   outline: none !important;
   border: none !important;
 }
+

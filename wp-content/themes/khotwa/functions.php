@@ -127,3 +127,27 @@ function khotwa_wpforms_custom_validation_messages( $strings ) {
 add_filter( 'wpforms_frontend_strings', 'khotwa_wpforms_custom_validation_messages' );
 
 
+if (function_exists('acf_add_options_page')) {
+    acf_add_options_page([
+        'page_title' => 'Options du site',
+        'menu_title' => 'Options du site',
+        'menu_slug'  => 'site-options',
+        'capability' => 'edit_posts',
+        'redirect'   => false
+    ]);
+}
+
+function get_footer_field_translated($field_name) {
+    $locale = get_locale(); // ex: fr_FR, ar, en_US
+    $lang_code = substr($locale, 0, 2); // fr, ar, en
+
+    $translated_field = $field_name . '_' . $lang_code;
+
+    // Si le champ traduit existe et a une valeur
+    $value = get_field($translated_field, 'option');
+    if ($value) return $value;
+
+    // Fallback : champ par défaut (non traduit)
+    return get_field($field_name, 'option');
+}
+
