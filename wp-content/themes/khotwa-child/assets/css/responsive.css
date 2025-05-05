@@ -1,0 +1,645 @@
+/* :root {
+    --font-primary: '29lt_bukraregular', sans-serif;
+    --font-secondary: 'ff_shamel_familysans_one_book', sans-serif;
+    --color-jaune: #FEAF22;
+    --color-orange: #FC874D;
+    --color-rouge: #FF3308;
+    --text-color-marron: #7B041F;
+    --background-color-marron: #6C0502;
+  } */
+/* Responsive Styles (Mobile) */
+@media (max-width: 768px) {
+  .navbar-container {
+    justify-content: center;
+  }
+
+  .navbar-brand {
+    margin: 0 auto;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .navbar-collapse {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    height: 100vh;
+    background-color: #fff;
+    width: 85%;
+    padding: 20px;
+    display: block;
+    flex-direction: column;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
+    transition: left 0.5s ease;
+    z-index: 1000;
+    opacity: 0.95;
+    font-size: 17px;
+  }
+
+  .navbar-collapse .language-dropdown-wrapper {
+    display: none;
+  }
+
+  .navbar-collapse .social_contact {
+    padding: 15px;
+  }
+
+  .navbar-collapse .icon-rounded {
+    border: 1px solid #70021C;
+    color: #70021C;
+  }
+
+  .navbar-collapse .social_contact p {
+    font-size: 15px;
+    color: #70021C;
+  }
+
+  .navbar-collapse .footer_social_title {
+    height: 70px;
+  }
+
+  .navbar-collapse .text-warning {
+    color: #FE2F07 !important;
+    font-weight: bold;
+    font-size: 15px;
+  }
+
+  .navbar-menu li a {
+    color: #70021C;
+    font-weight: bold;
+    font-size: 1rem;
+    line-height: 20px;
+  }
+  .phone_label {
+    font-size: 1rem;
+    line-height: 20px;
+    font-family: var(--font-secondary);
+  }
+  .navbar-collapse.active {
+    left: 0;
+  }
+
+  .navbar-menu {
+    flex-direction: column;
+    gap: 20px;
+    padding: 30% 15px 15px 15px;
+  }
+
+  .rtl .navbar-menu {
+    direction: rtl;
+  }
+
+  .cta-button.desktop {
+    display: none;
+  }
+
+  .cta-button.mobile {
+    display: block;
+    margin-top: 20px;
+  }
+
+  #closeMenu {
+    display: block;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    outline: 0;
+    font-size: 1.3rem;
+    padding: 15px;
+  }
+
+  .rtl .language-dropdown-wrapper,
+  .language-dropdown-wrapper {
+    margin: 0;
+    position: absolute;
+    right: 8%;
+    bottom: 40%;
+  }
+
+  .footer {
+    height: auto;
+  }
+
+  .footer .footer-top {
+    padding: 20px;
+  }
+
+  .footer .text-warning {
+    font-size: 17px;
+    font-weight: bold;
+  }
+
+  .footer p {
+    font-size: 15px;
+  }
+
+  .footer .plane {
+    background-size: contain;
+    background-position: 100% 100%;
+    height: 300px;
+    background-repeat: no-repeat;
+  }
+
+  .footer .map-embed {
+    width: 271px;
+    height: 240px;
+    margin: 40px 0;
+  }
+
+  /* ------------------------------
+  GLOBAL STYLES
+------------------------------ */
+  .desktop {
+    display: none;
+  }
+
+  .mobile {
+    display: block;
+  }
+
+  /* ------------------------------
+BANNER SECTION
+------------------------------ */
+  .banner_section {
+    height: 800px;
+  }
+
+  .banner_section .left_image_banner {
+    position: relative;
+  }
+
+  .banner_section .right_image_banner {
+    display: none;
+  }
+
+  .banner_section .title {
+    font-family: var(--font-primary);
+    font-size: 30px;
+    margin-bottom: 40px !important;
+  }
+
+  .banner_section .sub_title {
+    font-family: var(--font-secondary);
+    font-size: 16px;
+  }
+
+  .banner_section .benefit {
+    width: 100%;
+  }
+
+  .banner_section .left_image_banner {
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+  }
+
+  .banner_section .benefit_item {
+    max-width: 100%;
+  }
+
+  .is_homepage {
+    width: 90%;
+    height: 178px;
+    position: absolute;
+    bottom: -20%;
+  }
+
+  .banner_section .cta-banner {
+    font-size: 12px;
+    padding: 10px 20px;
+  }
+
+  /* --------------
+  DESTINATION
+   -------------- */
+  .destination-section .text-orange {
+    font-size: 18px;
+  }
+
+  .destination-section .avatar-row {
+    margin-top: 70px;
+  }
+
+  .destination-section .avatar-image {
+    width: 90px;
+    margin-left: 10px;
+    margin-right: 5px;
+  }
+
+  .destination-section .destination-title ,
+  .rtl .destination-section .destination-title{
+    max-width: 100%;
+  }
+
+  .destination-section .destination-title {
+    font-size: 1.7rem;
+    line-height: 40px;
+    margin-bottom: 1rem;
+  }
+
+  .destination-section .flag-overlay {
+    top: 0;
+    left: 0;
+    width: 100%;
+    position: relative;
+  }
+
+  .destination-section .destination-paragraph {
+    font-size: 1rem;
+    line-height: 1.4;
+    margin-bottom: 30px;
+  }
+
+  .destination-section .description-row {
+    margin-top: 10px;
+  }
+
+  /* ------------------------------
+   PROCESS SECTION
+------------------------------ */
+.process-section .steps-title ,.rtl .process-section .steps-title{
+    font-size: 35px;
+    width: 100%;
+    margin: 0 auto;
+    line-height: 40px;
+    padding: 0 15px;
+  }
+
+  .process-section .icon-top-left {
+    display: none;
+  }
+
+  .process-section .vector3-image {
+    display: none;
+  }
+
+  .process-section .icon-shape {
+    width: 40%;
+  }
+
+  .process-section .step-description {
+    font-size: 1rem;
+    line-height: 1.4;
+  }
+
+  .consultation-mobile-version h2 {
+    margin-top: 50px;
+  }
+
+  /* ------------------------------
+   CONSULTATION SECTION
+------------------------------ */
+  .consultation-section .consultation-title,
+  .rtl .consultation-section .consultation-title{
+    font-size: 1.7rem;
+    line-height: 40px;
+    text-align: center;
+    margin-bottom: 20px;
+    margin-top: 50px;
+  }
+  .consultation-section .consultation-feature {
+    text-align: left;
+  }
+  .rtl .consultation-section .consultation-feature {
+    text-align: right;
+  }
+  .consultation-section .consultation-feature p,
+  .rtl .consultation-section .consultation-feature p{
+    font-size: 1rem;
+    line-height: 1.4;
+  }
+  .rtl .consultation-section .consultation-feature p {
+    text-align: right;
+  }
+  .girl-container {
+    position: relative;
+    left: calc(-1 * -15px);
+    width: calc(100% + 40px);
+    margin-top: 30px;
+  }
+  /* ------------------------------
+   TESTIMONIAL HOME
+------------------------------ */
+
+  .testimonial-section .testimonial-main-title {
+    max-width: 100%;
+    font-size: 33px;
+    text-align: center;
+  }
+
+  .testimonial-section .swiper {
+    padding-bottom: 50px;
+  }
+
+  .testimonial-section .testimonial-top-right {
+    display: none;
+  }
+
+  .testimonial-information {
+    padding: 15px;
+  }
+
+  .testimonial-section[dir="ltr"] .swiper-button-next.btn-next,
+  .testimonial-section[dir="rtl"] .swiper-button-next.btn-next,
+  .testimonial-section[dir="ltr"] .swiper-button-prev.btn-prev,
+  .testimonial-section[dir="rtl"] .swiper-button-prev.btn-prev {
+    position: absolute;
+    bottom: 0;
+    top: auto;
+    transform: translateX(-50%);
+  }
+
+  .testimonial-section[dir="ltr"] .swiper-button-prev.btn-prev {
+    left: 40%;
+  }
+
+  .testimonial-section[dir="rtl"] .swiper-button-prev.btn-prev {
+    right: 30%;
+  }
+
+  .testimonial-section[dir="ltr"] .swiper-button-next.btn-next {
+    right: 30%;
+  }
+
+  .testimonial-section[dir="rtl"] .swiper-button-next.btn-next {
+    left: 40%;
+  }
+
+  .testimonial-section[dir="ltr"] .testimonial-name {
+    padding-left: 25px;
+  }
+
+  .testimonial-section[dir="ltr"] .testimonial-role {
+    padding-left: 25px;
+  }
+
+  .testimonial-section[dir="rtl"] .testimonial-name {
+    padding-right: 25px;
+  }
+
+  .testimonial-section[dir="rtl"] .testimonial-role {
+    padding-right: 25px;
+  }
+
+  .testimonial-section .testimonial-name {
+    margin-top: 0px !important;
+    font-size: 23px;
+  }
+
+  .testimonial-section .testimonial-role {
+    font-size: 19px;
+  }
+
+  .testimonial-section .testimonial_bloc_img {
+    margin-bottom: 10px !important;
+  }
+  
+  .testimonial-main .testimonial-info {
+    background-image: none;
+  }
+  /* ------------------------------
+   Study Section
+------------------------------ */
+  .study-countries h2,
+  .rtl .study-countries h2{
+    font-size: 1.7rem;
+    text-align: center;
+    max-width: 100%;
+  }
+
+  .study-countries .main-study {
+    padding: 0 15px;
+  }
+  .study-countries .main-study {
+    background-image: none;
+  }
+  /* ======================================== */
+  /* MEDIA QUERIES MIGRATED FROM custom.css */
+  /* ======================================== */
+
+  .steps-title {
+    font-size: 1.5rem;
+  }
+
+  .icon-shape {
+    width: 40%;
+  }
+
+  .icon-top-left {
+    display: none;
+  }
+
+  .testimonial-img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+  }
+
+  .universitySwiper {
+    top: -20%;
+  }
+
+  .specialization-section {
+    height: auto;
+  }
+
+  .specialization-title {
+    font-size: 23px;
+  }
+
+  .specialization-subtitle {
+    font-size: 23px;
+  }
+
+  .specialization-text {
+    margin-bottom: 0rem;
+  }
+
+  .specialization-image {
+    position: relative;
+    right: 0;
+    top: 1rem;
+    transform: none;
+  }
+
+  .specialization-btn {
+    position: absolute;
+    top: 80%;
+    left: 15%;
+  }
+  .specialization-section a{
+    padding: 10px;
+    min-height: 40px;
+    font-size: 14px;
+  }
+
+  .specialization-content {
+    margin-top: -10rem;
+  }
+
+  .specialization-image img {
+    width: 90%;
+    max-width: 90%;
+    margin: 0 auto;
+    display: block;
+  }
+
+   /* ------------------------------
+    Country Page
+  ------------------------------ */
+  .banner_country_section {
+    min-height: 1000px;
+  }
+  .banner_country {
+    position: relative;
+    min-height: 900px;
+  }
+  .banner_country .btn-consultation {
+    margin-top: 8%;
+  }
+  .banner_country .img_banner img{
+    position: absolute;
+    width: 100%;
+    height: auto;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+
+  .banner_country .left_image_banner {
+    left: 0;
+    right: auto;
+    width: 50%;
+    position: absolute;
+  }
+  .banner_country .left_image_banner.mobile {
+    display: block;
+  }
+  .banner_country .right_image_banner {
+    left: auto;
+    right: 0;
+    width: 50%;
+    display: block;
+  }
+
+  /* ------------------------------
+    Brands Section Country Page
+  ------------------------------ */
+  .brands-section {
+    padding-top: 15%;
+  }
+
+    /* -------------------------------
+    Contact Page
+  ------------------------------ */
+  .main_contact {
+    height: 200px;
+  }
+  .banner_contact {
+    padding: 0;
+  }
+  .banner_contact_section {
+    min-height: 880px;
+  }
+  .contact_right_form {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+  }
+  .row_banner {
+    margin-top: 0;
+  }
+  .bg_contact {
+    top: 35%;
+    height: 200px;
+  }
+  .contact_title {
+    padding: 15px !important;
+  }
+  .banner_contact .contact_title .title {
+    font-size: 28px;
+  }
+  .contact_right_img {
+    margin-bottom: 0;
+  }
+}
+
+/* Grands écrans (laptops / PC Windows) */
+@media screen and (min-width: 1024px) {
+  .ton-element {
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width: 1440px) {
+  .is_homepage {
+    bottom: -15%;
+  }
+  /* ------------------------------
+    Country Page
+  ------------------------------ */
+
+    .banner_country {}
+
+    .banner_country .img_banner {}
+
+    .banner_country .img_banner img {}
+
+    .is_country_page {}
+
+    .is_country_page .play-icon {}
+
+    .banner_country .btn-consultation {}
+
+    .btn-consultation {}
+ 
+}
+
+/* Très grands écrans (full HD ou +) */
+@media screen and (min-width: 1440px) {
+  .is_homepage {
+    bottom: -15%;
+  }
+}
+
+/* ===============================
+   PASSPORT SECTION
+=============================== */
+@media (min-width: 768px) {
+  .students-achievements__span {
+    width: 35%;
+  }
+  .students-achievements__title {
+    font-size: 37px;
+    margin-left: 10%;
+    margin-right: 10%;
+    justify-content: space-between;
+  }
+  .students-achievements__subtitle {
+    color: var(--color-jaune);
+    font-size: 37px;
+    margin-bottom: 5%;
+  }
+  .students-achievements__image {
+    width: 70%;
+  }
+  .students-achievements__cta {
+    left: 50%;
+    bottom: -4%;
+    transform: translateX(-50%);
+    width: 25%;
+    font-family: var(--font-secondary);
+    font-size: 16px;
+    padding: 10px 29px;
+    min-height: 54px;
+  }
+
+}
+
+
+

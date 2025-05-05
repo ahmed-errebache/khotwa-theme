@@ -2,7 +2,7 @@
 <?php
 // Vérification si ACF est installé
 if (!function_exists('get_field')) return;
-
+// $footer = get_footer_parameters_by_lang();
 // Gestion de la direction RTL / LTR
 $is_rtl = is_rtl();
 $current_language = substr(get_locale(), 0, 2);
@@ -14,52 +14,25 @@ $bg_footer_top = get_field('bg_footer_color_top') ?: '#800000';
 $bg_footer_bottom = get_field('bg_footer_color_bottom') ?: '#330000';
 $footer_map_iframe = get_field('footer_map_iframe');
 
-$footer_address_title = get_field('footer_address_title');
-$footer_address_text = get_field('footer_address_text');
-$footer_hours_title = get_field('footer_hours_title');
-$footer_hours_weekdays = get_field('footer_hours_weekdays');
-$footer_hours_saturday = get_field('footer_hours_saturday');
-$default_footer_background =  get_field('footer_hours_saturday');
+$footer_address_title = get_footer_field_translated('footer_address_title');
+$footer_address_text = get_footer_field_translated('footer_address_text');
+$footer_hours_title = get_footer_field_translated('footer_hours_title');
+$footer_hours_weekdays = get_footer_field_translated('footer_hours_weekdays');
+$footer_hours_saturday = get_footer_field_translated('footer_hours_saturday');
+$default_footer_background =  get_field('footer_hours_saturday', 'option');
 
 // === Champs visuels ===
 $default_footer_background = get_field('default_footer_background');
 $footer_select_color = get_field('footer_select_color'); // 'footer_red' ou 'footer_blue'
 
-// === valeurs statiques en cas de fond par défaut ===
-// $static_red_bg     = get_template_directory_uri() . '/assets/img/footer-red.png';
-// $static_blue_bg    = get_template_directory_uri() . '/assets/img/footer-blue.png';
-// $static_plane_red  = get_template_directory_uri() . '/assets/img/plane-red.png';
-// $static_plane_blue = get_template_directory_uri() . '/assets/img/plane-blue.png';
-// $static_plane_mobile_red = get_template_directory_uri() . '/assets/img/plane-red-mobile.png';
-// $static_plane_mobile_blue = get_template_directory_uri() . '/assets/img/plane-red-mobile.png';
 
 // === fallback si fond personnalisé (ACF)
-$footer_bg_color = get_field('footer_bg_color');
-$footer_image    = get_field('footer_image');
-$footer_image_mobile    = get_field('footer_image_mobile');
+$footer_bg_color = get_field('footer_bg_color', 'option');
+$footer_image    = get_field('footer_image', 'option');
+$footer_image_mobile    = get_field('footer_image_mobile', 'option');
 $plane_img = is_array($footer_image) && isset($footer_image['url']) ? esc_url($footer_image['url']) : esc_url($footer_image);
 $plane_img_mobile = is_array($footer_image_mobile) && isset($footer_image_mobile['url']) ? esc_url($footer_image_mobile['url']) : esc_url($footer_image_mobile);
 
-
-// === LOGIQUE PRINCIPALE
-// if ($default_footer_background) {
-//     if ($footer_select_color === 'footer_red') {
-//         $footer_bg = $static_red_bg;
-//         $plane_img = $static_plane_red;
-//         $plane_img_mobile = $static_plane_mobile_red;
-//         $plane_class = 'plane-red';
-//     } elseif ($footer_select_color === 'footer_blue') {
-//         $footer_bg = $static_blue_bg;
-//         $plane_img = $static_plane_blue;
-//         $plane_class = 'plane-blue';
-//         $plane_img_mobile = $static_plane_mobile_blue;
-//     }
-// } else {
-//     $footer_bg = is_array($footer_bg_color) && isset($footer_bg_color['url']) ? esc_url($footer_bg_color['url']) : esc_url($footer_bg_color);
-//     $plane_img = is_array($footer_image) && isset($footer_image['url']) ? esc_url($footer_image['url']) : esc_url($footer_image);
-//     $plane_img_mobile = is_array($footer_image_mobile) && isset($footer_image_mobile['url']) ? esc_url($footer_image_mobile['url']) : esc_url($footer_image_mobile);
-//     $plane_class = 'plane-custom';
-// }
 
 ?>
 <style>
@@ -96,10 +69,10 @@ $plane_img_mobile = is_array($footer_image_mobile) && isset($footer_image_mobile
             <h6 class="text-footer-jaune mb-3 mt-5"><?php echo esc_html($footer_hours_title); ?></h6>
           <?php endif; ?>
           <?php if ($footer_hours_weekdays): ?>
-            <p><?php echo esc_html($footer_hours_weekdays); ?></p>
+            <p><span><?php echo esc_html($footer_hours_weekdays); ?></span></p>
           <?php endif; ?>
           <?php if ($footer_hours_saturday): ?>
-            <p><?php echo esc_html($footer_hours_saturday); ?></p>
+            <p><span><?php echo esc_html($footer_hours_saturday); ?></span></p>
           <?php endif; ?>
         </div>  
       </div>
