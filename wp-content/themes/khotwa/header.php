@@ -13,15 +13,16 @@
     // Vérification si ACF est installé
     if (!function_exists('get_field')) return;
 
-    // Récupération des données ACF
-    $bg_image                = get_field('background_image');
-    $bg_image_url            = is_array($bg_image) && isset($bg_image['url']) ? esc_url($bg_image['url']) : esc_url($bg_image);
-    $header_background_color = get_field('header_background_color');
+    // $header_background_color = get_field('header_background_color');
     $cta_button_text         = get_field('cta_button_text') ?: 'استشارة مجانية';
     $cta_button_color        = get_field('cta_button_color') ?: '#ffffff';
     $cta_button_bgcolor      = get_field('cta_button_bgcolor') ?: '#b9131f';
     $cta_button_hover_color  = get_field('cta_button_hover_color') ?: '#ffffff';
     $cta_button_hover_bgcolor = get_field('cta_button_hover_bgcolor') ?: '#ff4d4d';
+    $banner_country_page    = get_field('banner_country_page');
+    $banner_contact_section = get_field('banner_contact_section');
+    $banner_blog_page = get_field('banner_blog_page');
+
 
     // Détection automatique de la direction (RTL / LTR)
     $is_rtl           = is_rtl();
@@ -40,24 +41,7 @@
     <?php wp_head(); ?>
 
     <style>
-        /* ------------------------------
-           FONT-FACE (exemple)
-        ------------------------------ */
-        /* @font-face {
-            font-family: 'FF Shamel Sans';
-            src: url('<?php echo get_template_directory_uri(); ?>/assets/fonts/ffshamelfamily-sansonebold-webfont.woff2') format('woff2'),
-                url('<?php echo get_template_directory_uri(); ?>/assets/fonts/ffshamelfamily-sansonebold-webfont.woff') format('woff');
-            font-weight: normal;
-            font-style: normal;
-        } */
-
-        /* ------------------------------
-           BANNER SECTION
-        ------------------------------ */
-        .banner_section {
-            background-image: url('<?php echo $bg_image_url; ?>');
-        }
-
+        
         /* ------------------------------
            CTA BUTTON
         ------------------------------ */
@@ -71,12 +55,13 @@
             color: <?php echo esc_attr($cta_button_hover_color); ?>;
         }
     </style>
+    <?php get_template_part('template-parts/common/button_settings'); ?>
 </head>
 
 <body <?php body_class(); ?>>
     <div class="wrapper">
         <!-- BANNER SECTION -->
-        <section class="banner_section">
+        <section class="banner_section <?php echo $banner_country_page ? 'banner_country_section' : ''; ?><?php echo $banner_contact_section ? 'banner_contact_section' : ''; ?><?php echo $banner_blog_page ? 'banner_blog_page' : ''; ?>">
             <!-- HEADER -->
             <header class="header <?php echo $direction_class; ?>">
                 <div class="navbar-container">
@@ -112,14 +97,14 @@
                             'fallback_cb'    => false,
                         ));
                         ?>
-                        <?php get_template_part('template-parts/common/select_language'); ?>
 
                         <div class="mobile social_contact mt-5">
                            <?php get_template_part('template-parts/common/social_contact'); ?> 
                         </div>
-
                     </div>
-
+                    <div class="desktop">
+                        <?php get_template_part('template-parts/common/select_language'); ?>
+                    </div>
                     <!-- Bouton CTA pour desktop -->
                     <button class="cta-button desktop">
                         <?php echo esc_html($cta_button_text); ?>
@@ -127,9 +112,4 @@
                 </div>
             </header>
 
-        <!-- Bannière (exemple pour un pays) -->
-        <?php get_template_part('template-parts/common/banner'); ?>
-        </section>
-        <!-- MAIN CONTENT -->
-        <main>
-            <!-- ... le reste de ton contenu ... -->
+        

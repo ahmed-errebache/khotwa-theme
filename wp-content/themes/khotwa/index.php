@@ -1,13 +1,12 @@
 <?php
 
 /**
- * Template Name: Home Template
+ * Template Name: Index Template
  * Description: A page template for Home pages, displaying ACF fields (banner, etc.)
  */
 
 get_header(); // Récupère le header.php du thème
 ?>
-
 
 
 <?php
@@ -19,17 +18,6 @@ get_template_part('template-parts/home/consultation_home');
 get_template_part('template-parts/home/study_countries_home');
 get_template_part('template-parts/home/reviews_home');
 ?>
-
-
-<!-- Affichage du contenu principal de la page -->
-<?php
-if (have_posts()) :
-    while (have_posts()) : the_post();
-        the_content();
-    endwhile;
-endif;
-?>
-
 
 
 <?php

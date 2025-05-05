@@ -17,13 +17,6 @@ get_header(); // Récupère le header.php du thème
          get_template_part('template-parts/service/section_service');
         ?>
     <!-- Affichage du contenu principal de la page -->
-    <?php
-    if ( have_posts() ) :
-        while ( have_posts() ) : the_post();
-            the_content();
-        endwhile;
-    endif;
-    ?>
 
 </div>
 

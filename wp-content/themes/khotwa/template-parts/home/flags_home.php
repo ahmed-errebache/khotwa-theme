@@ -32,66 +32,57 @@ $paragraphe_destination = $paragraphe_destination
     ?: "نحن لسنا مجرد وكالة تعليمية، نحن شركاء رحلتك<br>لتحقيق المستقبل الذي تستحقه مع \"خطوة\"، نحن<br>معك في كل لحظة، من الحلم إلى الانطلاق!";
 ?>
 
-<!-- SECTION DESTINATION -->
 <section class="destination-section">
-    <!-- Image de fond en haut, pleine largeur sans marge -->
-    <div class="background-top-destination">
-        <img
-            src="<?php echo $bg_top_url; ?>"
-            alt="Background Top Destination"
-            class="img-fluid w-100">
-    </div>
+    <div class="destination-main"></div>
+        <div class="container py-4">
+            <!-- Bloc : avatar + texte (remonté avec marge négative) -->
+            <div class="row avatar-row" data-aos="fade-in" data-aos-delay="800">
+                <div class="col-12 text-center mb-3">
+                    <!-- Avatar et texte dans une seule ligne -->
+                    <div class="d-inline-flex align-items-center">
+                        <img
+                            src="<?php echo $avatar_image_url; ?>"
+                            alt="Avatar Étudiants"
+                            class="avatar-image">
+                        <span class="text-orange fw-bold">
+                            <?php echo esc_html($nombre_avatar); ?>
+                        </span>
+                    </div>
+                </div>
+            </div>
 
-    <!-- Contenu principal -->
-    <div class="container py-4">
-        <!-- Bloc : avatar + texte (remonté avec marge négative) -->
-        <div class="row avatar-row">
-            <div class="col-12 text-center mb-3">
-                <!-- Avatar et texte dans une seule ligne -->
-                <div class="d-inline-flex align-items-center">
+            <!-- Titre de la destination -->
+            <div class="row">
+                <div class="col-12 text-center mb-3">
+                    <h2 class="destination-title text-violet fw-bold" data-aos="fade-up" data-aos-delay="300">
+                        <?php // On autorise le HTML (ex: <br>) si vous le souhaitez 
+                        ?>
+                        <?php echo wp_kses_post($titre_destination); ?>
+                    </h2>
+                </div>
+            </div>
+
+            <!-- Carte de la destination avec drapeau positionné dessus -->
+            <div class="row mb-2">
+                <div class="col-12 text-center position-relative">
                     <img
-                        src="<?php echo $avatar_image_url; ?>"
-                        alt="Avatar Étudiants"
-                        class="avatar-image">
-                    <span class="text-orange fw-bold">
-                        <?php echo esc_html($nombre_avatar); ?>
-                    </span>
+                        src="<?php echo $bg_map_url; ?>"
+                        alt="Carte de la destination"
+                        class="maps-overlay" data-aos="fade-up" data-aos-delay="800">
+                    <img
+                        src="<?php echo $image_flag_url; ?>"
+                        alt="Drapeau de la destination"
+                        class="flag-overlay" data-aos="fade-up" data-aos-delay="400">
+                </div>
+            </div>
+
+            <!-- Paragraphe descriptif -->
+            <div class="row description-row" data-aos="fade-up" data-aos-delay="300">
+                <div class="col-12 text-center">
+                    <div class="destination-paragraph">
+                        <?php echo wp_kses_post($paragraphe_destination); ?>
+                    </div>
                 </div>
             </div>
         </div>
-
-        <!-- Titre de la destination -->
-        <div class="row">
-            <div class="col-12 text-center mb-3">
-                <h2 class="destination-title text-violet fw-bold">
-                    <?php // On autorise le HTML (ex: <br>) si vous le souhaitez 
-                    ?>
-                    <?php echo wp_kses_post($titre_destination); ?>
-                </h2>
-            </div>
-        </div>
-
-        <!-- Carte de la destination avec drapeau positionné dessus -->
-        <div class="row mb-2">
-            <div class="col-12 text-center position-relative">
-                <img
-                    src="<?php echo $bg_map_url; ?>"
-                    alt="Carte de la destination"
-                    class="maps-overlay">
-                <img
-                    src="<?php echo $image_flag_url; ?>"
-                    alt="Drapeau de la destination"
-                    class="flag-overlay">
-            </div>
-        </div>
-
-        <!-- Paragraphe descriptif -->
-        <div class="row description-row">
-            <div class="col-12 text-center">
-                <div class="destination-paragraph">
-                    <?php echo wp_kses_post($paragraphe_destination); ?>
-                </div>
-            </div>
-        </div>
-    </div>
 </section>

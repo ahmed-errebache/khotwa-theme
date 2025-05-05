@@ -33,7 +33,7 @@
             "label": "titre testimonial",
             "name": "titre_testimonial",
             "aria-label": "",
-            "type": "wysiwyg",
+            "type": "text",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -42,12 +42,12 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "",
-            "allow_in_bindings": 0,
-            "tabs": "all",
-            "toolbar": "full",
-            "media_upload": 1,
-            "delay": 0
+            "default_value": "رحلتك تبدأ هنـا ... ولكن هل لديك خطة واضحة؟",
+            "maxlength": "",
+            "allow_in_bindings": 1,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
         },
         {
             "key": "field_67f5b2dfedabc",
@@ -150,7 +150,7 @@
                         "class": "",
                         "id": ""
                     },
-                    "default_value": "",
+                    "default_value": "نبيل المنصوري",
                     "maxlength": "",
                     "allow_in_bindings": 0,
                     "placeholder": "",
@@ -172,7 +172,7 @@
                         "class": "",
                         "id": ""
                     },
-                    "default_value": "",
+                    "default_value": "طالب في تركيا",
                     "maxlength": "",
                     "allow_in_bindings": 0,
                     "placeholder": "",
@@ -194,7 +194,7 @@
                         "class": "",
                         "id": ""
                     },
-                    "default_value": "",
+                    "default_value": "هل تحلم بتعليم عالمي المستوى في المملكة المتحدة؟ نحن هنا لنجعل هذا الحلم حقيقة. فريق الخبراء لدينا مكرس لإرشادك في كل خطوة  المستوى في المملكة المتحدة؟\r\n\r\nنحن هنا لنجعل هذا الحلم حقيقة. فريق الخبراء لدينا مكرس لإرشادك في كل خطوة على فريق الخبراء لدينا مكرس لإرشادك في كل خطوة على لم بتعليم عالمي من اختيار",
                     "allow_in_bindings": 0,
                     "tabs": "all",
                     "toolbar": "full",
@@ -223,5 +223,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1744930910
+    "modified": 1745662157
 }

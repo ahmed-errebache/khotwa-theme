@@ -12,6 +12,7 @@ $fenetre_mobile    = get_field('fenetre_consultation_section_mobile');
 
 // Champs communs
 $titre       = get_field('titre_consultation_section');
+$consultation_titre_red = get_field('consultation_titre_red');
 $features    = get_field('repetetor_consultation_feature');
 $text_button = get_field('text_button_consultation_button');
 
@@ -26,7 +27,7 @@ $fenetre_mobile_url    = ( is_array($fenetre_mobile)    && isset($fenetre_mobile
 ?>
 
 <!-- SECTION DESKTOP -->
-<section class="consultation-section desktop-version d-none d-md-block container-fluid">
+<section class="consultation-section desktop">
   <div class="bg-wrapper position-relative">
     <?php if ( $background_desktop_url ) : ?>
       <img
@@ -36,7 +37,7 @@ $fenetre_mobile_url    = ( is_array($fenetre_mobile)    && isset($fenetre_mobile
       />
     <?php endif; ?>
 
-    <div class="window-wrapper">
+    <div class="window-wrapper" data-aos="fade-left" data-aos-delay="200">
       <?php if ( $fenetre_desktop_url ) : ?>
         <img
           src="<?php echo $fenetre_desktop_url; ?>"
@@ -46,12 +47,62 @@ $fenetre_mobile_url    = ( is_array($fenetre_mobile)    && isset($fenetre_mobile
       <?php endif; ?>
     </div>
 
-    <div class="consultation-content">
+    <div class="consultation-content" data-aos="fade-right" data-aos-delay="200">
       <?php if ( $titre ) : ?>
-        <h1 class="consultation-title"><?php echo $titre; ?></h1>
-      <?php endif; ?>
+        <h1 class="consultation-title">
+            <?php echo esc_html($titre); ?>
+            <?php if (!empty($consultation_titre_red)) : ?>
+                <span class="text-red"><?php echo esc_html($consultation_titre_red); ?></span>
+            <?php endif; ?>
+        </h1>     
+       <?php endif; ?>
 
       <?php if ( $features ) : ?>
+        <div class="consultation-features d-flex flex-column align-items-start">
+          <?php foreach ( $features as $feature ) :
+            $icon = $feature['icon_feature'];
+            $text_feature = $feature['text_feature'];
+            $icon_url = ( is_array($icon) && isset($icon['url']) ) ? esc_url($icon['url']) : '';
+          ?>
+          <div class="consultation-feature d-flex flex-row align-items-center">
+            <?php if ( $icon_url ) : ?>
+              <img
+                src="<?php echo $icon_url; ?>"
+                alt="Icon"
+                class="feature-icon img-fluid"
+              />
+            <?php endif; ?>
+            <?php if ( $text_feature ) : ?>
+              <p class="mb-0 ml-2"><?php echo $text_feature; ?></p>
+            <?php endif; ?>
+          </div>
+          <?php endforeach; ?>
+        </div>
+      <?php endif; ?>
+
+      <?php if ( $text_button ) : ?>
+        <div class="btn-conslut-section">
+          <a href="#" class="btn-consultation"><?php echo $text_button; ?></a>
+        </div>
+      <?php endif; ?>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION MOBILE -->
+<section class="consultation-section mobile">
+  <!-- Bloc supérieur avec fond dynamique -->
+  <div class="color-bg" style="background-image: url('<?php echo $background_mobile_top_url; ?>');">
+    <?php if ( $titre ) : ?>
+      <h1 class="consultation-title">
+            <?php echo esc_html($titre); ?>
+            <?php if (!empty($consultation_titre_red)) : ?>
+                <span class="text-red"><?php echo esc_html($consultation_titre_red); ?></span>
+            <?php endif; ?>
+        </h1> 
+    <?php endif; ?>
+
+    <?php if ( $features ) : ?>
         <div class="consultation-features d-flex flex-column align-items-start">
           <?php foreach ( $features as $feature ) :
             $icon = $feature['icon_feature'];
@@ -79,43 +130,6 @@ $fenetre_mobile_url    = ( is_array($fenetre_mobile)    && isset($fenetre_mobile
           <a href="#" class="btn-consultation"><?php echo $text_button; ?></a>
         </div>
       <?php endif; ?>
-    </div>
-  </div>
-</section>
-
-<!-- SECTION MOBILE -->
-<section class="consultation-mobile-version d-block d-md-none container-fluid">
-  <!-- Bloc supérieur avec fond dynamique -->
-  <div class="color-bg" style="background-image: url('<?php echo $background_mobile_top_url; ?>');">
-    <?php if ( $titre ) : ?>
-      <h1 class="mobile-title text-center"><?php echo $titre; ?></h1>
-    <?php endif; ?>
-
-    <?php if ( $features ) : ?>
-      <ul class="consultation-mobile-features list-unstyled mx-auto">
-        <?php foreach ( $features as $feature ) :
-          $icon = $feature['icon_feature'];
-          $text_feature = $feature['text_feature'];
-          $icon_url = ( is_array($icon) && isset($icon['url']) ) ? esc_url($icon['url']) : '';
-        ?>
-        <li class="d-flex align-items-center justify-content-end my-2">
-          <?php if ( $icon_url ) : ?>
-            <img src="<?php echo $icon_url; ?>" alt="Icon" class="img-fluid">
-          <?php endif; ?>
-          <span class="ml-2"><?php echo $text_feature; ?></span>
-        </li>
-        <?php endforeach; ?>
-      </ul>
-    <?php endif; ?>
-  </div>
-
-  <div class="button-wrapper position-relative">
-    <div class="mobile-btn-consultation">
-      <?php if ( $text_button ) : ?>
-        <a href="#" class="btn-consultation"><?php echo $text_button; ?></a>
-      <?php endif; ?>
-    </div>
-  </div>
 
   <!-- Bloc inférieur : affichage de l'image statique et du cadre mobile dynamique -->
   <div class="girl-container position-relative text-center">
