@@ -12,6 +12,8 @@
   --color-rouge-light: #FF4D27;
   --text-color-marron: #7B041F;
   --background-color-marron: #6C0502;
+  
+
 }
 html,
 body {
@@ -21,8 +23,7 @@ body {
     background-color: #fff;
     font-family: '29lt_bukraregular', sans-serif !important;
     max-width: 100vw;
-  overflow-x: hidden;
-
+    overflow-x: hidden;
 
   }
   .wrapper {
@@ -1718,6 +1719,9 @@ div.wpforms-container-full button[type=submit]:focus::after {
   height: auto;
   width: 90%;
 }
+.process_country_mobile .row2 .flecheProcess {
+  transform: rotate(180deg);
+}
 .process_country_mobile .flecheProcessLine {
   transform: rotate(270deg);
   width: 60%;
@@ -1736,11 +1740,17 @@ div.wpforms-container-full button[type=submit]:focus::after {
 .process_country_mobile[dir="ltr"] .flecheProcess {
   transform: rotate(180deg) !important;
 }
+.process_country_mobile[dir="ltr"] .row2 .flecheProcess {
+  transform: rotate(0deg) !important;
+}
 /* LTR (inversé) */
-.process_country_mobile[dir="ltr"] .row1 img{
+.process_country_mobile[dir="ltr"] .row1 .flecheProcessLine{
   margin-left: 45%;
 }
-.process_country_mobile[dir="ltr"] .row2 img {
+.process_country_mobile[dir="ltr"] .row1 .stage-img{
+  margin-left: 10%;
+}
+.process_country_mobile[dir="ltr"] .row2 img{
   margin-left: 25%;
 }
 
