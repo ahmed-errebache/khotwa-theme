@@ -26,9 +26,10 @@ body {
     overflow-x: hidden;
 
   }
-  .wrapper {
+.wrapper {
   position: relative;
   max-width: 100%;
+  overflow: hidden;
 }
 
 .btn-consultation {
@@ -1622,37 +1623,6 @@ div.wpforms-container-full button[type=submit]:focus::after {
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* ================================
    process_country (Desktop)
 ================================= */
@@ -1754,3 +1724,192 @@ div.wpforms-container-full button[type=submit]:focus::after {
   margin-left: 25%;
 }
 
+/* ===============================
+   faq-section
+=============================== */
+
+.faq-section {
+  position: relative;
+  background: linear-gradient(to top, #FFFFFF 70%, #ECE5BD 100%);
+}
+.faq_title_col {
+  width: 100%;
+  height: 300px;
+  background-image: url(/wp-content/themes/khotwa/assets/img/testimonial_bg.png);
+  background-position: 50% 80%;
+  background-repeat: no-repeat;
+}
+.section-title {
+  font-family: var(--font-primary);
+  color: #FF4121;
+  font-size: 30px;
+  text-align: center;
+  margin-bottom: 2rem;
+  line-height: 45px;
+  font-weight: bold;
+}
+.faq-section .faq-main {
+  width: 100%;
+  height: 160px;
+  background-image: url(/wp-content/themes/khotwa/assets/img/testimonial_bg.png);
+  background-position: 90% 50%;
+  background-repeat: no-repeat;
+}
+.faq-section .faq-title {
+  font-family: var(--font-primary);
+  font-size: 35px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 2rem;
+  line-height: 50px;
+}
+.faq-section .faq-title span {
+  color: var(--color-rouge);
+}
+
+.faq_country-accordion {
+  font-family: 'Tajawal', sans-serif;
+  max-width: 900px;
+  margin: auto;
+  border-radius: 10px;
+}
+
+.faq_country-item {
+  border-top: 1px solid #eee;
+}
+
+.faq_country-title {
+  font-size: 26px;
+  color: #7b0033;
+  font-weight: bold;
+}
+
+.faq_country-question {
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  font-weight: bold;
+  color: #7b0033;
+  position: relative;
+  font-family: var(--font-primary);
+}
+
+.faq_country-number {
+  width: 30px;
+  height: 30px;
+  color: #7b0033;
+  margin-inline-end: 10px;
+  font-size: 20px;
+  font-family: var(--font-secondary);
+}
+
+.faq_country-toggle {
+  font-size: 15px;
+  color: #FFFFFF;
+  transition: transform 0.3s ease;
+  margin-inline-start: auto;
+  background: #FF4121;
+  padding: 10px;
+  border-radius: 50%;
+  height: 30px;
+  width: 30px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.faq_country-toggle.plus {
+  background: transparent;
+  border: 1px solid #FF4121;
+  color: #FF4121;
+}
+
+.faq_country-answer {
+  display: none;
+  padding: 15px 20px;
+  color: #000000;
+  line-height: 2;
+  font-family: var(--font-secondary);
+}
+
+.faq_country-answer p {
+  font-size: 18px;
+}
+
+/* RTL-specific styles */
+.rtl_faq .faq_country-question {
+  justify-content: flex-start;
+  text-align: right;
+}
+
+.rtl_faq .faq_country-number {
+  margin-inline-end: 10px;
+  margin-inline-start: 0;
+}
+
+.rtl_faq .faq_country-toggle {
+  margin-inline-start: auto;
+  margin-inline-end: 0;
+}
+
+.rtl_faq .faq_country-answer {
+  padding-right: 10%;
+}
+
+/* LTR-specific styles */
+.ltr_faq .faq_country-question {
+  justify-content: flex-start;
+  text-align: left;
+}
+
+.ltr_faq .faq_country-answer {
+  padding-left: 10%;
+}
+
+.faq-section.ltr_faq .faq-main {
+  background-position: 10% 50%;
+}
+
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .faq_title_col {
+   height: auto;
+   background: none;
+  }
+  .faq_country-title {
+   font-size: 18px;
+  }
+  .faq_country-question {
+   font-size: 18px;
+   padding: 15px;
+  }
+
+  .faq_country-number {
+   font-size: 16px;
+   margin-right: 20px;
+   width: 25px;
+   height: 25px;
+  }
+
+  .faq_country-toggle {
+   font-size: 12px;
+   height: 25px;
+   width: 25px;
+  }
+
+  .faq_country-answer p {
+   font-size: 16px;
+  }
+
+  .faq-section .faq-title {
+   font-size: 28px;
+   line-height: 40px;
+  }
+
+  .section-title {
+   font-size: 24px;
+   line-height: 35px;
+  }
+}
