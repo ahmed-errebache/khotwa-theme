@@ -23,7 +23,7 @@ get_header(); // Récupère le header.php du thème
         get_template_part('template-parts/country/testimonial-section');
         get_template_part('template-parts/country/study-countries-section');
         get_template_part('template-parts/country/reviews-section');
-        get_template_part('template-parts/country/faq-section');
+        get_template_part('template-parts/country/faq_country');
         ?>
 </div>
 

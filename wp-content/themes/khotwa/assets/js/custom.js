@@ -128,4 +128,25 @@ $(document).ready(function() {
         duration: 800,       // Durée de chaque animation (ms)
         easing: 'ease-out',  // Animation fluide
       });
+
+      // FAQ accordion
+      $('.faq_country-question').on('click', function() {
+       var $item = $(this).closest('.faq_country-item');
+       var $answer = $item.find('.faq_country-answer');
+       var $toggle = $(this).find('.faq_country-toggle');
+        
+       // Fermer tous les autres
+       $('.faq_country-answer').not($answer).slideUp();
+       $('.faq_country-toggle').not($toggle).text('+').removeClass('minus').addClass('plus');
+        
+       // Toggle actuel
+       if ($answer.is(':visible')) {
+           $answer.slideUp();
+           $toggle.text('+').removeClass('minus').addClass('plus');
+       } else {
+           $answer.slideDown();
+           $toggle.text('−').removeClass('plus').addClass('minus');
+       }
+      });
+
 });
