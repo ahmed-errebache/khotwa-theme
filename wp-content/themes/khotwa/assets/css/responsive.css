@@ -573,41 +573,136 @@ BANNER SECTION
   /* ===============================
    why_choose_country
 =============================== */
-  .why_choose_country .left-column h2 {
-    width: 65%;
-    margin: 0 auto 2rem;
-    text-align: center;
-    font-size: 24px;
-  }
-  .why_choose_country .btn-consultation {
-    position: absolute;
-    bottom: 1.5rem; /* à 1.5rem du bas de la section */
-    left: 50%; /* milieu horizontal */
-    transform: translateX(-50%);
-    width: auto; /* ou 80% si vous préférez une largeur fixe */
-    padding: 0.75rem 1.5rem;
-  }
-  .why_choose_country .left-column ul li span {
-    font-size: 22px;
-  }
-  .why_choose_country .left-column ul li .icon {
-    width: 2rem;
-    height: 2rem;
-  }
-  .why_choose_country .left-column ul.list-unstyled {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 0 auto;
-    padding: 0;
-  }
-  .why_choose_country .left-column .btn-consultation {
-    position: absolute;
-    left: 50%; /* milieu horizontal */
-    transform: translateX(-50%);
-    bottom: -1.5rem;
-    padding: 0.75rem 1.5rem;
-  }
+.why_choose_country .left-column h2 {
+  width: 65%;
+  margin: 0 auto 2rem; 
+  text-align: center;
+  font-size: 24px;
+}
+.why_choose_country .btn-consultation {
+  position: absolute;
+  bottom: 1.5rem;        /* à 1.5rem du bas de la section */
+  left: 50%;             /* milieu horizontal */
+  transform: translateX(-50%);
+  width: auto;           /* ou 80% si vous préférez une largeur fixe */
+  padding: 0.75rem 1.5rem;
+}
+.why_choose_country .left-column ul li span{
+  font-size: 22px;
+}
+.why_choose_country .left-column ul li .icon {
+  width: 2rem;
+  height: 2rem;
+}
+.why_choose_country .left-column ul.list-unstyled {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;     
+  padding: 0;
+}
+.why_choose_country .left-column .btn-consultation {
+  position: absolute;
+  left: 50%;             /* milieu horizontal */
+  transform: translateX(-50%);
+  bottom: -1.5rem;
+  padding: 0.75rem 1.5rem;
+}
+
+.faq_title_col {
+  height: auto;
+  background: none;
+ }
+ .faq_country-title {
+  font-size: 18px;
+ }
+ .faq_country-question {
+  font-size: 18px;
+  padding: 15px;
+ }
+
+ .faq_country-number {
+  font-size: 16px;
+  margin-right: 20px;
+  width: 25px;
+  height: 25px;
+ }
+
+ .faq_country-toggle {
+  font-size: 12px;
+  height: 25px;
+  width: 25px;
+ }
+
+ .faq_country-answer p {
+  font-size: 16px;
+ }
+
+ .faq-section .faq-title {
+  font-size: 28px;
+  line-height: 40px;
+ }
+
+ .section-title {
+  font-size: 24px;
+  line-height: 35px;
+ }
+
+ /* ===========================
+   Page service
+   ========================== */
+   .banner_service_section {
+     height: auto;
+   }
+   .intro-section {
+    padding: 15px;
+   }
+   .intro-section .intro-subtitle {
+    font-size: 30px;
+   }
+   .intro-section .intro-title {
+    margin-top: 20px;
+    font-size: 30px;
+   }
+   .valeurs-section {
+    padding: 15px;
+    padding-top: 40px !important;
+    padding-bottom: 80px !important;
+   }
+   .valeurs-section .valeurs-title {
+     font-size: 30px;
+   }
+   .valeurs-section .swiper-pagination {
+     bottom: 0;
+     left: 0;
+     right: 0;
+     margin: auto;
+     text-align: center;
+   }
+   .bloc_differenciation {
+    padding: 15px;
+    padding-top: 40px !important;
+    padding-bottom: 80px !important;
+   }
+   .bloc_differenciation .valeurs-title {
+     font-size: 30px;
+   }
+   .bloc_differenciation .swiper-pagination {
+     bottom: 0;
+     left: 0;
+     right: 0;
+     margin: auto;
+     text-align: center;
+   }
+   .bloc_differenciation .swiper-slide p {
+    width: 100%;
+   }
+   .bloc_differenciation_top {
+     display: none;
+   }
+   .bloc_differenciation_bottom {
+    display: none;
+   }
 }
 
 /* Grands écrans (laptops / PC Windows) */
@@ -687,73 +782,54 @@ BANNER SECTION
     padding: 10px 29px;
     min-height: 54px;
   }
+
+  .faq_title_col {
+    height: auto;
+    background: none;
+   }
+   .faq_country-title {
+    font-size: 18px;
+   }
+   .faq_country-question {
+    font-size: 18px;
+    padding: 15px;
+   }
+ 
+   .faq_country-number {
+    font-size: 16px;
+    margin-right: 20px;
+    width: 25px;
+    height: 25px;
+   }
+ 
+   .faq_country-toggle {
+    font-size: 12px;
+    height: 25px;
+    width: 25px;
+   }
+ 
+   .faq_country-answer p {
+    font-size: 16px;
+   }
+ 
+   .faq-section .faq-title {
+    font-size: 28px;
+    line-height: 40px;
+   }
+ 
+   .section-title {
+    font-size: 24px;
+    line-height: 35px;
+   }
+ 
+   /* ===========================
+     Page service
+     ========================== */
+     .banner_service_section {
+       height: auto;
+     }
+
 }
-/* ======================================
-  ESTABLISHMENTS SECTION
-====================================== */
-.bottom-mobile {
-  display: none;
-}
-@media (max-width: 767px) {
-  .establishments-section {
-    height: auto !important;
-  }
-  .establishments-section .top-section {
-    height: 3rem;
-  }
-  .establishments-section .top-bg-img {
-    position: static;
-    margin-top: 5%;
-    width: 50%;
-  }
-  /* on cache la version desktop */
-  .bottom-desktop {
-    display: none;
-  }
 
-  /* on affiche la version mobile */
-  .bottom-mobile {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 2rem 1rem;
-  }
 
-  /* titre centré et plus petit */
-  .bottom-mobile .section-title {
-    font-size: 2rem;
-    margin-bottom: 1.5rem;
-    text-align: center;
-  }
 
-  /* image statique, plein width à 80% max */
-  .bottom-mobile .pic-esta {
-    position: static !important;
-    width: 80%;
-    max-width: 300px;
-    margin-bottom: 1.5rem;
-    transform: none !important;
-    left: auto;
-    bottom: auto;
-  }
-
-  /* liste centrée */
-  .bottom-mobile ul {
-    width: 65%;
-    max-width: 320px;
-    margin: 0 auto;
-  }
-  .bottom-mobile ul li {
-    display: flex;
-    align-items: start;
-    margin-bottom: 1rem;
-  }
-  .bottom-mobile .icon-img {
-    margin-inline-start: 0.75rem;
-  }
-  .bottom-mobile ul li span {
-    font-family: var(--font-sub-title);
-    font-size: 23px;
-    line-height: 1.2;
-  }
-}
