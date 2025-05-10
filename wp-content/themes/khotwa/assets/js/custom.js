@@ -149,4 +149,50 @@ $(document).ready(function() {
        }
       });
 
+    // slide page service
+      new Swiper('.valeurs-swiper', {
+        slidesPerView: 1,
+        spaceBetween: 30,
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+        pagination: {
+          el: '.swiper-pagination', 
+          clickable: true     
+        },
+        breakpoints: {
+            768: {
+                slidesPerView: 1,
+                pagination : {
+                    el: '.swiper-pagination',
+                    clickable: true
+                }
+            }
+        },
+      });
+
+      new Swiper('.bloc-differenciation-swiper', {
+        slidesPerView: 1,
+        spaceBetween: 30,
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+        pagination: {
+          el: '.swiper-pagination', 
+          clickable: true     
+        },
+        breakpoints: {
+            768: {
+                slidesPerView: 1,
+                pagination : {
+                    el: '.swiper-pagination',
+                    clickable: true
+                }
+            }
+        },
+      });
+
+      
 });

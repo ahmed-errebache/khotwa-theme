@@ -604,6 +604,101 @@ BANNER SECTION
   bottom: -1.5rem;
   padding: 0.75rem 1.5rem;
 }
+
+.faq_title_col {
+  height: auto;
+  background: none;
+ }
+ .faq_country-title {
+  font-size: 18px;
+ }
+ .faq_country-question {
+  font-size: 18px;
+  padding: 15px;
+ }
+
+ .faq_country-number {
+  font-size: 16px;
+  margin-right: 20px;
+  width: 25px;
+  height: 25px;
+ }
+
+ .faq_country-toggle {
+  font-size: 12px;
+  height: 25px;
+  width: 25px;
+ }
+
+ .faq_country-answer p {
+  font-size: 16px;
+ }
+
+ .faq-section .faq-title {
+  font-size: 28px;
+  line-height: 40px;
+ }
+
+ .section-title {
+  font-size: 24px;
+  line-height: 35px;
+ }
+
+ /* ===========================
+   Page service
+   ========================== */
+   .banner_service_section {
+     height: auto;
+   }
+   .intro-section {
+    padding: 15px;
+   }
+   .intro-section .intro-subtitle {
+    font-size: 30px;
+   }
+   .intro-section .intro-title {
+    margin-top: 20px;
+    font-size: 30px;
+   }
+   .valeurs-section {
+    padding: 15px;
+    padding-top: 40px !important;
+    padding-bottom: 80px !important;
+   }
+   .valeurs-section .valeurs-title {
+     font-size: 30px;
+   }
+   .valeurs-section .swiper-pagination {
+     bottom: 0;
+     left: 0;
+     right: 0;
+     margin: auto;
+     text-align: center;
+   }
+   .bloc_differenciation {
+    padding: 15px;
+    padding-top: 40px !important;
+    padding-bottom: 80px !important;
+   }
+   .bloc_differenciation .valeurs-title {
+     font-size: 30px;
+   }
+   .bloc_differenciation .swiper-pagination {
+     bottom: 0;
+     left: 0;
+     right: 0;
+     margin: auto;
+     text-align: center;
+   }
+   .bloc_differenciation .swiper-slide p {
+    width: 100%;
+   }
+   .bloc_differenciation_top {
+     display: none;
+   }
+   .bloc_differenciation_bottom {
+    display: none;
+   }
 }
 
 /* Grands écrans (laptops / PC Windows) */
@@ -677,6 +772,52 @@ BANNER SECTION
     padding: 10px 29px;
     min-height: 54px;
   }
+
+  .faq_title_col {
+    height: auto;
+    background: none;
+   }
+   .faq_country-title {
+    font-size: 18px;
+   }
+   .faq_country-question {
+    font-size: 18px;
+    padding: 15px;
+   }
+ 
+   .faq_country-number {
+    font-size: 16px;
+    margin-right: 20px;
+    width: 25px;
+    height: 25px;
+   }
+ 
+   .faq_country-toggle {
+    font-size: 12px;
+    height: 25px;
+    width: 25px;
+   }
+ 
+   .faq_country-answer p {
+    font-size: 16px;
+   }
+ 
+   .faq-section .faq-title {
+    font-size: 28px;
+    line-height: 40px;
+   }
+ 
+   .section-title {
+    font-size: 24px;
+    line-height: 35px;
+   }
+ 
+   /* ===========================
+     Page service
+     ========================== */
+     .banner_service_section {
+       height: auto;
+     }
 
 }
 
