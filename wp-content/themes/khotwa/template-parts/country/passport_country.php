@@ -16,7 +16,7 @@ if ($image_passport) {
 <?php if ( $image_passport && $titre_section && $sous_titre_section && $button_text ) : ?>
 <section
   class="students-achievements position-relative text-center text-white py-5 overflow-visible"
-  style="background: #344D33 url('<?php echo get_template_directory_uri(); ?>/assets/img/pass-bg.png') no-repeat center top / cover;"
+  style="background: #344D33 url('<?php echo get_template_directory_uri(); ?>/assets/img/pass-bg.png') no-repeat center top / cover;z-index: 5;"
 >
   <div class="container-fluid px-0">
     <!-- Titre avec icônes -->

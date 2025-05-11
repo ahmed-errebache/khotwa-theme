@@ -15,7 +15,7 @@ $avion_url        = is_array($avion) && isset($avion['url'])        ? esc_url($a
 ?>
 
 <?php if ( $titre_section ): ?>
-<section class="why_choose_country py-5 text-white" style="background-color: <?php echo esc_attr($color_section); ?>; position: relative;">
+<section class="why_choose_country py-5 text-white" style="background-color: <?php echo esc_attr($color_section); ?>; position: relative;z-index: 2">
   <div class="container">
     <div class="row align-items-center">
 
