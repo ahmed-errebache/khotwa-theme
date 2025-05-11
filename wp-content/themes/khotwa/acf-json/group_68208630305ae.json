@@ -1,10 +1,10 @@
 {
-    "key": "group_68069c9354fab",
-    "title": "spécialisation section",
+    "key": "group_68208630305ae",
+    "title": "domaine section",
     "fields": [
         {
-            "key": "field_68069c95b92b0",
-            "label": "titre spécialisation section",
+            "key": "field_682086322ed4d",
+            "label": "titre specialisation section",
             "name": "titre_specialisation_section",
             "aria-label": "",
             "type": "text",
@@ -16,7 +16,7 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "تخصصات مختلفة فـ بولندا",
+            "default_value": "",
             "maxlength": "",
             "allow_in_bindings": 0,
             "placeholder": "",
@@ -24,8 +24,8 @@
             "append": ""
         },
         {
-            "key": "field_68069da1bd6a0",
-            "label": "sous titre spécialisation section",
+            "key": "field_682086802ed4e",
+            "label": "sous titre specialisation section",
             "name": "sous_titre_specialisation_section",
             "aria-label": "",
             "type": "text",
@@ -37,7 +37,7 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "كتسنّاك باش تبني مستقبلك",
+            "default_value": "",
             "maxlength": "",
             "allow_in_bindings": 0,
             "placeholder": "",
@@ -45,8 +45,8 @@
             "append": ""
         },
         {
-            "key": "field_68069dc2bd6a1",
-            "label": "image spécialisation section",
+            "key": "field_682086972ed4f",
+            "label": "image specialisation section",
             "name": "image_specialisation_section",
             "aria-label": "",
             "type": "image",
@@ -71,8 +71,8 @@
             "preview_size": "medium"
         },
         {
-            "key": "field_68069dd4bd6a2",
-            "label": "button spécialisation section",
+            "key": "field_682086b42ed50",
+            "label": "text button specialisation section",
             "name": "button_specialisation_section",
             "aria-label": "",
             "type": "text",
@@ -84,7 +84,7 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "استغل الفرصة وتسجل معنا دبا",
+            "default_value": "",
             "maxlength": "",
             "allow_in_bindings": 0,
             "placeholder": "",
@@ -110,5 +110,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1745264644
+    "modified": 1746962165
 }
