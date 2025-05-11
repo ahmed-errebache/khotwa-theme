@@ -129,7 +129,7 @@ $arrow_url         = esc_url( get_template_directory_uri() . '/assets/img/fleche
       <?php echo esc_attr($first_color); ?> -40%,
       <?php echo esc_attr($second_color); ?> 50%,
       <?php echo esc_attr($first_color); ?> 140%
-  );"
+  );z-index: 1"
 >
   <div class="container">
     <?php if( $title ): ?>
