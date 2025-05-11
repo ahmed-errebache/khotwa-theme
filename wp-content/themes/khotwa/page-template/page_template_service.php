@@ -10,12 +10,15 @@ get_header(); // Récupère le header.php du thème
 <?php get_template_part('template-parts/service/bloc_service_banner'); ?>
         </section>
 <!-- MAIN CONTENT -->
-<main>
+<main class="page-service">
 
         <?php
         // Affiche chaque section si elle est configurée dans ACF
             get_template_part('template-parts/service/bloc_valeurs_service');
             get_template_part('template-parts/service/bloc_differenciation_service');
+            get_template_part('template-parts/country/process_country');
+            get_template_part('template-parts/service/bloc_testimonials_service');
+            get_template_part('template-parts/service/bloc_first_step');
         ?>
 </div>
 

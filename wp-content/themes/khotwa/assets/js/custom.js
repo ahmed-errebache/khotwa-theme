@@ -153,6 +153,16 @@ $(document).ready(function() {
       new Swiper('.valeurs-swiper', {
         slidesPerView: 1,
         spaceBetween: 30,
+        loop: true,
+        speed: 800,              // durée de l’animation (ms)
+        effect: 'fade',          // type d’effet
+        fadeEffect: {
+          crossFade: true        // permet un fondu croisé
+        },
+        autoplay: {
+            delay: 5000,
+            disableOnInteraction: false
+        },
         navigation: {
           nextEl: '.swiper-button-next',
           prevEl: '.swiper-button-prev',
@@ -175,6 +185,16 @@ $(document).ready(function() {
       new Swiper('.bloc-differenciation-swiper', {
         slidesPerView: 1,
         spaceBetween: 30,
+        loop: true,
+        speed: 800,              // durée de l’animation (ms)
+        effect: 'fade',          // type d’effet
+        fadeEffect: {
+          crossFade: true        // permet un fondu croisé
+        },
+        autoplay: {
+            delay: 5000,
+            disableOnInteraction: false
+        },
         navigation: {
           nextEl: '.swiper-button-next',
           prevEl: '.swiper-button-prev',
@@ -194,5 +214,73 @@ $(document).ready(function() {
         },
       });
 
+
+    //   new Swiper('.testimonial_service_slider', {
+    //     // effect: 'coverflow',
+    //     slidesPerView: 3,
+    //     spaceBetween: 70,
+    //     // coverflowEffect: {
+    //     //   rotate: 0,
+    //     //   stretch: -20,
+    //     //   depth: 200,
+    //     //   modifier: 1,
+    //     //   slideShadows: false,
+    //     // },
+    //     slidesPerView: 'auto',      // largeur automatique selon le CSS
+    //     centeredSlides: true,       // centre toujours le slide actif
+    //     loop: true,
+    //     autoplay: {
+    //       delay: 5000,
+    //       disableOnInteraction: false,
+    //     },
+    //     navigation: {
+    //       nextEl: '.swiper-button-next',
+    //       prevEl: '.swiper-button-prev',
+    //     },
+    //     pagination: {
+    //       el: '.swiper-pagination',
+    //       clickable: true,
+    //     },
+    //     // breakpoints: {
+    //     //   576: {
+    //     //     slidesPerView: 1,
+    //     //   },
+    //     //   768: {
+    //     //     slidesPerView: 'auto',
+    //     //   }
+    //     // }
+    //   });
+
+    new Swiper(".testimonial_service_slider", {
+        effect: 'coverflow',
+        centeredSlides: true,    // ← important !
+        coverflowEffect: {
+          rotate: 0,
+          stretch: -20,
+          depth: 200,
+          modifier: 1,
+          slideShadows: false
+        },
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+        loop: true,
+        spaceBetween: 50,
+        autoplay: {
+          delay: 5000,
+          disableOnInteraction: false
+        },
+        speed: 800,
+        grabCursor: true,
+        slidesPerView: 3,        // 3 slides (prev / active / next)
+        breakpoints: {
+          320:  { slidesPerView: 1, centeredSlides: true },
+          576:  { slidesPerView: 1 },
+          768:  { slidesPerView: 1 },
+          992:  { slidesPerView: 3 }
+        }
+      });
+      
       
 });
