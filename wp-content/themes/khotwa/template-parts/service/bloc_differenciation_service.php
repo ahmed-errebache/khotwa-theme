@@ -26,9 +26,6 @@ $img_bloc_differenciation = is_array($bloc_differenciation_image) && isset($bloc
   <div class="bloc_differenciation_top">
       <img src="<?php echo get_template_directory_uri(); ?>/assets/img/iconSections.png" alt="Icon Top Right" class="testimonial-shape">
   </div>
-  <div class="bloc_differenciation_bottom">
-      <img src="<?php echo get_template_directory_uri(); ?>/assets/img/iconSections.png" alt="Icon Bottom Left" class="testimonial-shape">
-  </div>
   <div class="container">
   <div class="row">
     <div class="col-lg-6 mobile">

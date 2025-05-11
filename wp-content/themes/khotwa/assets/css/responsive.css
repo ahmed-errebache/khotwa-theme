@@ -735,9 +735,38 @@ BANNER SECTION
    .bloc_differenciation_top {
      display: none;
    }
-   .bloc_differenciation_bottom {
-    display: none;
+   .testimonial_service {
+    padding: 40px 0;
    }
+   .testimonial_service .testimonial-title {
+    padding: 10px;
+    font-size: 30px;
+    margin-bottom: 0;
+   }
+   .testimonial_service .testimonial-paragraph {
+    max-width: 100%;
+    padding: 15px;
+    font-size: 18px;
+   }
+
+   .bloc_first_step {
+    padding: 40px 20px;
+   }
+
+   .bloc_first_step .first_step-title, .bloc_first_step .first_step-title>p {
+     font-size: 30px;
+   }
+
+   .bloc_first_step p {
+     font-size: 20px;
+   }
+   .bloc_first_step .first_step-image {
+    margin-bottom: 30px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+   }
+   
 }
 
 /* Grands écrans (laptops / PC Windows) */
