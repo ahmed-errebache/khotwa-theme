@@ -1672,25 +1672,19 @@ div.wpforms-container-full button[type="submit"]:focus::after {
   top: calc(50% + 1rem);
   transform: rotate(270deg);
 }
-.process_country[dir="rtl"] .fleche-vt {
-  left: 6%;
-}
-.process_country[dir="ltr"] .fleche-vt {
-  right: 6%;
-}
-.process_country[dir="rtl"] .row1 .fleche-hz.reverse {
-  transform: rotate(0deg);
-}
-.process_country[dir="ltr"] .row1 .fleche-hz {
-  transform: rotate(180deg);
-}
-.process_country[dir="rtl"] .row2 .fleche-hz {
-  transform: rotate(180deg);
-}
-.process_country[dir="ltr"] .row2 .fleche-hz.reverse {
-  transform: rotate(0deg);
-}
+.process_country[dir="rtl"] .fleche-vt { left: 6%; }
+.process_country[dir="ltr"] .fleche-vt { right: 6%; }
+.process_country[dir="rtl"] .row1 .fleche-hz.reverse { transform: rotate(0deg); }
+.process_country[dir="ltr"] .row1 .fleche-hz { transform: rotate(180deg); }
+.process_country[dir="rtl"] .row2 .fleche-hz { transform: rotate(180deg); }
+.process_country[dir="ltr"] .row2 .fleche-hz.reverse { transform: rotate(0deg); }
 
+.process_country h5{
+  font-family: var(--font-primary);
+}
+.process_country p{
+  font-family: var(--font-secondary);
+}
 /* ================================
    process_country_mobile (Mobile <768px)
 ================================= */
@@ -1712,6 +1706,12 @@ div.wpforms-container-full button[type="submit"]:focus::after {
   text-align: center;
   color: #fff;
 }
+.process_country_mobile h5{
+  font-family: var(--font-primary);
+}
+.process_country_mobile p{
+  font-family: var(--font-secondary);
+}
 /* Icônes */
 .process_country_mobile .stage-img {
   display: block;
@@ -1730,6 +1730,9 @@ div.wpforms-container-full button[type="submit"]:focus::after {
   transform: rotate(270deg);
   width: 60%;
   max-width: 30%;
+}
+.process_country_mobile .btn-consultation {
+  margin-top: 30px;
 }
 /* === Mobile LTR Overrides === */
 .process_country_mobile[dir="ltr"] {
@@ -2019,7 +2022,9 @@ div.wpforms-container-full button[type="submit"]:focus::after {
   position: relative;
   z-index: 99 ;
 }
-
+.page-service {
+  
+}
 /* ==================================
     Bloc differenciation
   ================================= */
@@ -2112,295 +2117,192 @@ div.wpforms-container-full button[type="submit"]:focus::after {
     top: -6%;
     z-index: 99;
   }
-  .bloc_differenciation_bottom {
-    position: absolute;
-    left: 10%;
-    width: 120px;
-    height: 120px;
-    bottom: -6%;
-    z-index: 99;
+
+  /* ==============================
+      testimonial service
+  ===============================*/
+
+  .testimonial_service {
+    position: relative;
+    background: linear-gradient(to top, #FFFFFF 70%, #ECE5BD 100%);
+    padding: 80px 0;
+  }
+  
+  .testimonial_service .testimonial-title {
+    text-align: center;
+    font-family: var(--font-primary);
+    font-size: 40px;
+    font-weight: bold;
+    margin-bottom: 30px;
   }
 
-/* Responsive Styles */
-@media (max-width: 768px) {
-  .faq_title_col {
-    height: auto;
-    background: none;
-  }
-  .faq_country-title {
-    font-size: 18px;
-  }
-  .faq_country-question {
-    font-size: 18px;
-    padding: 15px;
-  }
-
-  .faq_country-number {
-    font-size: 16px;
-    margin-right: 20px;
-    width: 25px;
-    height: 25px;
-  }
-
-  .faq_country-toggle {
-    font-size: 12px;
-    height: 25px;
-    width: 25px;
-  }
-
-  .faq_country-answer p {
-    font-size: 16px;
-  }
-
-  .faq-section .faq-title {
-    font-size: 28px;
-    line-height: 40px;
-  }
-
-  .section-title {
-    font-size: 24px;
+  .testimonial_service .testimonial-paragraph {
+    text-align: center;
+    font-family: var(--font-primary);
+    font-weight: bold;
+    font-size: 20px;
     line-height: 35px;
+    max-width: 70%;
+    margin: auto;
   }
+
+  /* fixe une largeur de base pour que coverflow calcule bien */
+.testimonial_service_slider .swiper-slide {
+  width: 280px;
 }
 
-/* ======================================
-  ESTABLISHMENTS SECTION
-     ====================================== */
-.establishments-section {
-  width: 100vw; /* 100% de la largeur de la fenêtre */
-  margin: 0; /* pas de marge supplémentaire */
-  overflow: hidden; /* mais ici ça n’enlève que l’éventuel pixel résiduel */
-  display: flex;
-  flex-direction: column;
-  height: 45rem; /* 15rem + 30rem */
-  background: #fff;
+/* optionnel : zoom supplémentaire sur le slide actif */
+.testimonial_service_slider .swiper-slide-active {
+  transform: scale(1.1);
+  transition: transform 0.3s;
 }
-.establishments-section .top-section {
-  position: relative;
-  width: 100%;
-  height: 15rem;
-  background: linear-gradient(to top, #fff 0%, #ece5bd 100%);
-  z-index: 1;
+/* par défaut tous masqués */
+.testimonial_service_slider .swiper-slide {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s;
 }
-.establishments-section .top-bg-img {
+
+/* n’afficher que prev, active et next */
+.testimonial_service_slider .swiper-slide-prev,
+.testimonial_service_slider .swiper-slide-active,
+.testimonial_service_slider .swiper-slide-next {
+  opacity: 1;
+  pointer-events: auto;
+}
+.testimonial_service_slider .swiper_btn {
+  width: 50px;
+  height: 50px;
+  border: 1px solid #ccc;
+  background-color: transparent;
+  color: #a99d9d;
+  transition: all 0.3s ease;
+  outline: none;
+  border-radius: 50%;
+}
+
+/* n’afficher que prev, active et next */
+.testimonial_service_slider .swiper-button-next.btn-next {
+  top: auto;
+  bottom: 20px;
+  left: 0%;
+}
+.testimonial_service_slider .swiper-button-prev.btn-prev {
+  left: 5%;
+  right: auto;
+  top: auto;
+  bottom: 20px;
+}
+.testimonial_service_slider[dir="ltr"] .swiper-button-next.btn-next {
+  left: auto;
+  right: 0;
+}
+.testimonial_service_slider[dir="ltr"] .swiper-button-prev.btn-prev {
+  left: auto;
+  right: 5%;
+}
+.testimonial_service_slider .swiper-button-next:after,.testimonial-section .swiper-button-prev:after {
+  font-size: 20px;
+  color: #a99d9d;
+}
+.testimonial_service_slider .swiper_btn {
+  width: 50px;
+  height: 50px;
+  border: 1px solid #ccc;
+  background-color: transparent;
+  color: #a99d9d;
+  transition: all 0.3s ease;
+  outline: none;
+  border-radius: 50%;
+}
+
+.testimonial_service_slider .swiper_btn::after {
+  font-size: 20px;
+  color: #a99d9d;
+  transition: color 0.3s ease;
+}
+
+.testimonial_service_slider .swiper_btn:hover,
+.testimonial_service_slider .swiper_btn:focus,
+.testimonial_service_slider .swiper_btn:active {
+  border-color: var(--color-rouge);
+  background-color: #ffffff;
+  color: var(--color-rouge);
+}
+
+.testimonial_service_slider .swiper_btn:hover::after,
+.testimonial_service_slider .swiper_btn:focus::after,
+.testimonial_service_slider .swiper_btn:active::after {
+  color: var(--color-rouge);
+}
+
+.testimonial_service_slider .swiper_btn.swiper-button-disabled,
+.testimonial_service_slider .swiper_btn.swiper-button-disabled::after {
+  opacity: 0.4;
+  cursor: not-allowed;
+  color: #aaa;
+  border-color: #ddd;
+}
+
+.testimonial_service_slider .play-btn {
   position: absolute;
-  bottom: 30%;
-  left: 30%;
   transform: translateX(-50%);
-  width: 30%;
-  height: auto;
+  font-size: 4rem;
+  color: #fff;
+  width: 50px;
+  height: 50px;
+  left: 15%;
+  top: 40%;
+  margin: 0 auto;
+  right: 0;
+  cursor: pointer;
+  transition: color 0.3s ease;
 }
-.bottom-section {
-  height: 30rem;
+.testimonial_service_slider .play-btn:hover {
+  color: var(--color-rouge);
 }
-.bottom-desktop .container,
-.bottom-desktop .row {
-  height: 100%;
-  align-items: center;
+.bloc_first_step {
+  padding: 40px 0 0 0;
 }
-.pic-esta {
-  position: absolute;
-  left: 20%;
-  bottom: -9rem;
-  width: 80%;
-  height: auto;
+.rtl_firststep_service.bloc_first_step {
+  direction: ltr;
 }
-.esta-left {
-  z-index: 5;
+.ltr_firststep_service.bloc_first_step {
+  direction: rtl;
 }
-.esta-right {
-  align-items: center;
-  margin-top: -10%;
-  width: 43%;
-  z-index: 5;
+
+.rtl_firststep_service .first_step-title {
+  text-align: right;
 }
-.esta-right ul {
-  margin-top: 10%;
-  width: 63%;
+.rtl_firststep_service p {
+  text-align: right;
 }
-.section-title {
+.rtl_firststep_service .swiper-slide {
+  text-align: right;
+}
+.ltr_firststep_service .swiper-slide {
+  text-align: left;
+}
+
+.bloc_first_step .first_step-title,.bloc_first_step .first_step-title>p {
+  font-size: 40px;
   font-family: var(--font-primary);
-  font-size: 44px;
-  color: var(--text-color-marron);
-  margin: 0 0 3rem;
+  font-weight: bold;
 }
-.icon-img {
-  width: 24px;
-  height: auto;
-}
-.bottom-desktop ul li span {
-  font-family: var(--font-sub-title);
-  font-size: 24px;
-}
-@media (min-width: 768px) {
-  #establishments[dir="ltr"] .top-bg-img {
-    left: 70% !important;
-    transform: translateX(-50%);
-  }
+.bloc_first_step p{
+  font-size: 34px;
+  font-family: var(--font-secondary);
+  font-weight: bold;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* ======================================
-     Stat Section — common RTL defaults
-     ====================================== */
-     #stats-section {
-      position: relative;
-      direction: rtl;
-      background:
-        url('/wp-content/themes/khotwa/assets/img/stats_bg.png') center/cover no-repeat,
-        #000;
-      min-height: 700px;
-      width: 100%;
-      color: #fff;
-      z-index: 2;
-    }
-  
-    /* Icône rouge top-right */
-    #stats-section .stats-icon {
-      position: absolute;
-      top: -5%;
-      right: 1%;
-      width: 10%;
-      height: auto;
-    }
-  
-    /* Titre centré */
-    #stats-section .stats-title {
-      position: absolute;
-      top: 1%;
-      left: 50%;
-      transform: translateX(-50%);
-      margin-top: 2%;
-      font-family: var(--font-sub-title);
-      font-size: 41px;
-      font-weight: bold;
-      white-space: nowrap;
-    }
-  
-    /* Blocs statistiques */
-    #stats-section .stat {
-      position: absolute;
-      text-align: center;
-      width: 20%;
-    }
-    #stats-section .stat .stat-number {
-      font-size: 60px;
-      font-weight: bold;
-    }
-    #stats-section .stat .stat-label {
-      font-size: 22px;
-      font-family: var(--font-sub-title);
-      font-weight: bold;
-      opacity: 0.85;
-    }
-  
-    /* Positions des stats (RTL) */
-    #stats-section .stat-top-left    { top: 20%;  left: 20%;  }
-    #stats-section .stat-top-right   { top: 20%;  right:20%;  }
-    #stats-section .stat-bottom-left { bottom:45%; left:10%; }
-    #stats-section .stat-bottom-right{ bottom:45%; right:10%; }
-  
-    /* Bouton bottom-center */
-    #stats-section .stats-cta {
-      position: absolute;
-      bottom: -4%;
-      font-size: 20px;
-      width: 60%;
-      left: 50%;
-      transform: translateX(-50%);
-      white-space: nowrap;
-    }
-  
-    /* ======================================
-       LTR override — identical values, swapped
-       ====================================== */
-    #stats-section[dir="ltr"] {
-      direction: ltr;
-    }
-    #stats-section[dir="ltr"] .stats-icon {
-      right: auto;
-      left: 1%;
-    }
-    #stats-section[dir="ltr"] .stat-top-left {
-      left: auto;
-      right: 20%;
-    }
-    #stats-section[dir="ltr"] .stat-top-right {
-      right: auto;
-      left: 20%;
-    }
-    #stats-section[dir="ltr"] .stat-bottom-left {
-      left: auto;
-      right: 10%;
-    }
-    #stats-section[dir="ltr"] .stat-bottom-right {
-      right: auto;
-      left: 10%;
-    }
-  
-    /* ======================================
-       Mobile overrides (≤767px)
-       ====================================== */
-    @media (max-width: 767px) {
-      /* swap background to testpic */
-      #stats-section {
-        background:
-          url('/wp-content/themes/khotwa/assets/img/testpic.png') center/cover no-repeat,
-          #000;
-        min-height: 400px;
-      }
-      /* hide the red icon */
-      #stats-section .stats-icon {
-        display: none;
-      }
-      /* smaller title */
-      #stats-section .stats-title {
-        font-size: 23px;
-        margin-top: 10%;
-      }
-      /* smaller numbers */
-      #stats-section .stat .stat-number {
-        font-size: 35px;
-      }
-      /* smaller labels */
-      #stats-section .stat .stat-label {
-        font-size: 7px;
-      }
-      #stats-section .stat-top-left    { top: 25%;  left: 15%;  }
-      #stats-section .stat-top-right   { top: 25%;  right:15%;  }
-      #stats-section[dir="ltr"] .stat-top-left {
-        left: auto;
-        right: 15%;
-      }
-      #stats-section[dir="ltr"] .stat-top-right {
-        right: auto;
-        left: 15%;
-      }
-      #stats-section .stat-bottom-left { bottom:40%; left:5%; }
-      #stats-section .stat-bottom-right{ bottom:40%; right:5%; }
-      #stats-section[dir="ltr"] .stat-bottom-left {
-        left: auto;
-        right: 5%;
-      }
-      #stats-section[dir="ltr"] .stat-bottom-right {
-        right: auto;
-        left: 5%;
-      }
-      #stats-section .stats-cta{
-        bottom: -5%;
-        min-height: 8%;
-      }
-    }
+.rtl_firststep_service .first_step-content {
+  text-align: right;
+}
+.ltr_firststep_service .first_step-content{
+  text-align: left;
+} 
+.bloc_first_step .first_step-image {
+  background-image: url(/wp-content/themes/khotwa/assets/img/bg_first_step.png);
+  background-position: 45% 5%;
+  background-repeat: no-repeat;
+}
