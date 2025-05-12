@@ -30,6 +30,7 @@ $(document).ready(function() {
     navbarCollapse.on('click', function(event) {
         event.stopPropagation();
     });
+    
 
     // video modal
     $(document).on('click', '.video-trigger', function (e) {
@@ -281,6 +282,33 @@ $(document).ready(function() {
           992:  { slidesPerView: 3 }
         }
       });
+
+    //  submenu mobile
+    $('.navbar-menu').on('click', '.menu-item-has-children > a', function(e){
+        e.preventDefault();
+        var $item = $(this).parent();
+    
+        if (!$item.hasClass('open')) {
+          // fermer les autres
+          $item
+            .siblings('.open')
+            .removeClass('open')
+            .children('.sub-menu')
+            .slideUp(300);
+          // ouvrir celui-ci
+          $item
+            .addClass('open')
+            .children('.sub-menu')
+            .slideDown(300);
+        } else {
+          // fermer si déjà ouvert
+          $item
+            .removeClass('open')
+            .children('.sub-menu')
+            .slideUp(300);
+        }
+      });
+    
       
       
 });
