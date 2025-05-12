@@ -2287,6 +2287,157 @@ div.wpforms-container-full button[type="submit"]:focus::after {
   transition: opacity 0.3s;
 }
 
+/* ======================================
+     Stat Section — common RTL defaults
+     ====================================== */
+     #stats-section {
+      position: relative;
+      direction: rtl;
+      background:
+        url('/wp-content/themes/khotwa/assets/img/stats_bg.png') center/cover no-repeat,
+        #000;
+      min-height: 700px;
+      width: 100%;
+      color: #fff;
+      z-index: 2;
+    }
+  
+    /* Icône rouge top-right */
+    #stats-section .stats-icon {
+      position: absolute;
+      top: -5%;
+      right: 1%;
+      width: 10%;
+      height: auto;
+    }
+  
+    /* Titre centré */
+    #stats-section .stats-title {
+      position: absolute;
+      top: 1%;
+      left: 50%;
+      transform: translateX(-50%);
+      margin-top: 2%;
+      font-family: var(--font-sub-title);
+      font-size: 41px;
+      font-weight: bold;
+      white-space: nowrap;
+    }
+  
+    /* Blocs statistiques */
+    #stats-section .stat {
+      position: absolute;
+      text-align: center;
+      width: 20%;
+    }
+    #stats-section .stat .stat-number {
+      font-size: 60px;
+      font-weight: bold;
+    }
+    #stats-section .stat .stat-label {
+      font-size: 22px;
+      font-family: var(--font-sub-title);
+      font-weight: bold;
+      opacity: 0.85;
+    }
+  
+    /* Positions des stats (RTL) */
+    #stats-section .stat-top-left    { top: 20%;  left: 20%;  }
+    #stats-section .stat-top-right   { top: 20%;  right:20%;  }
+    #stats-section .stat-bottom-left { bottom:45%; left:10%; }
+    #stats-section .stat-bottom-right{ bottom:45%; right:10%; }
+  
+    /* Bouton bottom-center */
+    #stats-section .stats-cta {
+      position: absolute;
+      bottom: -4%;
+      font-size: 20px;
+      width: 60%;
+      left: 50%;
+      transform: translateX(-50%);
+      white-space: nowrap;
+    }
+  
+    /* ======================================
+       LTR override — identical values, swapped
+       ====================================== */
+    #stats-section[dir="ltr"] {
+      direction: ltr;
+    }
+    #stats-section[dir="ltr"] .stats-icon {
+      right: auto;
+      left: 1%;
+    }
+    #stats-section[dir="ltr"] .stat-top-left {
+      left: auto;
+      right: 20%;
+    }
+    #stats-section[dir="ltr"] .stat-top-right {
+      right: auto;
+      left: 20%;
+    }
+    #stats-section[dir="ltr"] .stat-bottom-left {
+      left: auto;
+      right: 10%;
+    }
+    #stats-section[dir="ltr"] .stat-bottom-right {
+      right: auto;
+      left: 10%;
+    }
+  
+    /* ======================================
+       Mobile overrides (≤767px)
+       ====================================== */
+    @media (max-width: 767px) {
+      /* swap background to testpic */
+      #stats-section {
+        background:
+          url('/wp-content/themes/khotwa/assets/img/testpic.png') center/cover no-repeat,
+          #000;
+        min-height: 400px;
+      }
+      /* hide the red icon */
+      #stats-section .stats-icon {
+        display: none;
+      }
+      /* smaller title */
+      #stats-section .stats-title {
+        font-size: 23px;
+        margin-top: 10%;
+      }
+      /* smaller numbers */
+      #stats-section .stat .stat-number {
+        font-size: 35px;
+      }
+      /* smaller labels */
+      #stats-section .stat .stat-label {
+        font-size: 7px;
+      }
+      #stats-section .stat-top-left    { top: 25%;  left: 15%;  }
+      #stats-section .stat-top-right   { top: 25%;  right:15%;  }
+      #stats-section[dir="ltr"] .stat-top-left {
+        left: auto;
+        right: 15%;
+      }
+      #stats-section[dir="ltr"] .stat-top-right {
+        right: auto;
+        left: 15%;
+      }
+      #stats-section .stat-bottom-left { bottom:40%; left:5%; }
+      #stats-section .stat-bottom-right{ bottom:40%; right:5%; }
+      #stats-section[dir="ltr"] .stat-bottom-left {
+        left: auto;
+        right: 5%;
+      }
+      #stats-section[dir="ltr"] .stat-bottom-right {
+        right: auto;
+        left: 5%;
+      }
+      #stats-section .stats-cta{
+        bottom: -5%;
+        min-height: 8%;
+      }
+    }
 /* n’afficher que prev, active et next */
 .testimonial_service_slider .swiper-slide-prev,
 .testimonial_service_slider .swiper-slide-active,
