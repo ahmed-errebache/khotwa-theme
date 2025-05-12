@@ -2032,6 +2032,7 @@ div.wpforms-container-full button[type="submit"]:focus::after {
   #establishments[dir="ltr"] .top-bg-img {
     left: 70% !important;
     transform: translateX(-50%);
+  }
 /* ==================================
   Page Service
   ================================== */
@@ -2580,4 +2581,4 @@ div.wpforms-container-full button[type="submit"]:focus::after {
   background-image: url(/wp-content/themes/khotwa/assets/img/bg_first_step.png);
   background-position: 45% 5%;
   background-repeat: no-repeat;
-}
+}}
