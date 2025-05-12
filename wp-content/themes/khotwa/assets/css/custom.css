@@ -1907,7 +1907,122 @@ div.wpforms-container-full button[type="submit"]:focus::after {
 .faq-section.ltr_faq .faq-main {
   background-position: 10% 50%;
 }
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .faq_title_col {
+    height: auto;
+    background: none;
+  }
+  .faq_country-title {
+    font-size: 18px;
+  }
+  .faq_country-question {
+    font-size: 18px;
+    padding: 15px;
+  }
 
+  .faq_country-number {
+    font-size: 16px;
+    margin-right: 20px;
+    width: 25px;
+    height: 25px;
+  }
+
+  .faq_country-toggle {
+    font-size: 12px;
+    height: 25px;
+    width: 25px;
+  }
+
+  .faq_country-answer p {
+    font-size: 16px;
+  }
+
+  .faq-section .faq-title {
+    font-size: 28px;
+    line-height: 40px;
+  }
+
+  .section-title {
+    font-size: 24px;
+    line-height: 35px;
+  }
+}
+
+/* ======================================
+  ESTABLISHMENTS SECTION
+     ====================================== */
+.establishments-section {
+  width: 100vw; /* 100% de la largeur de la fenêtre */
+  margin: 0; /* pas de marge supplémentaire */
+  overflow: hidden; /* mais ici ça n’enlève que l’éventuel pixel résiduel */
+  display: flex;
+  flex-direction: column;
+  height: 45rem; /* 15rem + 30rem */
+  background: #fff;
+}
+.establishments-section .top-section {
+  position: relative;
+  width: 100%;
+  height: 15rem;
+  background: linear-gradient(to top, #fff 0%, #ece5bd 100%);
+  z-index: 1;
+}
+.establishments-section .top-bg-img {
+  position: absolute;
+  bottom: 30%;
+  left: 30%;
+  transform: translateX(-50%);
+  width: 30%;
+  height: auto;
+}
+.bottom-section {
+  height: 30rem;
+}
+.bottom-desktop .container,
+.bottom-desktop .row {
+  height: 100%;
+  align-items: center;
+}
+.pic-esta {
+  position: absolute;
+  left: 20%;
+  bottom: -9rem;
+  width: 80%;
+  height: auto;
+}
+.esta-left {
+  z-index: 5;
+}
+.esta-right {
+  align-items: center;
+  margin-top: -10%;
+  width: 43%;
+  z-index: 5;
+}
+.esta-right ul {
+  margin-top: 10%;
+  width: 63%;
+}
+.section-title {
+  font-family: var(--font-primary);
+  font-size: 44px;
+  color: var(--text-color-marron);
+  margin: 0 0 3rem;
+}
+.icon-img {
+  width: 24px;
+  height: auto;
+}
+.bottom-desktop ul li span {
+  font-family: var(--font-sub-title);
+  font-size: 24px;
+}
+@media (min-width: 768px) {
+  #establishments[dir="ltr"] .top-bg-img {
+    left: 70% !important;
+    transform: translateX(-50%);
+  }
 /* ==================================
   Page Service
   ================================== */
@@ -2305,4 +2420,4 @@ div.wpforms-container-full button[type="submit"]:focus::after {
   background-image: url(/wp-content/themes/khotwa/assets/img/bg_first_step.png);
   background-position: 45% 5%;
   background-repeat: no-repeat;
-}
+}}
