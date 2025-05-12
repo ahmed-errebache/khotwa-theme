@@ -731,6 +731,49 @@ BANNER SECTION
     background-position: center;
     background-size: contain;
    }
+
+   /* Sub Menu Mobile */
+   .navbar-menu .sub-menu {
+    display: none;
+    padding-left: 1rem;
+    position: relative;
+    left: 0;
+    top: 0;
+  }
+  .navbar-menu li {
+    display: inline-grid;
+  }
+  .navbar-menu li.menu-item-has-children > a {
+    position: relative;
+  }
+  .navbar-menu .sub-menu li a {
+    color: #70021c;
+  }
+  /* .navbar-menu li.menu-item-has-children > a::after {
+    content: '+';
+    position: absolute;
+    right: 1rem;
+    font-size: 1.2em;
+    transition: transform .3s;
+  } */
+  /* .navbar-menu li.menu-item-has-children.open > a::after {
+    content: '-';
+  } */
+  .navbar-menu li.menu-item-has-children.open > .sub-menu {
+    display: block;
+  }
+  .ltr .navbar-menu .sub-menu {
+    left: 0;
+    text-align: left;
+  }
+  .rtl .navbar-menu .sub-menu {
+    right: 0;
+    text-align: right;
+  }
+  .navbar-menu .sub-menu {
+    box-shadow: none;
+    padding: 10px;
+  }
    
 }
 

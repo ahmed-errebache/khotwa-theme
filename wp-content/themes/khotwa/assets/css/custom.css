@@ -2018,10 +2018,7 @@ div.wpforms-container-full button[type="submit"]:focus::after {
   font-family: var(--font-sub-title);
   font-size: 24px;
 }
-@media (min-width: 768px) {
-  #establishments[dir="ltr"] .top-bg-img {
-    left: 70% !important;
-    transform: translateX(-50%);
+
   }
 /* ==================================
   Page Service
@@ -2420,4 +2417,87 @@ div.wpforms-container-full button[type="submit"]:focus::after {
   background-image: url(/wp-content/themes/khotwa/assets/img/bg_first_step.png);
   background-position: 45% 5%;
   background-repeat: no-repeat;
-}}
+}
+
+
+/* Ajout d’une flèche ↓ sur les items parent */
+.navbar-menu .menu-item-has-children > a::after {
+  content: '\25BC';
+  display: inline-block;
+  font-size: 0.6em;
+  transition: transform 0.3s ease;
+}
+.rtl .navbar-menu .menu-item-has-children > a::after {
+  margin-right: 0.5em;
+}
+.ltr .navbar-menu .menu-item-has-children > a::after  {
+  margin-left: 0.5em;
+}
+/* ================================
+   Sous-menu (masqué par défaut)
+   ================================ */
+.navbar-menu .sub-menu {
+  display: none;           
+  position: absolute;      
+  top: 100%;               
+  background: #fff;        
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  min-width: 160px;       
+  z-index: 1000;
+  padding: 0;
+  text-align: center;
+}
+.ltr .navbar-menu .sub-menu {
+  left: -20%;  
+}
+.rtl .navbar-menu .sub-menu {
+   right: -60%;
+}
+.navbar-menu .sub-menu li {
+  border-bottom: 2px solid transparent;
+  transition: border-color 0.3s;
+  display: block;
+}
+.navbar-menu .sub-menu li a {
+  display: block;
+  padding: 0.5rem 1rem;
+  color: #333;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+.navbar-menu .sub-menu li:hover {
+  border-bottom-color: #e53e3e;
+}
+.navbar-menu .sub-menu li:hover > a {
+  color: #e53e3e;
+}
+
+
+/* ================================
+   Affichage au survol (desktop)
+   ================================ */
+@media (hover: hover) {
+  .navbar-menu li.menu-item-has-children:hover > .sub-menu {
+    display: block;
+  }
+}
+
+/* Rotation de la flèche au hover */
+@media (hover: hover) {
+  .navbar-menu li.menu-item-has-children:hover > a::after {
+    transform: rotate(180deg);
+  }
+}
+
+/* ================================
+   Affichage via JS (mobile)
+   ================================ */
+/* Lorsque ton JS ajoute la classe .open sur le <li> parent */
+.navbar-menu li.menu-item-has-children.open > .sub-menu {
+  display: block; /* on override le display: none */
+}
+
+/* Et on fait aussi pivoter la flèche */
+.navbar-menu li.menu-item-has-children.open > a::after {
+  transform: rotate(180deg);
+}
