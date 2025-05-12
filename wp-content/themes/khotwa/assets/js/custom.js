@@ -30,6 +30,7 @@ $(document).ready(function() {
     navbarCollapse.on('click', function(event) {
         event.stopPropagation();
     });
+    
 
     // video modal
     $(document).on('click', '.video-trigger', function (e) {
@@ -128,4 +129,186 @@ $(document).ready(function() {
         duration: 800,       // Durée de chaque animation (ms)
         easing: 'ease-out',  // Animation fluide
       });
+
+      // FAQ accordion
+      $('.faq_country-question').on('click', function() {
+       var $item = $(this).closest('.faq_country-item');
+       var $answer = $item.find('.faq_country-answer');
+       var $toggle = $(this).find('.faq_country-toggle');
+        
+       // Fermer tous les autres
+       $('.faq_country-answer').not($answer).slideUp();
+       $('.faq_country-toggle').not($toggle).text('+').removeClass('minus').addClass('plus');
+        
+       // Toggle actuel
+       if ($answer.is(':visible')) {
+           $answer.slideUp();
+           $toggle.text('+').removeClass('minus').addClass('plus');
+       } else {
+           $answer.slideDown();
+           $toggle.text('−').removeClass('plus').addClass('minus');
+       }
+      });
+
+    // slide page service
+      new Swiper('.valeurs-swiper', {
+        slidesPerView: 1,
+        spaceBetween: 30,
+        loop: true,
+        speed: 800,              // durée de l’animation (ms)
+        effect: 'fade',          // type d’effet
+        fadeEffect: {
+          crossFade: true        // permet un fondu croisé
+        },
+        autoplay: {
+            delay: 5000,
+            disableOnInteraction: false
+        },
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+        pagination: {
+          el: '.swiper-pagination', 
+          clickable: true     
+        },
+        breakpoints: {
+            768: {
+                slidesPerView: 1,
+                pagination : {
+                    el: '.swiper-pagination',
+                    clickable: true
+                }
+            }
+        },
+      });
+
+      new Swiper('.bloc-differenciation-swiper', {
+        slidesPerView: 1,
+        spaceBetween: 30,
+        loop: true,
+        speed: 800,              // durée de l’animation (ms)
+        effect: 'fade',          // type d’effet
+        fadeEffect: {
+          crossFade: true        // permet un fondu croisé
+        },
+        autoplay: {
+            delay: 5000,
+            disableOnInteraction: false
+        },
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+        pagination: {
+          el: '.swiper-pagination', 
+          clickable: true     
+        },
+        breakpoints: {
+            768: {
+                slidesPerView: 1,
+                pagination : {
+                    el: '.swiper-pagination',
+                    clickable: true
+                }
+            }
+        },
+      });
+
+
+    //   new Swiper('.testimonial_service_slider', {
+    //     // effect: 'coverflow',
+    //     slidesPerView: 3,
+    //     spaceBetween: 70,
+    //     // coverflowEffect: {
+    //     //   rotate: 0,
+    //     //   stretch: -20,
+    //     //   depth: 200,
+    //     //   modifier: 1,
+    //     //   slideShadows: false,
+    //     // },
+    //     slidesPerView: 'auto',      // largeur automatique selon le CSS
+    //     centeredSlides: true,       // centre toujours le slide actif
+    //     loop: true,
+    //     autoplay: {
+    //       delay: 5000,
+    //       disableOnInteraction: false,
+    //     },
+    //     navigation: {
+    //       nextEl: '.swiper-button-next',
+    //       prevEl: '.swiper-button-prev',
+    //     },
+    //     pagination: {
+    //       el: '.swiper-pagination',
+    //       clickable: true,
+    //     },
+    //     // breakpoints: {
+    //     //   576: {
+    //     //     slidesPerView: 1,
+    //     //   },
+    //     //   768: {
+    //     //     slidesPerView: 'auto',
+    //     //   }
+    //     // }
+    //   });
+
+    new Swiper(".testimonial_service_slider", {
+        effect: 'coverflow',
+        centeredSlides: true,    // ← important !
+        coverflowEffect: {
+          rotate: 0,
+          stretch: -20,
+          depth: 200,
+          modifier: 1,
+          slideShadows: false
+        },
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+        loop: true,
+        spaceBetween: 50,
+        autoplay: {
+          delay: 5000,
+          disableOnInteraction: false
+        },
+        speed: 800,
+        grabCursor: true,
+        slidesPerView: 3,        // 3 slides (prev / active / next)
+        breakpoints: {
+          320:  { slidesPerView: 1, centeredSlides: true },
+          576:  { slidesPerView: 1 },
+          768:  { slidesPerView: 1 },
+          992:  { slidesPerView: 3 }
+        }
+      });
+
+    //  submenu mobile
+    $('.navbar-menu').on('click', '.menu-item-has-children > a', function(e){
+        e.preventDefault();
+        var $item = $(this).parent();
+    
+        if (!$item.hasClass('open')) {
+          // fermer les autres
+          $item
+            .siblings('.open')
+            .removeClass('open')
+            .children('.sub-menu')
+            .slideUp(300);
+          // ouvrir celui-ci
+          $item
+            .addClass('open')
+            .children('.sub-menu')
+            .slideDown(300);
+        } else {
+          // fermer si déjà ouvert
+          $item
+            .removeClass('open')
+            .children('.sub-menu')
+            .slideUp(300);
+        }
+      });
+    
+      
+      
 });
