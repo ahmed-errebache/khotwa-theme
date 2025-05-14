@@ -1550,6 +1550,7 @@ div.wpforms-container-full button[type="submit"]:focus::after {
   outline: none !important;
   border: none !important;
 }
+
 /* ===============================
    why_choose_country
 =============================== */
@@ -1962,13 +1963,14 @@ div.wpforms-container-full button[type="submit"]:focus::after {
 /* ======================================
   ESTABLISHMENTS SECTION
      ====================================== */
+/* ajoutez cette règle à votre fichier CSS */
 .establishments-section {
-  width: 100vw; /* 100% de la largeur de la fenêtre */
-  margin: 0; /* pas de marge supplémentaire */
-  overflow: hidden; /* mais ici ça n’enlève que l’éventuel pixel résiduel */
+  width: 100vw; 
+  margin: 0; 
+  overflow: hidden; 
   display: flex;
   flex-direction: column;
-  height: 45rem; /* 15rem + 30rem */
+  height: 55rem; 
   background: #fff;
 }
 .establishments-section .top-section {
@@ -1987,7 +1989,7 @@ div.wpforms-container-full button[type="submit"]:focus::after {
   height: auto;
 }
 .bottom-section {
-  height: 30rem;
+  height: auto;
 }
 .bottom-desktop .container,
 .bottom-desktop .row {
@@ -1998,21 +2000,21 @@ div.wpforms-container-full button[type="submit"]:focus::after {
   position: absolute;
   left: 20%;
   bottom: -9rem;
-  width: 80%;
+  width: 90%;
   height: auto;
 }
 .esta-left {
+  margin-top: 10rem;
   z-index: 5;
 }
 .esta-right {
   align-items: center;
-  margin-top: -10%;
+  margin-top: -5%;
   width: 43%;
   z-index: 5;
 }
 .esta-right ul {
-  margin-top: 10%;
-  width: 63%;
+  width: 80%;
 }
 .section-title {
   font-family: var(--font-primary);
@@ -2021,12 +2023,14 @@ div.wpforms-container-full button[type="submit"]:focus::after {
   margin: 0 0 3rem;
 }
 .icon-img {
+  margin-top: 5px;
   width: 24px;
   height: auto;
 }
 .bottom-desktop ul li span {
   font-family: var(--font-sub-title);
-  font-size: 24px;
+  font-size: 34px;
+  margin-bottom: -2rem;
 }
 @media (min-width: 768px) {
   #establishments[dir="ltr"] .top-bg-img {

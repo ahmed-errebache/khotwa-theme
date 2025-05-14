@@ -892,6 +892,7 @@ BANNER SECTION
        height: auto;
      }
 }
+
 /* ======================================
   ESTABLISHMENTS SECTION
 ====================================== */
@@ -927,6 +928,7 @@ BANNER SECTION
   .bottom-mobile .section-title {
     font-size: 2rem;
     margin-bottom: 1.5rem;
+    line-height: 1.5;
     text-align: center;
   }
 
@@ -943,14 +945,14 @@ BANNER SECTION
 
   /* liste centrée */
   .bottom-mobile ul {
-    width: 65%;
+    width: 70%;
     max-width: 320px;
     margin: 0 auto;
   }
   .bottom-mobile ul li {
     display: flex;
     align-items: start;
-    margin-bottom: 1rem;
+    margin-bottom: 0rem !important; 
   }
   .bottom-mobile .icon-img {
     margin-inline-start: 0.75rem;

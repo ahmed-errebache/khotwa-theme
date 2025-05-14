@@ -44,33 +44,43 @@ if ($est_img) {
         <!-- Right: dynamic title + repeater list -->
         <div class="col-md-6 d-flex flex-column justify-content-center ps-md-4 esta-right">
           <?php if ($title): ?>
-            <h2 class="section-title mb-4">
+            <h2 class="section-title mb-4" style="margin-bottom: 50px !important;line-height: 1.5;font-size: 45px;">
               <?php echo esc_html($title); ?>
             </h2>
           <?php endif; ?>
 
           <?php if ($rows): ?>
-          <ul class="list-unstyled">
-            <?php foreach ($rows as $row): 
-              $icon = $row['icon_list'];
-              $text = $row['test_list'];
-              $icon_url = is_array($icon) && isset($icon['url'])
-                          ? esc_url($icon['url'])
-                          : esc_url($icon);
-            ?>
-              <li class="d-flex align-items-start mb-3">
-                <?php if ($icon_url): ?>
-                  <img
-                    src="<?php echo $icon_url; ?>"
-                    alt=""
-                    class="icon-img me-2"
-                  >
-                <?php endif; ?>
-                <span><?php echo esc_html($text); ?></span>
-              </li>
-            <?php endforeach; ?>
-          </ul>
-          <?php endif; ?>
+<ul class="list-unstyled">
+  <?php 
+    $total = count($rows);
+    foreach ($rows as $index => $row): 
+      $icon    = $row['icon_list'];
+      $text    = $row['test_list'];
+      $icon_url = is_array($icon) && isset($icon['url'])
+                  ? esc_url($icon['url'])
+                  : esc_url($icon);
+  ?>
+    <li class="d-flex align-items-start mb-3">
+      <?php if ($icon_url): ?>
+        <img src="<?php echo $icon_url; ?>" alt="" class="icon-img me-2">
+      <?php endif; ?>
+      <span><?php echo esc_html($text); ?></span>
+    </li>
+
+    <?php
+      // Affiche le <hr> (ou image) uniquement si on n'est pas sur le dernier élément
+      if ($index < $total - 1): 
+    ?>
+      <img
+        src="<?php echo esc_url( get_template_directory_uri() . '/assets/img/hr.png' ); ?>"
+        alt=""
+      >
+    <?php endif; ?>
+
+  <?php endforeach; ?>
+</ul>
+<?php endif; ?>
+
         </div>
 
       </div>
@@ -92,27 +102,37 @@ if ($est_img) {
     <?php endif; ?>
 
     <?php if ($rows): ?>
-    <ul class="list-unstyled">
-      <?php foreach ($rows as $row): 
-        $icon = $row['icon_list'];
-        $text = $row['test_list'];
-        $icon_url = is_array($icon) && isset($icon['url'])
-                    ? esc_url($icon['url'])
-                    : esc_url($icon);
-      ?>
-        <li class="d-flex align-items-start mb-3">
-          <?php if ($icon_url): ?>
-            <img
-              src="<?php echo $icon_url; ?>"
-              alt=""
-              class="icon-img me-2"
-            >
-          <?php endif; ?>
-          <span><?php echo esc_html($text); ?></span>
-        </li>
-      <?php endforeach; ?>
-    </ul>
+<ul class="list-unstyled">
+  <?php 
+    $total = count($rows);
+    foreach ($rows as $index => $row): 
+      $icon    = $row['icon_list'];
+      $text    = $row['test_list'];
+      $icon_url = is_array($icon) && isset($icon['url'])
+                  ? esc_url($icon['url'])
+                  : esc_url($icon);
+  ?>
+    <li class="d-flex align-items-start mb-3">
+      <?php if ($icon_url): ?>
+        <img src="<?php echo $icon_url; ?>" alt="" class="icon-img me-2">
+      <?php endif; ?>
+      <span><?php echo esc_html($text); ?></span>
+    </li>
+
+    <?php
+      // Affiche le <hr> (ou image) uniquement si on n'est pas sur le dernier élément
+      if ($index < $total - 1): 
+    ?>
+      <img
+        src="<?php echo esc_url( get_template_directory_uri() . '/assets/img/hr.png' ); ?>"
+        alt=""
+      >
     <?php endif; ?>
+
+  <?php endforeach; ?>
+</ul>
+<?php endif; ?>
+
   </div>
 
 </section>
