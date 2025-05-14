@@ -3,7 +3,6 @@
 $bg_process_top = get_field('bg_banner_color_top') ?: '#800000';
 $bg_process_bottom = get_field('bg_banner_color_bottom') ?: '#330000';
 $titre_de_process = get_field('titre_de_process', false, false);
-$background_de_process = get_field('background_de_process');
 $process_repetetor     = get_field('process_repetetor');
 $text_button_process   = get_field('text_button_process');
 
@@ -12,15 +11,6 @@ if (!$titre_de_process) {
     $titre_de_process = 'كيف تبدأ رحلتك معنا في ثلاث خطوات ؟';
 }
 
-// Image de fond
-$default_bg = get_template_directory_uri() . '/assets/img/footer-red.png';
-if (is_array($background_de_process) && isset($background_de_process['url'])) {
-    $background_url = esc_url($background_de_process['url']);
-} elseif (!empty($background_de_process) && is_string($background_de_process)) {
-    $background_url = esc_url($background_de_process);
-} else {
-    $background_url = $default_bg;
-}
 ?>
 
 <style>
