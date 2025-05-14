@@ -2328,7 +2328,7 @@ div.wpforms-container-full button[type="submit"]:focus::after {
     #stats-section .stat {
       position: absolute;
       text-align: center;
-      width: 20%;
+      width: 25%;
     }
     #stats-section .stat .stat-number {
       font-size: 60px;
@@ -2342,8 +2342,8 @@ div.wpforms-container-full button[type="submit"]:focus::after {
     }
   
     /* Positions des stats (RTL) */
-    #stats-section .stat-top-left    { top: 20%;  left: 20%;  }
-    #stats-section .stat-top-right   { top: 20%;  right:20%;  }
+    #stats-section .stat-top-left    { top: 20%;  left: 15%;  }
+    #stats-section .stat-top-right   { top: 20%;  right:15%;  }
     #stats-section .stat-bottom-left { bottom:45%; left:10%; }
     #stats-section .stat-bottom-right{ bottom:45%; right:10%; }
   
