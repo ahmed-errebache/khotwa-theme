@@ -96,6 +96,7 @@
                             'container'      => false,
                             'menu_class'     => 'navbar-menu',
                             'fallback_cb'    => false,
+                            'walker'         => new Walker_Nav_Menu(),
                         ));
                         ?>
 
