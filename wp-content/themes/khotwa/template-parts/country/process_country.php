@@ -53,7 +53,7 @@ $arrow_url         = esc_url( get_template_directory_uri() . '/assets/img/fleche
             <?php if( $icon_url ): ?>
               <img src="<?php echo $icon_url; ?>" class="stage-img mb-3" alt="">
             <?php endif; ?>
-            <h5 class="fw-bold mb-1">
+            <h5 class="fw-bold mb-3">
               <?php echo esc_html( $item['titre_process_country_repetetor'] ); ?>
             </h5>
             <p class="small mb-0">
@@ -88,7 +88,7 @@ $arrow_url         = esc_url( get_template_directory_uri() . '/assets/img/fleche
             <?php if( $icon_url ): ?>
               <img src="<?php echo $icon_url; ?>" class="stage-img mb-3" alt="">
             <?php endif; ?>
-            <h5 class="fw-bold mb-1">
+            <h5 class="fw-bold mb-3">
               <?php echo esc_html( $item['titre_process_country_repetetor'] ); ?>
             </h5>
             <p class="small mb-0">
@@ -129,7 +129,7 @@ $arrow_url         = esc_url( get_template_directory_uri() . '/assets/img/fleche
       <?php echo esc_attr($first_color); ?> -40%,
       <?php echo esc_attr($second_color); ?> 50%,
       <?php echo esc_attr($first_color); ?> 140%
-  );"
+  );z-index: 1"
 >
   <div class="container">
     <?php if( $title ): ?>
@@ -160,7 +160,7 @@ $arrow_url         = esc_url( get_template_directory_uri() . '/assets/img/fleche
             <?php if( $icon1_url ): ?>
               <img src="<?php echo $icon1_url; ?>" class="stage-img mb-2" alt="">
             <?php endif; ?>
-            <h5 class="fw-bold mb-1">
+            <h5 class="fw-bold mb-3">
               <?php echo esc_html( $item1['titre_process_country_repetetor'] ); ?>
             </h5>
             <p class="small mb-0">
@@ -174,7 +174,7 @@ $arrow_url         = esc_url( get_template_directory_uri() . '/assets/img/fleche
             <?php if( $icon2_url ): ?>
               <img src="<?php echo $icon2_url; ?>" class="stage-img mb-2" alt="">
             <?php endif; ?>
-            <h5 class="fw-bold mb-1">
+            <h5 class="fw-bold mb-3">
               <?php echo esc_html( $item2['titre_process_country_repetetor'] ); ?>
             </h5>
             <p class="small mb-0">
