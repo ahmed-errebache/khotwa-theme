@@ -1,90 +1,103 @@
 <?php
-// Récupération des champs ACF
-$titre_section          = get_field('titre_section_');
-$benefits               = get_field('repetetor_why_choose_us_'); // repeater
-$maps                   = get_field('why_choose_us_maps');
-$icon_country           = get_field('why_choose_us_icon-country');
-$avion                  = get_field('why_choose_us_avion');
-$button_text            = get_field('why_choose_us_text_button');
-$color_section          = get_field('color_section') ?: '#FAA815';
+  $is_rtl           = is_rtl();
+  $current_language = substr( get_locale(), 0, 2 );
+  $direction_class  = ( $is_rtl && $current_language === 'ar' ) ? 'rtl_choose' : 'ltr_choose';
 
-// Construction des URLs d'images
-$maps_url         = is_array($maps) && isset($maps['url'])         ? esc_url($maps['url'])         : esc_url($maps);
-$icon_country_url = is_array($icon_country) && isset($icon_country['url']) ? esc_url($icon_country['url']) : esc_url($icon_country);
-$avion_url        = is_array($avion) && isset($avion['url'])        ? esc_url($avion['url'])        : esc_url($avion);
+  // Champs ACF
+  $titre_section = get_field('titre_section');
+  $benefits      = get_field('repetetor_why_choose_us_'); 
+  $maps          = get_field('why_choose_image');
+  $button_text   = get_field('why_choose_us_text_button');
+  $color_section = get_field('color_section') ?: '#FAA815';
+
+  $maps_url = is_array($maps) && isset($maps['url'])
+    ? esc_url($maps['url'])
+    : esc_url($maps);
 ?>
-
-<?php if ( $titre_section ): ?>
-<section class="why_choose_country py-5 text-white" style="background-color: <?php echo esc_attr($color_section); ?>; position: relative;z-index: 2">
+<section
+  class="why_choose_us py-5 <?php echo $direction_class; ?>"
+  style="background-color: <?php echo esc_attr($color_section); ?>;"
+  data-aos="fade-up"
+>
   <div class="container">
     <div class="row align-items-center">
 
-      <!-- Colonne gauche (2/5) -->
-      <div class="col-md-5 left-column mb-10">
+      <!-- Colonne gauche -->
+      <div class="col-lg-5">
+        <?php if ( $titre_section ): ?>
+          <h2
+            class="section-title fw-bold mb-5"
+            data-aos="fade-down"
+            data-aos-delay="200"
+          >
+            <?php echo wp_kses_post( $titre_section ); ?>
+          </h2>
+        <?php endif; ?>
 
-        <!-- Titre (desktop + mobile) -->
-        <h2 class="fw-bold mb-6">
-          <?php echo esc_html( $titre_section ); ?>
-        </h2>
+        <?php if ( $maps_url ): ?>
+          <img
+            src="<?php echo $maps_url; ?>"
+            alt="Carte"
+            class="img-fluid rounded mobile mb-4"
+            data-aos="fade-right"
+            data-aos-delay="300"
+          >
+        <?php endif; ?>
 
-        <!-- *** IMAGE-STACK MOBILE only *** -->
-        <div class="image-stack d-block d-md-none mb-4">
-          <?php if ( $maps_url ): ?>
-            <img src="<?php echo $maps_url; ?>" alt="Carte" class="maps">
-          <?php endif; ?>
-          <?php if ( $icon_country_url ): ?>
-            <img src="<?php echo $icon_country_url; ?>" alt="Icône pays" class="icon-country">
-          <?php endif; ?>
-          <?php if ( $avion_url ): ?>
-            <img src="<?php echo $avion_url; ?>" alt="Avion" class="plane">
-          <?php endif; ?>
-        </div>
-
-        <!-- Liste dynamique -->
         <?php if ( $benefits ): ?>
-        <ul class="list-unstyled">
-          <?php foreach ( $benefits as $item ):
-            $icon       = $item['icon_why_choose_us'];
-            $icon_url   = is_array($icon) && isset($icon['url'])
-                          ? esc_url($icon['url'])
-                          : esc_url($icon);
-            $text_benefit = $item['text_associe_a_licon'];
-          ?>
-          <li class="d-flex align-items-start mb-3">
-            <?php if ( $icon_url ): ?>
-              <img src="<?php echo $icon_url; ?>" alt="" class="icon">
-            <?php endif; ?>
-            <span class="ms-4"><?php echo esc_html( $text_benefit ); ?></span>
-          </li>
-          <?php endforeach; ?>
-        </ul>
+          <ul class="list-unstyled">
+            <?php foreach ( $benefits as $i => $item ):
+              $icon     = $item['icon_choose'] ?? '';
+              $text     = $item['text_choose'] ?? '';
+              $icon_url = is_array($icon) && isset($icon['url'])
+                ? esc_url($icon['url'])
+                : esc_url($icon);
+              $delay    = 400 + $i * 100;
+            ?>
+              <li
+                class="d-flex align-items-center mb-3"
+                data-aos="fade-right"
+                data-aos-delay="<?php echo $delay; ?>"
+              >
+                <?php if ( $icon_url ): ?>
+                  <img src="<?php echo $icon_url; ?>"
+                       alt=""
+                       class="me-3"
+                       style="width:32px; height:auto;">
+                <?php endif; ?>
+                <span><?php echo esc_html( $text ); ?></span>
+              </li>
+            <?php endforeach; ?>
+          </ul>
         <?php endif; ?>
 
-        <!-- Bouton dynamique -->
         <?php if ( $button_text ): ?>
-        <button class="btn-consultation w-100 mt-4">
-          <?php echo esc_html( $button_text ); ?>
-        </button>
+          <div
+            class="mt-4 button_blc"
+            data-aos="zoom-in"
+            data-aos-delay="800"
+          >
+            <a href="#"
+               class="btn btn-danger btn-lg">
+              <?php echo esc_html( $button_text ); ?>
+            </a>
+          </div>
         <?php endif; ?>
-
       </div>
 
-      <!-- Colonne droite (3/5) : IMAGE-STACK DESKTOP only -->
-      <div class="col-md-7 right-column d-none d-md-block">
-        <div class="image-stack">
-          <?php if ( $maps_url ): ?>
-            <img src="<?php echo $maps_url; ?>" alt="Carte" class="maps">
-          <?php endif; ?>
-          <?php if ( $icon_country_url ): ?>
-            <img src="<?php echo $icon_country_url; ?>" alt="Icône pays" class="icon-country">
-          <?php endif; ?>
-          <?php if ( $avion_url ): ?>
-            <img src="<?php echo $avion_url; ?>" alt="Avion" class="plane">
-          <?php endif; ?>
-        </div>
+      <!-- Colonne droite -->
+      <div class="col-lg-7 text-center mt-4 mt-lg-0 desktop">
+        <?php if ( $maps_url ): ?>
+          <img
+            src="<?php echo $maps_url; ?>"
+            alt="Carte"
+            class="img-fluid rounded"
+            data-aos="fade-left"
+            data-aos-delay="300"
+          >
+        <?php endif; ?>
       </div>
 
     </div>
   </div>
 </section>
-<?php endif; ?>

@@ -158,7 +158,11 @@
   .mobile {
     display: block;
   }
-
+  .btn-consultation {
+    padding: 5px 20px;
+    min-height: 46px;
+    font-size: 16px;
+  }
   /* ------------------------------
 BANNER SECTION
 ------------------------------ */
@@ -809,61 +813,13 @@ BANNER SECTION
     box-shadow: none;
     padding: 10px;
   }
+  .students-achievements {
+    min-height: auto;
+  }
    
-}
-
-/* Grands écrans (laptops / PC Windows) */
-@media screen and (min-width: 1024px) {
-  .ton-element {
-    font-size: 20px;
-    display: flex;
-    justify-content: center;
-  }
-}
-
-@media screen and (min-width: 1200px) and (max-width: 1440px) {
-  .is_homepage {
-    bottom: -15%;
-  }
-  /* ------------------------------
-    Country Page
-  ------------------------------ */
-
-  .banner_country {
-  }
-
-  .banner_country .img_banner {
-  }
-
-  .banner_country .img_banner img {
-  }
-
-  .is_country_page {
-  }
-
-  .is_country_page .play-icon {
-  }
-
-  .banner_country .btn-consultation {
-  }
-
-  .btn-consultation {
-  }
-}
-
-/* Très grands écrans (full HD ou +) */
-@media screen and (min-width: 1440px) {
-  .is_homepage {
-    bottom: -15%;
-  }
-}
-
-/* ===============================
-   PASSPORT SECTION
-=============================== */
-@media (min-width: 768px) {
   .students-achievements__span {
-    width: 35%;
+    font-size: 24px;
+    width: 100%;
   }
   .students-achievements__title {
     font-size: 37px;
@@ -873,7 +829,7 @@ BANNER SECTION
   }
   .students-achievements__subtitle {
     color: var(--color-jaune);
-    font-size: 37px;
+    font-size:20px;
     margin-bottom: 5%;
   }
   .students-achievements__image {
@@ -883,7 +839,7 @@ BANNER SECTION
     left: 50%;
     bottom: -4%;
     transform: translateX(-50%);
-    width: 25%;
+    width: 100%;
     font-family: var(--font-secondary);
     font-size: 16px;
     padding: 10px 29px;
@@ -934,7 +890,120 @@ BANNER SECTION
      .banner_service_section {
        height: auto;
      }
+       /* swap background to testpic */
+       .stats-section {
+        min-height: 400px;
+      }
+      /* hide the red icon */
+      .stats-section .stats-icon {
+        display: none;
+      }
+      /* smaller title */
+      .stats-section .stats-title {
+        font-size: 23px;
+        margin-top: 10%;
+      }
+      /* smaller numbers */
+      .stats-section .stat .stat-number {
+        font-size: 35px;
+      }
+      /* smaller labels */
+      .stats-section .stat .stat-label {
+        font-size: 10px;
+      }
+      .stats-section .stat-top-left    { top: 25%;  left: 15%;  }
+      .stats-section .stat-top-right   { top: 25%;  right:15%;  }
+      .stats-section[dir="ltr"] .stat-top-left {
+        left: auto;
+        right: 15%;
+      }
+      .stats-section[dir="ltr"] .stat-top-right {
+        right: auto;
+        left: 15%;
+      }
+      .stats-section .stat-bottom-left { bottom:40%; left:5%; }
+      .stats-section .stat-bottom-right{ bottom:40%; right:5%; }
+      .stats-section[dir="ltr"] .stat-bottom-left {
+        left: auto;
+        right: 5%;
+      }
+      .stats-section[dir="ltr"] .stat-bottom-right {
+        right: auto;
+        left: 5%;
+      }
+      .stats-section .stats-cta{
+        font-size: 16px;
+        bottom: -5%;
+      }
+
+      .why_choose_us {
+        padding: 40px 0;
+      }
+      .why_choose_us .section-title {
+        font-size: 32px;
+        text-align: center;
+      }
+      .why_choose_us ul.list-unstyled {
+        margin: 0 1rem 1.5rem;
+      }
+      .why_choose_us ul.list-unstyled li span {
+        font-size: 20px;
+      }
+      .why_choose_us .button_blc {
+        padding: 0 20px;
+      }
+      .why_choose_us .btn-danger {
+        width: 100%;
+        text-align: center;
+      }
 }
+
+/* Grands écrans (laptops / PC Windows) */
+@media screen and (min-width: 1024px) {
+  .ton-element {
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width: 1440px) {
+  .is_homepage {
+    bottom: -15%;
+  }
+  /* ------------------------------
+    Country Page
+  ------------------------------ */
+
+  .banner_country {
+  }
+
+  .banner_country .img_banner {
+  }
+
+  .banner_country .img_banner img {
+  }
+
+  .is_country_page {
+  }
+
+  .is_country_page .play-icon {
+  }
+
+  .banner_country .btn-consultation {
+  }
+
+  .btn-consultation {
+  }
+}
+
+/* Très grands écrans (full HD ou +) */
+@media screen and (min-width: 1440px) {
+  .is_homepage {
+    bottom: -15%;
+  }
+}
+
 
 /* ======================================
   ESTABLISHMENTS SECTION
@@ -947,11 +1016,11 @@ BANNER SECTION
     height: auto !important;
   }
   .establishments-section .top-section {
-    height: 3rem;
+    height: 6rem;
   }
   .establishments-section .top-bg-img {
     position: static;
-    margin-top: 5%;
+    margin-top: 10%;
     width: 50%;
   }
   /* on cache la version desktop */
@@ -965,6 +1034,9 @@ BANNER SECTION
     flex-direction: column;
     align-items: center;
     padding: 2rem 1rem;
+    background-image: url(/wp-content/themes/khotwa/assets/img/testimonial_bg.png);
+    background-position: 40% 3%;
+    background-repeat: no-repeat;
   }
 
   /* titre centré et plus petit */
